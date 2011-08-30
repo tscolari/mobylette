@@ -1,3 +1,8 @@
 = Mobylette
 
 This project rocks and uses MIT-LICENSE.
+
+
+http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
+http://www.arctickiwi.com/blog/mobile-enable-your-ruby-on-rails-site-for-small-screens
+https://github.com/brendanlim/mobile-fu
