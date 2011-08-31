@@ -1,7 +1,8 @@
 = Mobylette
 
-This project rocks and uses MIT-LICENSE.
+Not ready...
 
+Mobile mime-type handling, based on the mobile-fu plugin, and these articles:
 
 http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
 http://www.arctickiwi.com/blog/mobile-enable-your-ruby-on-rails-site-for-small-screens
