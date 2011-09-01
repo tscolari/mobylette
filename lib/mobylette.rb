@@ -5,5 +5,8 @@ module Mobylette
   end
 
   autoload "TestHelpers"              , "mobylette/test_helpers"
-  require 'mobylette/railtie'
+  require 'mobylette/engine'
 end
+
+require 'action_controller'
+Mime::Type.register_alias "text/html", :mobile

@@ -2,6 +2,9 @@ Dummy::Application.routes.draw do
 
   get "testing" => "testing#index"
 
+  get "home(.:format)"            => "home#index"
+  get "respond_to_test(.:format)" => "home#respond_to_test"
+
   root :to => "home#index"
 
   # The priority is based upon order of creation:
