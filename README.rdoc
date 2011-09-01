@@ -11,9 +11,15 @@ https://github.com/brendanlim/mobile-fu
 
 === Testing
 
-For testing, include the Mobylette::TestHelpers to your rspec_helpers.rb or test_helpers.rb:
+For testing, include the Mobylette::TestHelpers to your  test/test_helpers.rb:
 
     include Mobylette::TestHelpers
+
+Or to your spec/rspec_helpers.rb or create a spec/support/mobylette.rb with the following:
+
+    RSpec.configure do |config|
+      config.include Mobylette::TestHelpers, :type => :controller
+    end
 
 This will add 2 methods to your test scope:
 

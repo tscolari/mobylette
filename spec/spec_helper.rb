@@ -20,8 +20,6 @@ Capybara.default_selector = :css
 # Run any available migration
 ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
 
-include Mobylette::TestHelpers
-
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
@@ -30,6 +28,8 @@ RSpec.configure do |config|
   # methods or matchers
   require 'rspec/expectations'
   config.include RSpec::Matchers
+
+  config.include Mobylette::TestHelpers, :type => :controller
 
   # == Mock Framework
   config.mock_with :rspec
