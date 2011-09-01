@@ -30,3 +30,5 @@ this will force your user_agent to the one specified, allowing you to test mobil
     reset_test_request_agent
 
 this will reset your user_agent to the test default "Rails Testing"
+
+Just an observation, on your tests call these functions BEFORE you make the request, otherwise they are useless =p
