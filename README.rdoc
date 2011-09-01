@@ -7,3 +7,20 @@ Mobile mime-type handling, based on the mobile-fu plugin, and these articles:
 http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
 http://www.arctickiwi.com/blog/mobile-enable-your-ruby-on-rails-site-for-small-screens
 https://github.com/brendanlim/mobile-fu
+
+
+=== Testing
+
+For testing, include the Mobylette::TestHelpers to your rspec_helpers.rb or test_helpers.rb:
+
+    include Mobylette::TestHelpers
+
+This will add 2 methods to your test scope:
+
+    force_mobile_request_agent(device = "Android")
+
+this will force your user_agent to the one specified, allowing you to test mobile requests.
+
+    reset_test_request_agent
+
+this will reset your user_agent to the test default "Rails Testing"
