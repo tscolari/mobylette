@@ -54,5 +54,10 @@ describe HomeController do
     response.should render_template(:mobile)
   end
 
+  it "should fall back to html view" do
+    get :no_mobile_view, :format => "mobile"
+    response.should render_template(:no_mobile_view)
+    resepnse.body.should contain("This is the only view, and it's html")
+  end
 
 end
