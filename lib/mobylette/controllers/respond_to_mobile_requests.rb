@@ -39,7 +39,7 @@ module Mobylette
         end
 
         def is_mobile_request?
-          request.user_agent.to_s.downcase =~ /#{self.class.MOBILE_USER_AGENTS}/
+          request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
         end
 
       end
