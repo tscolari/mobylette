@@ -35,7 +35,7 @@ module Mobylette
         private
 
         def handle_mobile
-          request.format = :mobile if is_mobile_request?
+          request.format = :mobile if (not request.xhr?) and is_mobile_request?
         end
 
         def is_mobile_request?
