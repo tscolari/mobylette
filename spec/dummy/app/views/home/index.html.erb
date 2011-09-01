@@ -1,1 +1,7 @@
 this is the html view
+
+<% if is_mobile_request? %>
+  THIS A MOBILE DEVICE
+<% else %>
+  THIS IS NOT A MOBILE DEVICE
+<% end %>

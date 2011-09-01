@@ -1,15 +1,55 @@
+==== Not ready yet!!!
+
 = Mobylette
 
-Not ready...
+This gem works by adding the 'mobile' format to your rails application. Whenever a request come from a mobile device, if you have your controller mobile enabled, it shall render the view.mobile.erb instead of the view.html.erb (or haml, or whatever).
 
-Mobile mime-type handling, based on the mobile-fu plugin, and these articles:
+This is based on the mobile_fu plugin (https://github.com/brendanlim/mobile-fu). Also these pages were very usefull for me:
+ * http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
+ * http://www.arctickiwi.com/blog/mobile-enable-your-ruby-on-rails-site-for-small-screens
+ * http://metautonomo.us/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/
 
-http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
-http://www.arctickiwi.com/blog/mobile-enable-your-ruby-on-rails-site-for-small-screens
-https://github.com/brendanlim/mobile-fu
+== How does it work?
 
+By adding "respond_to_mobile_requests" to your application_controller (or any other controller) your controllers (or that controller) will understand mobile requests as a new mime type alias "mobile". This will make the controller search for the .mobile.erb file instead of the .html.erb. Also you will be able to do:
 
-=== Testing
+    respond_to do |format|
+      format.html   { ... }
+      format.mobile { ... }
+    end
+
+== Instalation
+
+Add the gem to your gemfile:
+
+    gem 'mobylette', :git => "git://github.com/tscolari/mobylette.git"
+
+And add to your ApplicationController.rb (for enabling it to all your controllers) or to the controllers you want this functionality on:
+
+    respond_to_mobile_requests
+
+After that, you may start adding your .mobile. views.
+
+== Helpers
+
+==== is_mobile_request?
+
+This helper returns true if the request comes from a mobile device, false if it does not.
+
+==== mobylette_stylesheet_link_tag(*sources)    - not tested yet
+
+This works just like the stylesheet_link_tag helper, but when the request comes from a mobile device, it adds "_mobile" to the stylesheets before calling stylesheet_link_tag
+
+==== mobylette_javascript_include_tag           - not tested yet
+
+Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
+
+== Fall Backs - not implemented yet
+
+Fall back still a problem. In my POV .mobile should fall back to .html, it's a desirable behavior. But it's not working this way.
+In this post - http://metautonomo.us/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/ - there is an idea that will work (not on this gem), that could be considered. I still think that it would be a lot better making the .mobile fall back into .html. But as I haven't even tryed it yet, I've no more to say.
+
+== Testing
 
 For testing, include the Mobylette::TestHelpers to your  test/test_helpers.rb:
 
@@ -31,4 +71,4 @@ this will force your user_agent to the one specified, allowing you to test mobil
 
 this will reset your user_agent to the test default "Rails Testing"
 
-Just an observation, on your tests call these functions BEFORE you make the request, otherwise they are useless =p
+Friendly note: on your tests, call these functions BEFORE you make the request, otherwise they are useless =p

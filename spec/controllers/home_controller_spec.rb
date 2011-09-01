@@ -36,7 +36,6 @@ describe HomeController do
     response.body.should contain("this is the mobile view")
   end
 
-
   it "should render desktop view on non mobile request" do
     reset_test_request_agent
     get :respond_to_test
@@ -57,7 +56,31 @@ describe HomeController do
   it "should fall back to html view" do
     get :no_mobile_view, :format => "mobile"
     response.should render_template(:no_mobile_view)
-    resepnse.body.should contain("This is the only view, and it's html")
+    response.body.should contain("This is the only view, and it's html")
+  end
+
+  it "should display THIS A MOBILE DEVICE on index from mobile" do
+    force_mobile_request_agent("Android")
+    get :index
+    response.body.should contain("THIS A MOBILE DEVICE")
+  end
+
+  it "should not display THIS IS NOT A MOBILE DEVICE on index from mobile" do
+    force_mobile_request_agent("Android")
+    get :index
+    response.body.should_not contain("THIS IS NOT A MOBILE DEVICE")
+  end
+
+  it "should not display THIS A MOBILE DEVICE on index from non mobile" do
+    reset_test_request_agent
+    get :index
+    response.body.should_not contain("THIS A MOBILE DEVICE")
+  end
+
+  it "should display THIS IS NOT A MOBILE DEVICE on index from non mobile" do
+    reset_test_request_agent
+    get :index
+    response.body.should contain("THIS IS NOT A MOBILE DEVICE")
   end
 
 end
