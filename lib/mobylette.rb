@@ -4,7 +4,7 @@ module Mobylette
     autoload "Helpers"                , "mobylette/controllers/helpers"
   end
 
-  autoload "TestHelpers"              , "mobylette/test_helpers"
+  autoload "Helmet"                   , "mobylette/helmet"
   require 'mobylette/engine'
 end
 

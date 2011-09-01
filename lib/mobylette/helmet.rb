@@ -1,6 +1,6 @@
 module Mobylette
   #TODO add documentation here
-  module TestHelpers
+  module Helmet
     extend ActiveSupport::Concern
 
     def force_mobile_request_agent(device_name = "Android")
