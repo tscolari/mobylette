@@ -1,11 +1,12 @@
 require 'spec_helper'
 
 describe HomeController do
+  render_views
 
   it "should render the index view" do
     get :index
     response.should render_template(:index)
-    response.should contain("this is the html view")
+    response.body.should contain("this is the html view")
   end
 
   it "should have the Rails Testing request type by default" do
@@ -32,7 +33,7 @@ describe HomeController do
     force_mobile_request_agent
     get :index
     @controller.send(:is_mobile_request?).should be_true
-    response.should contain("this is the mobile view")
+    response.body.should contain("this is the mobile view")
   end
 
 
