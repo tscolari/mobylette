@@ -4,6 +4,7 @@ Dummy::Application.routes.draw do
 
   get "home(.:format)"            => "home#index"
   get "respond_to_test(.:format)" => "home#respond_to_test"
+  get "no_mobile_view(.:format)"  => "home#no_mobile_view"
 
   root :to => "home#index"
 

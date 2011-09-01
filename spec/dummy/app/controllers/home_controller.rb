@@ -8,4 +8,9 @@ class HomeController < ApplicationController
       format.mobile {render :action => "mobile"}
     end
   end
+
+  def no_mobile_view
+
+  end
+
 end
