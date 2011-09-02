@@ -38,17 +38,13 @@ module Mobylette
       # Anex the "_mobile" sulfix to each string in the array,
       # before the .#{extension}, if it exists
       def sulfix_mobile_assets(sources, extension)
-        sources.each_index do |index|
-          source = sources[index]
-          source = source.first unless source.is_a?(String)
-
-          if source =~ /.#{extension}$/
-            sources[index]  = "#{source.split(/.#{extension}$/)[0]}_mobile.#{extension}"
+        sources.map do |source| 
+          if source =~ /.#{extension}/ 
+            "#{source.split(/.#{extension}$/)[0]}_mobile.#{extension}"
           else
-            sources[index]  = "#{source}_mobile"
+            "#{source}_mobile"
           end
         end
-        sources
       end
     end
 
