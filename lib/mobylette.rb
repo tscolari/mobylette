@@ -5,7 +5,7 @@ module Mobylette
   end
 
   autoload "Helmet"                   , "mobylette/helmet"
-  require 'mobylette/engine'
+  require 'mobylette/railtie'
 end
 
 require 'action_controller'
