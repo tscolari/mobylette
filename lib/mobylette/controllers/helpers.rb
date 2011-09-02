@@ -34,12 +34,9 @@ module Mobylette
             sources[index]  = "#{source}_mobile"
           end
         end
-        if sources.size == 1
-          sources.first
-        else
-          sources
-        end
+        sources
       end
     end
+
   end
 end
