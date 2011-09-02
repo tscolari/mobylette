@@ -38,11 +38,11 @@ After that, you may start adding your .mobile. views.
 
 This helper returns true if the request comes from a mobile device, false if it does not.
 
-==== mobylette_stylesheet_link_tag(*sources)    - not tested yet
+==== mobylette_stylesheet_link_tag(*sources)
 
 This works like the stylesheet_link_tag helper, but when the request comes from a mobile device, it adds "_mobile" to the stylesheets before calling stylesheet_link_tag
 
-==== mobylette_javascript_include_tag(*soruces) - not tested yet
+==== mobylette_javascript_include_tag(*soruces)
 
 Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
 

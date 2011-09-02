@@ -1,5 +1,10 @@
 = Change Log
 
+== 0.0.2
+  * Fixing the view helpers (stylesheet and javascript includes)
+  * Added tests to those helpers
+  * Added a few more methods and modules documentation
+
 == 0.0.1
 
   * Gem creation
