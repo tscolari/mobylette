@@ -1,6 +1,6 @@
 module Mobylette
   module Helmet
-    # This module is only for testing the view helpers of the module
+    # This module is only for testing the view's helpers of the module
     # it simulates the Helmet helpers and the controller methods
     # that are necessary for the tests
     module Helpers
@@ -11,7 +11,7 @@ module Mobylette
       end
 
 
-      def force_mobile_request_agent(user_agent = "Android")
+      def force_mobile_request_agent
         insert_faker
         ActionController::Base.is_mobile_request = true
       end
