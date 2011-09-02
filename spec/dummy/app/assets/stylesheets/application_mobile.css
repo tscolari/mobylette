@@ -1,0 +1,11 @@
+/*
+ * This is the application mobile CSS
+ *
+ *
+ *= require_self
+ *
+ */
+
+body {
+  background-color: green;
+}

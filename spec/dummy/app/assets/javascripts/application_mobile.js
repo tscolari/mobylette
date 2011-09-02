@@ -6,4 +6,4 @@
 //
 //
 
-alert("HTML JS");
+alert("MOBILE JS");

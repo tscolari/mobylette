@@ -26,7 +26,7 @@ module Mobylette
           sources.each_index do |index|
             source          = sources[index]
             source_mobile   = source.split(/.#{extension.to_s}$/)
-            sources[index]  = "#{source[0]}_mobile"
+            sources[index]  = "#{source_mobile[0]}_mobile"
             sources[index] += ".#{extension.to_s}" if source =~ /\.css$/
           end
           return *sources

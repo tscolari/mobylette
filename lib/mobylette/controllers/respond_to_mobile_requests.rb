@@ -37,6 +37,7 @@ module Mobylette
 
         # helper method to check if the current request if from a mobile device or not
         def is_mobile_request?
+          return true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
           request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
         end
       end
