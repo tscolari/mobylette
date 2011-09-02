@@ -7,16 +7,17 @@ require "mobylette/version"
 Gem::Specification.new do |s|
   s.name        = "mobylette"
   s.version     = Mobylette::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Mobylette."
-  s.description = "TODO: Description of Mobylette."
+  s.authors     = ["Tiago Scolari"]
+  s.email       = ["tscolari@gmail.com"]
+  s.homepage    = "https://github.com/tscolari/mobylette"
+  s.summary     = "Mobile request handling for your Rails app."
+  s.description = "Adds the mobile format for rendering views for mobile device."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 3.1.0.rc8"
+  s.add_dependency "rails", "~> 3.1"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rspec"
 end

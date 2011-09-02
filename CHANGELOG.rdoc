@@ -1,0 +1,7 @@
+= Change Log
+
+== 0.0.1
+
+  * Gem creation
+    * respond_to_mobile_requests
+    * Test Helpers (Helmet)
