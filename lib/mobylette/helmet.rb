@@ -7,6 +7,7 @@ module Mobylette
   module Helmet
     extend ActiveSupport::Concern
     autoload "Helpers", "mobylette/helmet/helpers"
+    autoload "Faker"  , "mobylette/helmet/faker"
 
     # Force the request for the user_agent
     # Remember to add it BEFORE the request

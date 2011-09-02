@@ -4,19 +4,30 @@ module Mobylette
     # it simulates the Helmet helpers and the controller methods
     # that are necessary for the tests
     module Helpers
-      @@user_agent = "Rails Testing"
+      extend ActiveSupport::Concern
+
+      included do
+        cattr_accessor :user_agent
+      end
+
 
       def force_mobile_request_agent(user_agent = "Android")
-        @@user_agent = user_agent
+        insert_faker
+        ActionController::Base.is_mobile_request = true
       end
 
       def reset_test_request_agent
-        @@user_agent = "Rails Testing"
+        insert_faker
+        ActionController::Base.is_mobile_request = false
       end
 
-      def is_mobile_request?
-        @@user_agent.to_s.downcase =~ /#{ActionController::Base::MOBILE_USER_AGENTS}/
+      private
+
+      def insert_faker
+        return if ActionController::Base.included_modules.include?(Mobylette::Helmet::Faker)
+        ActionController::Base.send(:include, Mobylette::Helmet::Faker)
       end
+
 
     end
   end
