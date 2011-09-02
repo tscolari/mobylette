@@ -4,32 +4,30 @@ module Mobylette
       extend ActiveSupport::Concern
       module InstanceMethods
 
-        def mobylette_stylesheet_link_tag(*sources)
+        def mobylette_stylesheet_link_tag(source, options = {})
           if is_mobile_request?
-            stylesheet_link_tag(*sulfix_mobile_assets(*sources, :css))
+            stylesheet_link_tag(sulfix_mobile_assets(source, :css), options)
           else
-            stylesheet_link_tag(*sources)
+            stylesheet_link_tag(source, options)
           end
         end
 
-        def mobylette_javascript_include_tag(*sources)
+        def mobylette_javascript_include_tag(source, options = {})
           if is_mobile_request?
-            javascript_include_tag(*sulfix_mobile_assets(*sources, :js))
+            javascript_include_tag(sulfix_mobile_assets(source, :js), options)
           else
-            javascript_include_tag(*sources)
+            javascript_include_tag(source, options)
           end
         end
 
         private
 
-        def sulfix_mobile_assets(*sources, extension)
-          sources.each_index do |index|
-            source          = sources[index]
-            source_mobile   = source.split(/.#{extension.to_s}$/)
-            sources[index]  = "#{source_mobile[0]}_mobile"
-            sources[index] += ".#{extension.to_s}" if source =~ /\.css$/
+        def sulfix_mobile_assets(source, extension)
+          if source =~ /.#{extension}$/
+            "#{source.split(/.#{extension}$/)[0]}_mobile.#{extension}"
+          else
+            "#{source}_mobile"
           end
-          return *sources
         end
       end
     end
