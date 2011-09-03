@@ -1,4 +1,5 @@
 .bundle/
+rdoc/*
 log/*.log
 tmp/*
 *.swp
