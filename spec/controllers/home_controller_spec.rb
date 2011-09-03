@@ -57,12 +57,6 @@ describe HomeController do
     response.should render_template(:mobile)
   end
 
-  it "should fall back to html view" do
-    get :no_mobile_view, :format => "mobile"
-    response.should render_template(:no_mobile_view)
-    response.body.should contain("This is the only view, and it's html")
-  end
-
   it "should display THIS A MOBILE DEVICE on index from mobile" do
     force_mobile_request_agent("Android")
     get :index

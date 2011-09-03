@@ -1,0 +1,2 @@
+module NoFallbackHelper
+end
