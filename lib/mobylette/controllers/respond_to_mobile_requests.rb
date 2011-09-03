@@ -60,7 +60,10 @@ module Mobylette
         # Changes the request.form to :mobile, when the request is from
         # a mobile device
         def handle_mobile
-          request.format            = :mobile if is_mobile_request?
+          if is_mobile_request?
+            request.format    = :mobile
+            request.formats  << Mime::Type.new(:html)
+          end
         end
       end
     end
