@@ -1,4 +1,4 @@
-http://fd.img.v4.skyrock.net/fd6/mantaur/pics/206915407_small.jpg
+http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg
 
 = Mobylette http://travis-ci.org/tscolari/mobylette.png
 
@@ -56,7 +56,7 @@ This would force all views (mobile) to fall back to the html views. You may also
 
 == Testing
 
-http://image.tin247.com/kenh14/080918143137-689-665.jpg
+http://tscolari.github.com/mobylette/mobylette_images/helmet.jpg
 
 Don't drive your mobylette without your Helmet! It's always safer do tests!
 

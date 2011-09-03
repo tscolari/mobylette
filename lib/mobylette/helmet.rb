@@ -10,6 +10,7 @@ module Mobylette
     autoload "Faker"  , "mobylette/helmet/faker"
 
     # Force the request for the user_agent
+    #
     # Remember to add it BEFORE the request
     #
     # Example:
@@ -24,6 +25,7 @@ module Mobylette
     end
 
     # Reset the user_aget to the default ("Rails Testing")
+    #
     # Remember to add it BEFORE the request
     #
     # Example:

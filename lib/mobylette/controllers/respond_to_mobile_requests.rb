@@ -23,6 +23,7 @@ module Mobylette
       module ClassMethods
 
         # This method enables the controller do handle mobile requests
+        #
         # You must add this to every controller you want to respond differently to mobile devices,
         # or make it application wide calling it from the ApplicationController
         #
@@ -57,6 +58,7 @@ module Mobylette
     end
 
     # RespondToMobileRequestsMethods is included by respond_to_mobile_requests
+    #
     # This will check if the request is from a mobile device and change
     # the request format to :mobile
     module RespondToMobileRequestsMethods
