@@ -22,7 +22,7 @@ By adding "respond_to_mobile_requests" in your application_controller (or any ot
 
 Add the gem to your gemfile:
 
-    gem 'mobylette', :git => "git://github.com/tscolari/mobylette.git"
+    gem 'mobylette'
 
 And add to your ApplicationController.rb (for enabling it to all your controllers) or to the controllers you want this functionality on:
 

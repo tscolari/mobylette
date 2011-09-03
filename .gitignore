@@ -1,5 +1,6 @@
 .bundle/
 rdoc/*
+*.gem
 log/*.log
 tmp/*
 *.swp
