@@ -25,8 +25,18 @@ module Mobylette
         # This method enables the controller do handle mobile requests
         # You must add this to every controller you want to respond diferently to mobile devices,
         # or make it application wide calling it from the ApplicationController
-        def respond_to_mobile_requests
+        #
+        # Options:
+        # :fall_back_format => :html
+        # You may pass a fall_back_format option to the method
+        # TODO!!
+        #
+        def respond_to_mobile_requests(options = {})
           return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
+
+          cattr_accessor :fall_back_format
+          self.fall_back_format   = options[:fall_back_format].to_sym
+
           self.send(:include, Mobylette::Controllers::RespondToMobileRequestsMethods)
         end
       end
@@ -62,7 +72,7 @@ module Mobylette
         def handle_mobile
           if is_mobile_request?
             request.format    = :mobile
-            request.formats  << Mime::Type.new(:html)
+            request.formats  << Mime::Type.new(self.fall_back_format) if self.fall_back_format
           end
         end
       end
