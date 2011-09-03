@@ -1,5 +1,9 @@
 = Change Log
 
+== 1.0.0
+  * Added fall back from mobile views to others when there is no mobile view
+  avaible
+
 == 0.0.2
   * Fixing the view helpers (stylesheet and javascript includes)
   * Added tests to those helpers

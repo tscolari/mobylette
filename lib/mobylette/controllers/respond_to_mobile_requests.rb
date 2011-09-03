@@ -23,16 +23,15 @@ module Mobylette
       module ClassMethods
 
         # This method enables the controller do handle mobile requests
-        # You must add this to every controller you want to respond diferently to mobile devices,
+        # You must add this to every controller you want to respond differently to mobile devices,
         # or make it application wide calling it from the ApplicationController
         #
         # Options:
-        # :fall_back => :html
-        # You may pass a fall_back_format option to the method, it will force the render
-        # to look for that other format, in case there is not .mobile file for the view
-        #
-        # By default, it will fall back to the format of the original request.
-        # If you don't want fall back at all, pass :fall_back => false
+        # * :fall_back => :html
+        #     You may pass a fall_back option to the method, it will force the render
+        #     to look for that other format, in case there is not a .mobile file for the view.
+        #     By default, it will fall back to the format of the original request.
+        #     If you don't want fall back at all, pass :fall_back => false
         #
         def respond_to_mobile_requests(options = {})
           return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)

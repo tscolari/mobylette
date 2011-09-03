@@ -1,5 +1,3 @@
-==== Not ready yet!!!
-
 http://fd.img.v4.skyrock.net/fd6/mantaur/pics/206915407_small.jpg
 
 = Mobylette
@@ -46,13 +44,13 @@ This works like the stylesheet_link_tag helper, but when the request comes from 
 
 Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
 
-== Fall Backs - not implemented yet
+== Fall Backs
 
-By default, when the mobile format is not found, mobylette will fall back to the request original format. For example, if a cell phone makes a request by html, and there is no mobile view, it will render the html. You may force it always to fall back to a format of your choice, by passing the :fall_back parameter to the respond_to_mobile_requests method.
+By default, when the mobile format is not found, mobylette will fall back to the request original format. For example, if a cell phone makes a request by html, and there is no mobile view, it will render the html. You may force it always to fall back to a especific format, by passing the :fall_back parameter to the respond_to_mobile_requests method:
 
     respond_to_mobile_requests :fall_back => :html
 
-This would force all views (mobile) to fall back to the html views. You may also disable this behavior, so no fall back will never occur:
+This would force all views (mobile) to fall back to the html views. You may also disable this behavior, and no fall back will ever occur:
 
     respond_to_mobile_requests :fall_back => false
 
