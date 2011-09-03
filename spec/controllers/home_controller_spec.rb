@@ -3,6 +3,10 @@ require 'spec_helper'
 describe HomeController do
   render_views
 
+  it "should have the :handle_mobile method" do
+    @controller.private_methods.include?(:handle_mobile).should be_true
+  end
+
   it "should render the index view" do
     get :index
     response.should render_template(:index)

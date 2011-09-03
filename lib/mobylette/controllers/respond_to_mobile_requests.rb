@@ -28,14 +28,17 @@ module Mobylette
         #
         # Options:
         # :fall_back_format => :html
-        # You may pass a fall_back_format option to the method
-        # TODO!!
+        # You may pass a fall_back_format option to the method, it will force the render
+        # to look for that other format, in case there is not .mobile file for the view
+        #
+        # By default, it will fall back to the format of the original request.
+        # If you don't want fall back at all, pass :fall_back_format => false
         #
         def respond_to_mobile_requests(options = {})
           return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
 
           cattr_accessor :fall_back_format
-          self.fall_back_format   = options[:fall_back_format].to_sym
+          self.fall_back_format   = options[:fall_back_format]
 
           self.send(:include, Mobylette::Controllers::RespondToMobileRequestsMethods)
         end
@@ -72,7 +75,9 @@ module Mobylette
         def handle_mobile
           if is_mobile_request?
             request.format    = :mobile
-            request.formats  << Mime::Type.new(self.fall_back_format) if self.fall_back_format
+            if self.fall_back_format != false
+              request.formats << Mime::Type.new((self.fall_back_format if self.fall_back_format) || params[:format])
+            end
           end
         end
       end

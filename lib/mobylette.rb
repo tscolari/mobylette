@@ -4,8 +4,6 @@ module Mobylette
     autoload "Helpers"                , "mobylette/controllers/helpers"
   end
 
-  autoload "FallBackResolver"         , "mobylette/fall_back_resolver"
-
   autoload "Helmet"                   , "mobylette/helmet"
   require 'mobylette/railtie'
 end

@@ -48,8 +48,13 @@ Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_i
 
 == Fall Backs - not implemented yet
 
-Fall back still a problem. In my POV .mobile should fall back to .html, it's a desirable behavior. But it's not working this way.
-In this post - http://metautonomo.us/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/ - it is an idea that will work (not with this gem), but that could be considered. I still think that it would be a lot better making the .mobile fall back into .html. But as I haven't tryed it yet, I've no more to say, yet.
+By default, when the mobile format is not found, mobylette will fall back to the request original format. For example, if a cell phone makes a request by html, and there is no mobile view, it will render the html. You may force it always to fall back to a format of your choice, by passing the :fall_back parameter to the respond_to_mobile_requests method.
+
+    respond_to_mobile_requests :fall_back => :html
+
+This would force all views (mobile) to fall back to the html views. You may also disable this behavior, so no fall back will never occur:
+
+    respond_to_mobile_requests :fall_back => false
 
 == Testing
 

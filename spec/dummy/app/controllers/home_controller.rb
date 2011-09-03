@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+
+  respond_to_mobile_requests
+
   def index
   end
 
