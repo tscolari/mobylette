@@ -33,17 +33,17 @@
     </div>
 
     <div id="project-metadata">
-
-
+      
+      
       <div id="fileindex-section" class="section project-section">
         <h3 class="section-header">Files</h3>
         <ul>
-
+        
           <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
-
+        
         </ul>
       </div>
-
+      
 
       <div id="classindex-section" class="section project-section">
         <h3 class="section-header">Class Index
@@ -59,43 +59,44 @@
         </form>
 
         <ul class="link-list">
-
+        
           <li><a href="./Mobylette.html">Mobylette</a></li>
-
+        
           <li><a href="./Mobylette/Controllers.html">Mobylette::Controllers</a></li>
-
+        
           <li><a href="./Mobylette/Controllers/Helpers.html">Mobylette::Controllers::Helpers</a></li>
-
+        
           <li><a href="./Mobylette/Controllers/RespondToMobileRequests.html">Mobylette::Controllers::RespondToMobileRequests</a></li>
-
+        
           <li><a href="./Mobylette/Controllers/RespondToMobileRequests/ClassMethods.html">Mobylette::Controllers::RespondToMobileRequests::ClassMethods</a></li>
-
+        
           <li><a href="./Mobylette/Controllers/RespondToMobileRequests/InstanceMethods.html">Mobylette::Controllers::RespondToMobileRequests::InstanceMethods</a></li>
-
+        
           <li><a href="./Mobylette/Controllers/RespondToMobileRequestsMethods.html">Mobylette::Controllers::RespondToMobileRequestsMethods</a></li>
-
+        
           <li><a href="./Mobylette/Controllers/RespondToMobileRequestsMethods/InstanceMethods.html">Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods</a></li>
-
+        
           <li><a href="./Mobylette/Helmet.html">Mobylette::Helmet</a></li>
-
+        
           <li><a href="./Mobylette/Helmet/Faker.html">Mobylette::Helmet::Faker</a></li>
-
+        
           <li><a href="./Mobylette/Helmet/Helpers.html">Mobylette::Helmet::Helpers</a></li>
-
+        
           <li><a href="./Mobylette/Railtie.html">Mobylette::Railtie</a></li>
-
+        
         </ul>
         <div id="no-class-search-results" style="display: none;">No matching classes.</div>
       </div>
 
-
+      
     </div>
   </div>
 
   <div id="documentation">
-
+    
 <p><img
-src="http://fd.img.v4.skyrock.net/fd6/mantaur/pics/206915407_small.jpg" /></p>
+src="http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg"
+/></p>
 
 <h1><a href="Mobylette.html">Mobylette</a> <img src="http://travis-ci.org/tscolari/mobylette.png" /></h1>
 
@@ -114,8 +115,8 @@ Also these pages were very usefull for me:</p>
 
 <h2>How does it work?</h2>
 
-<p>By adding “respond_to_mobile_requests” in your application_controller
-(or any other controller), your controllers (or that controller) will
+<p>By adding “respond_to_mobile_requests” in your application_controller (or
+any other controller), your controllers (or that controller) will
 understand mobile requests as a new mime type alias “mobile”. This will
 make the controller to search for the .mobile.erb file instead of the
 .html.erb. Also you will be able to do:</p>
@@ -148,8 +149,8 @@ if it does not.</p>
 <h4>mobylette_stylesheet_link_tag(*sources)</h4>
 
 <p>This works like the stylesheet_link_tag helper, but when the request comes
-from a mobile device, it adds “_mobile” to the stylesheets before
-calling stylesheet_link_tag</p>
+from a mobile device, it adds “_mobile” to the stylesheets before calling
+stylesheet_link_tag</p>
 
 <h4>mobylette_javascript_include_tag(*soruces)</h4>
 
@@ -173,10 +174,10 @@ also disable this behavior, and no fall back will ever occur:</p>
 
 <h2>Testing</h2>
 
-<p><img src="http://image.tin247.com/kenh14/080918143137-689-665.jpg" /></p>
+<p><img src="http://tscolari.github.com/mobylette/mobylette_images/helmet.jpg"
+/></p>
 
-<p>Don’t drive your mobylette without your Helmet! It’s always safer do
-tests!</p>
+<p>Don’t drive your mobylette without your Helmet! It’s always safer do tests!</p>
 
 <p>For testing, include the <a
 href="Mobylette/Helmet.html">Mobylette::Helmet</a> module to your
