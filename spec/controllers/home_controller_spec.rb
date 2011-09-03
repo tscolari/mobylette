@@ -4,7 +4,12 @@ describe HomeController do
   render_views
 
   it "should have the :handle_mobile method" do
-    @controller.private_methods.include?(:handle_mobile).should be_true
+    #
+    # Works on ruby 1.9.2 but not on 1.8.7
+    # @controller.private_methods.include?(:handle_mobile).should be_true
+    # this is a hack, not perfect, but if it didnt have the method it would
+    # throw an error, and the test would fail
+    @controller.send(:handle_mobile).should be_nil
   end
 
   it "should render the index view" do
