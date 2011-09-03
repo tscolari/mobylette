@@ -1,5 +1,7 @@
 Dummy::Application.routes.draw do
 
+  get "fallbacks/index"
+
   get "testing" => "testing#index"
 
   get "home(.:format)"            => "home#index"
