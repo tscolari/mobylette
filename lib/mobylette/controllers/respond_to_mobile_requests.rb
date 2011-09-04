@@ -10,6 +10,7 @@ module Mobylette
 
       included do
         helper_method :is_mobile_request?
+        helper_method :is_mobile_view?
 
         # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)
         MOBILE_USER_AGENTS =  'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
@@ -49,9 +50,14 @@ module Mobylette
 
         # helper method to check if the current request if from a mobile device or not
         def is_mobile_request?
-          return true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
           request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
         end
+
+        # this helper will check if the format beeing rendered is the :mobile or not
+        def is_mobile_view?
+          true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
+        end
+
       end
 
     end

@@ -1,5 +1,12 @@
 = Change Log
 
+  * XHR requests no longer trigger the mobile format
+  * Added a new method 'is_mobile_view?'
+    * The 'is_mobile_device?' now checks only for the user agent, no longer
+    check for the request.format to return true/false
+    * The new 'is_mobile_view?' checks only for the reqeust.format /
+    params[:format] to return true/false
+
 == 1.0.0
   * Added fall back from mobile views to others when there is no mobile view
   avaible

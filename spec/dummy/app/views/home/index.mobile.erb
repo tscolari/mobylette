@@ -1,4 +1,6 @@
-this is the mobile view
+<% if is_mobile_view? %>
+  this is the mobile view
+<% end %>
 
 <% if is_mobile_request? %>
   THIS A MOBILE DEVICE
