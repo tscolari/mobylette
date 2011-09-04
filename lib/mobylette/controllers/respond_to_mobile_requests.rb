@@ -79,8 +79,8 @@ module Mobylette
         # Changes the request.form to :mobile, when the request is from
         # a mobile device
         def handle_mobile
-          return if session[:mobylette_format_force] == :html
-          if (session[:mobylette_format_force] == :mobile) or (is_mobile_request? && (not request.xhr?))
+          return if session[:mobylette_override] == :ignore_mobile
+          if not request.xhr? and ((session[:mobylette_override] == :force_mobile) or (is_mobile_request?))
             original_format   = request.format.to_sym
             request.format    = :mobile
             if self.fall_back_format != false

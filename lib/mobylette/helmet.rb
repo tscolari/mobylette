@@ -39,5 +39,14 @@ module Mobylette
       request.user_agent = "Rails Testing"
     end
 
+    # set_session_override will set the 'value' to the session override control
+    # value may be:
+    # * :ignore_mobile  -> This will disable mobile checking, and the original format will be rendered
+    # * :force_mobile   -> This will force to all requests for this session be mobile (except xhr)
+    # * nil             -> This will disable session override
+    def set_session_override(value)
+      session[:mobylette_override] = value
+    end
+
   end
 end

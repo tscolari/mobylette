@@ -100,6 +100,7 @@ describe HomeController do
 
   it "should force mobile view if session says it so" do
     reset_test_request_agent
+    set_session_override(:force_mobile)
     get :index
     response.should render_template(:index)
     response.should contain("this is the mobile view")
@@ -108,6 +109,7 @@ describe HomeController do
 
   it "should ignore mobile view processing if session says it so" do
     force_mobile_request_agent("Android")
+    set_session_override(:ignore_mobile)
     get :index
     response.should render_template(:index)
     response.should contain("this is the html view")
