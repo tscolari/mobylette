@@ -4,11 +4,6 @@ http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg
 
 This gem works by adding the 'mobile' format to your rails application. Whenever a request come from a mobile device, if you have your controller mobile enabled, it shall render the view.mobile.erb instead of the view.html.erb (or haml, or whatever).
 
-This gem is based on the mobile_fu plugin (https://github.com/brendanlim/mobile-fu). Also these pages were very usefull for me:
- * http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
- * http://www.arctickiwi.com/blog/mobile-enable-your-ruby-on-rails-site-for-small-screens
- * http://metautonomo.us/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/
-
 == How does it work?
 
 By adding "respond_to_mobile_requests" in your application_controller (or any other controller), your controllers (or that controller) will understand mobile requests as a new mime type alias "mobile". This will make the controller to search for the .mobile.erb file instead of the .html.erb. Also you will be able to do:
@@ -105,3 +100,12 @@ this one will force your user_agent to the one specified, allowing you to test m
 and this one will reset your user_agent to the test default "Rails Testing". You don't need to call this everytime, all your requests by default are "Rails Testing" in your test env.
 
 Friendly note: on your tests, call these functions BEFORE you make the request, otherwise they are useless =p
+
+== Contributions and Credits
+
+This gem is based on the mobile_fu plugin (https://github.com/brendanlim/mobile-fu).
+
+Also, these pages were very usefull when creating the gem:
+* http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
+* http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
+* http://metautonomo.us/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/
