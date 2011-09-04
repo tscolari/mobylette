@@ -32,17 +32,25 @@ After that, you may start adding your .mobile. views.
 
 == Helpers
 
-==== is_mobile_request?
+* ==== is_mobile_request?
 
-This helper returns true if the request comes from a mobile device, false if it does not.
+  This helper returns true if the request comes from a mobile device, false if it does not.
 
-==== mobylette_stylesheet_link_tag(*sources)
+* ==== is_mobile_view?
 
-This works like the stylesheet_link_tag helper, but when the request comes from a mobile device, it adds "_mobile" to the stylesheets before calling stylesheet_link_tag
+  Returns if the current format is :mobile or not.
 
-==== mobylette_javascript_include_tag(*soruces)
+There is a difference between is_mobile_view? and is_mobile_request?. You may have a user requesting from a mobile device (is_mobile_request? == true) and at the same time, you may use the sesssion override to render de default format aways (is_mobile_view? == false). There are a lot of other combinations where these 2 functions will return different results.
+  * is_mobile_request?  -> Exclusively checks for the device from where the request were made
+  * is_mobile_view?     -> Exclusively checks for the view format been rendered
 
-Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
+* ==== mobylette_stylesheet_link_tag(*sources)
+
+  This works like the stylesheet_link_tag helper, but when the request comes from a mobile device, it adds "_mobile" to the stylesheets before calling stylesheet_link_tag
+
+* ==== mobylette_javascript_include_tag(*soruces)
+
+  Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
 
 == Fall Backs
 
@@ -53,6 +61,22 @@ By default, when the mobile format is not found, mobylette will fall back to the
 This would force all views (mobile) to fall back to the html views. You may also disable this behavior, and no fall back will ever occur:
 
     respond_to_mobile_requests :fall_back => false
+
+== Forcing/Ignoring Mobile Requests
+
+You may force your user to aways render the mobile format, or to aways render the default request format (when the request comes from a mobile device). You can use the session var :mobylette_override for doing it:
+
+    session[:mobylette_override] = :ignore_mobile
+
+This will skip the code that would force the mobile format. By doing this, your user will aways render the 'original' version of your app.
+
+    session[:mobylette_override] = :force_mobile
+
+This will force the mobile format rendering, no matter from where the user is requesting it (unless it's a xhr request).
+
+    session[:mobylette_override] = nil
+
+This will disable any override (default).
 
 == Testing
 

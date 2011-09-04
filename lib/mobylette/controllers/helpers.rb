@@ -1,14 +1,16 @@
 module Mobylette
   module Controllers
 
-    #
     # Mobylette::Controllers::Helpers include few methods to
     # include different css/js files for the mobile and for
     # the normal version of your layout
     #
-    # Personal note: I'm rethinking and I guess that, since you
-    # may have (and probably will) a different layout file for the
-    # "normal" and mobile version, you probably wont use this at all
+    # Personal notes:
+    # * I'm rethinking and I guess that, since you
+    #   may have (and probably will) a different layout file for the
+    #   "normal" and mobile version, you probably wont use this at all.
+    # * Also I'm not sure it's the case of using 'is_mobile_request?'
+    #   or 'is_mobile_view?' check here.'
     module Helpers
       extend ActiveSupport::Concern
 
@@ -34,7 +36,6 @@ module Mobylette
 
       private
 
-      #
       # Anex the "_mobile" sulfix to each string in the array,
       # before the .#{extension}, if it exists
       def sulfix_mobile_assets(sources, extension)
