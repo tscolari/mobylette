@@ -1,4 +1,4 @@
 == TODO
 
-
-
+* Add session override for mobile/html
+* Check for request.xhr
