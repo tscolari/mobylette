@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: Mobylette::Controllers::Helpers</title>
+
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../lib/mobylette/controllers/helpers_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/mobylette/controllers/helpers.rb">lib/mobylette/controllers/helpers.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-mobylette_javascript_include_tag">#mobylette_javascript_include_tag</a></li>
+          
+          <li><a href="#method-i-mobylette_stylesheet_link_tag">#mobylette_stylesheet_link_tag</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../Mobylette.html">Mobylette</a></li>
+        
+          <li><a href="../../Mobylette/Controllers.html">Mobylette::Controllers</a></li>
+        
+          <li><a href="../../Mobylette/Controllers/Helpers.html">Mobylette::Controllers::Helpers</a></li>
+        
+          <li><a href="../../Mobylette/Controllers/RespondToMobileRequests.html">Mobylette::Controllers::RespondToMobileRequests</a></li>
+        
+          <li><a href="../../Mobylette/Controllers/RespondToMobileRequests/ClassMethods.html">Mobylette::Controllers::RespondToMobileRequests::ClassMethods</a></li>
+        
+          <li><a href="../../Mobylette/Controllers/RespondToMobileRequests/InstanceMethods.html">Mobylette::Controllers::RespondToMobileRequests::InstanceMethods</a></li>
+        
+          <li><a href="../../Mobylette/Controllers/RespondToMobileRequestsMethods.html">Mobylette::Controllers::RespondToMobileRequestsMethods</a></li>
+        
+          <li><a href="../../Mobylette/Controllers/RespondToMobileRequestsMethods/InstanceMethods.html">Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods</a></li>
+        
+          <li><a href="../../Mobylette/Helmet.html">Mobylette::Helmet</a></li>
+        
+          <li><a href="../../Mobylette/Helmet/Faker.html">Mobylette::Helmet::Faker</a></li>
+        
+          <li><a href="../../Mobylette/Helmet/Helpers.html">Mobylette::Helmet::Helpers</a></li>
+        
+          <li><a href="../../Mobylette/Railtie.html">Mobylette::Railtie</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">Mobylette::Controllers::Helpers</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Helpers.html">Mobylette::Controllers::Helpers</a> include few
+methods to include different css/js files for the mobile and for the normal
+version of your layout</p>
+
+<p>Personal notes:</p>
+<ul><li>
+<p>I’m rethinking and I guess that, since you may have (and probably will) a
+different layout file for the “normal” and mobile version, you probably
+wont use this at all.</p>
+</li><li>
+<p>Also I’m not sure it’s the case of using ‘is_mobile_request?’ or
+‘is_mobile_view?’ check here.‘</p>
+</li></ul>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="mobylette_javascript_include_tag-method" class="method-detail ">
+          <a name="method-i-mobylette_javascript_include_tag"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mobylette_javascript_include_tag</span><span
+              class="method-args">(*sources)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Adds a “_mobile” sulfix to the files you include (when the request is
+mobile)</p>
+            
+
+            
+            <div class="method-source-code" id="mobylette_javascript_include_tag-source">
+<pre>
+<span class="ruby-comment"># File lib/mobylette/controllers/helpers.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mobylette_javascript_include_tag</span>(*<span class="ruby-identifier">sources</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">sources</span>.<span class="ruby-identifier">extract_options!</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_mobile_request?</span>
+    <span class="ruby-identifier">javascript_include_tag</span>(*<span class="ruby-identifier">sulfix_mobile_assets</span>(<span class="ruby-identifier">sources</span>, <span class="ruby-value">:js</span>).<span class="ruby-identifier">insert</span>(<span class="ruby-value">-1</span>, <span class="ruby-identifier">options</span>))
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">javascript_include_tag</span>(*<span class="ruby-identifier">sources</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">-1</span>, <span class="ruby-identifier">options</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- mobylette_javascript_include_tag-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mobylette_javascript_include_tag-method -->
+
+      
+        <div id="mobylette_stylesheet_link_tag-method" class="method-detail ">
+          <a name="method-i-mobylette_stylesheet_link_tag"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mobylette_stylesheet_link_tag</span><span
+              class="method-args">(*sources)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Adds a “_mobile” sulfix to the files you include (when the request is
+mobile)</p>
+            
+
+            
+            <div class="method-source-code" id="mobylette_stylesheet_link_tag-source">
+<pre>
+<span class="ruby-comment"># File lib/mobylette/controllers/helpers.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mobylette_stylesheet_link_tag</span>(*<span class="ruby-identifier">sources</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">sources</span>.<span class="ruby-identifier">extract_options!</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_mobile_request?</span>
+    <span class="ruby-identifier">stylesheet_link_tag</span>(*<span class="ruby-identifier">sulfix_mobile_assets</span>(<span class="ruby-identifier">sources</span>, <span class="ruby-value">:css</span>).<span class="ruby-identifier">insert</span>(<span class="ruby-value">-1</span>, <span class="ruby-identifier">options</span>))
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">stylesheet_link_tag</span>(*<span class="ruby-identifier">sources</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">-1</span>, <span class="ruby-identifier">options</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- mobylette_stylesheet_link_tag-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mobylette_stylesheet_link_tag-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

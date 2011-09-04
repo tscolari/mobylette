@@ -1,0 +1,512 @@
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 85ms (Views: 84.1ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 4ms (Views: 3.7ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.6ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 44ms (Views: 44.0ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 7ms (Views: 5.9ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.0ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 1.0ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 1ms (Views: 1.0ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.9ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 3.1ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.5ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.6ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.7ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 2ms (Views: 1.5ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.6ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.5ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.7ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.3ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.8ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 188ms (Views: 187.8ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 41ms (Views: 40.4ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 7ms (Views: 6.3ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.6ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 2ms (Views: 2.0ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 35ms (Views: 35.2ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.6ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.1ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.4ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 1ms (Views: 1.0ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.1ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.0ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as JS
+Completed 200 OK in 6ms (Views: 6.0ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.3ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.6ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 114ms (Views: 113.1ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 40ms (Views: 40.0ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.3ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 2ms (Views: 2.2ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 2ms (Views: 1.7ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 0.7ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.2ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.7ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.1ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 2ms (Views: 2.1ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 1ms (Views: 1.1ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.3ms)
+  Processing by HomeController#index as JS
+Completed 200 OK in 6ms (Views: 6.2ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 5ms (Views: 5.0ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 2ms (Views: 2.3ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 115ms (Views: 114.0ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 40ms (Views: 40.1ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.4ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 2ms (Views: 2.2ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 2ms (Views: 1.7ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.7ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.1ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.4ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 1ms (Views: 1.1ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as JS
+Completed 200 OK in 7ms (Views: 6.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.0ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 2ms (Views: 2.2ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 113ms (Views: 112.6ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.2ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 40ms (Views: 39.9ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.4ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 2ms (Views: 1.7ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.7ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.5ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.1ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.2ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 1ms (Views: 1.2ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#index as JS
+Completed 200 OK in 42ms (Views: 41.9ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.5ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.4ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.4ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 113ms (Views: 112.3ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.2ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 40ms (Views: 40.0ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.4ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 2ms (Views: 1.7ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.1ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.6ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 1ms (Views: 1.2ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as JS
+Completed 200 OK in 7ms (Views: 6.5ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.1ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 2ms (Views: 2.2ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 115ms (Views: 114.1ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.2ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 40ms (Views: 39.8ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.3ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 2ms (Views: 2.2ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 2ms (Views: 1.7ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 0.7ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 1ms (Views: 0.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.1ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.2ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 1ms (Views: 1.1ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as JS
+Completed 200 OK in 41ms (Views: 41.0ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.3ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.1ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 114ms (Views: 113.0ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.2ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 40ms (Views: 40.0ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.3ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 2ms (Views: 2.3ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 2ms (Views: 1.7ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 0.7ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 1ms (Views: 0.9ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.7ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.1ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 1ms (Views: 1.2ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.4ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.3ms)
+  Processing by HomeController#index as JS
+Completed 200 OK in 42ms (Views: 6.7ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.3ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.4ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.3ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 83ms (Views: 82.7ms)
+  Processing by DefaultFallbackController#index as HTML
+Completed 200 OK in 4ms (Views: 3.6ms)
+  Processing by DefaultFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.7ms)
+  Processing by DefaultFallbackController#test as JS
+Completed 200 OK in 86ms (Views: 85.7ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 7ms (Views: 6.1ms)
+  Processing by ForceFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 3ms (Views: 2.1ms)
+  Processing by ForceFallbackController#test as HTML
+Completed 200 OK in 1ms (Views: 1.0ms)
+  Processing by ForceFallbackController#test as JS
+Completed 200 OK in 1ms (Views: 1.0ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 6ms (Views: 5.9ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.9ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 4ms (Views: 3.5ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.9ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.9ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.7ms)
+  Processing by HomeController#respond_to_test as HTML
+Completed 200 OK in 3ms (Views: 2.8ms)
+  Processing by HomeController#respond_to_test as MOBILE
+Completed 200 OK in 2ms (Views: 1.6ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.7ms)
+  Processing by HomeController#index as JS
+Completed 200 OK in 7ms (Views: 6.5ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms)
+  Processing by HomeController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 6ms (Views: 5.5ms)
+  Processing by NoFallbackController#index as HTML
+Completed 200 OK in 3ms (Views: 2.9ms)
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 2ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by NoFallbackController#test as HTML
+Completed 500 Internal Server Error in 1ms

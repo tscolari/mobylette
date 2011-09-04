@@ -1,0 +1,72 @@
+<html><head><style>table { background: #fff; color: #000; }
+.ruby .normal { color: #000; }
+.ruby .comment { color: #005; font-style: italic; }
+.ruby .keyword { color: #A44; font-weight: bold; }
+.ruby .method { color: #44f; }
+.ruby .class { color: #b1713d; }
+.ruby .module { color: #050; }
+.ruby .punct { color: #668; font-weight: bold; }
+.ruby .symbol { color: #00f; }
+.ruby .string { color: #4a4; }
+.ruby .char { color: #F07; }
+.ruby .ident { color: #000; }
+.ruby .constant { color: #b1713d; }
+.ruby .regex { color: #B66; background: #FEF; }
+.ruby .number { color: #F99; }
+.ruby .attribute { color: #f84; }
+.ruby .global { color: #7FB; }
+.ruby .expr { color: #227; }
+.ruby .escape { color: #277; }</style></head><body><table cellpadding='0' cellspacing='0' class='ruby'><tr><td valign='top'><small>1</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line1'><pre><span class="keyword">module </span><span class="module">Mobylette</span>
+</pre></a></td></tr><tr><td valign='top'><small>2</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line2'><pre>  <span class="keyword">module </span><span class="module">Controllers</span>
+</pre></a></td></tr><tr><td valign='top'><small>3</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line3'><pre>
+</pre></a></td></tr><tr><td valign='top'><small>4</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line4'><pre>    <span class="comment"># Mobylette::Controllers::Helpers include few methods to</span>
+</pre></a></td></tr><tr><td valign='top'><small>5</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line5'><pre>    <span class="comment"># include different css/js files for the mobile and for</span>
+</pre></a></td></tr><tr><td valign='top'><small>6</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line6'><pre>    <span class="comment"># the normal version of your layout</span>
+</pre></a></td></tr><tr><td valign='top'><small>7</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line7'><pre>    <span class="comment">#</span>
+</pre></a></td></tr><tr><td valign='top'><small>8</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line8'><pre>    <span class="comment"># Personal notes:</span>
+</pre></a></td></tr><tr><td valign='top'><small>9</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line9'><pre>    <span class="comment"># * I'm rethinking and I guess that, since you</span>
+</pre></a></td></tr><tr><td valign='top'><small>10</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line10'><pre>    <span class="comment">#   may have (and probably will) a different layout file for the</span>
+</pre></a></td></tr><tr><td valign='top'><small>11</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line11'><pre>    <span class="comment">#   &quot;normal&quot; and mobile version, you probably wont use this at all.</span>
+</pre></a></td></tr><tr><td valign='top'><small>12</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line12'><pre>    <span class="comment"># * Also I'm not sure it's the case of using 'is_mobile_request?'</span>
+</pre></a></td></tr><tr><td valign='top'><small>13</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line13'><pre>    <span class="comment">#   or 'is_mobile_view?' check here.'</span>
+</pre></a></td></tr><tr><td valign='top'><small>14</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line14'><pre>    <span class="keyword">module </span><span class="module">Helpers</span>
+</pre></a></td></tr><tr><td valign='top'><small>15</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line15'><pre>      <span class="ident">extend</span> <span class="constant">ActiveSupport</span><span class="punct">::</span><span class="constant">Concern</span>
+</pre></a></td></tr><tr><td valign='top'><small>16</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line16'><pre>
+</pre></a></td></tr><tr><td valign='top'><small>17</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line17'><pre>      <span class="comment"># Adds a &quot;_mobile&quot; sulfix to the files you include (when the request is mobile)</span>
+</pre></a></td></tr><tr><td valign='top'><small>18</small></td><td valign='top'><ul><li>Score of 9.85 &raquo; flog</li></ul></td><td valign='top'><a name='line18'><pre>      <span class="keyword">def </span><span class="method">mobylette_stylesheet_link_tag</span><span class="punct">(*</span><span class="ident">sources</span><span class="punct">)</span>
+</pre></a></td></tr><tr><td valign='top'><small>19</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line19'><pre>        <span class="ident">options</span> <span class="punct">=</span> <span class="ident">sources</span><span class="punct">.</span><span class="ident">extract_options!</span>
+</pre></a></td></tr><tr><td valign='top'><small>20</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line20'><pre>        <span class="keyword">if</span> <span class="ident">is_mobile_request?</span>
+</pre></a></td></tr><tr><td valign='top'><small>21</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line21'><pre>          <span class="ident">stylesheet_link_tag</span><span class="punct">(*</span><span class="ident">sulfix_mobile_assets</span><span class="punct">(</span><span class="ident">sources</span><span class="punct">,</span> <span class="symbol">:css</span><span class="punct">).</span><span class="ident">insert</span><span class="punct">(-</span><span class="number">1</span><span class="punct">,</span> <span class="ident">options</span><span class="punct">))</span>
+</pre></a></td></tr><tr><td valign='top'><small>22</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line22'><pre>        <span class="keyword">else</span>
+</pre></a></td></tr><tr><td valign='top'><small>23</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line23'><pre>          <span class="ident">stylesheet_link_tag</span><span class="punct">(*</span><span class="ident">sources</span><span class="punct">.</span><span class="ident">insert</span><span class="punct">(-</span><span class="number">1</span><span class="punct">,</span> <span class="ident">options</span><span class="punct">))</span>
+</pre></a></td></tr><tr><td valign='top'><small>24</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line24'><pre>        <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>25</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line25'><pre>      <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>26</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line26'><pre>
+</pre></a></td></tr><tr><td valign='top'><small>27</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line27'><pre>      <span class="comment"># Adds a &quot;_mobile&quot; sulfix to the files you include (when the request is mobile)</span>
+</pre></a></td></tr><tr><td valign='top'><small>28</small></td><td valign='top'><ul><li>Score of 9.85 &raquo; flog</li></ul></td><td valign='top'><a name='line28'><pre>      <span class="keyword">def </span><span class="method">mobylette_javascript_include_tag</span><span class="punct">(*</span><span class="ident">sources</span><span class="punct">)</span>
+</pre></a></td></tr><tr><td valign='top'><small>29</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line29'><pre>        <span class="ident">options</span> <span class="punct">=</span> <span class="ident">sources</span><span class="punct">.</span><span class="ident">extract_options!</span>
+</pre></a></td></tr><tr><td valign='top'><small>30</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line30'><pre>        <span class="keyword">if</span> <span class="ident">is_mobile_request?</span>
+</pre></a></td></tr><tr><td valign='top'><small>31</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line31'><pre>          <span class="ident">javascript_include_tag</span><span class="punct">(*</span><span class="ident">sulfix_mobile_assets</span><span class="punct">(</span><span class="ident">sources</span><span class="punct">,</span> <span class="symbol">:js</span><span class="punct">).</span><span class="ident">insert</span><span class="punct">(-</span><span class="number">1</span><span class="punct">,</span> <span class="ident">options</span><span class="punct">))</span>
+</pre></a></td></tr><tr><td valign='top'><small>32</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line32'><pre>        <span class="keyword">else</span>
+</pre></a></td></tr><tr><td valign='top'><small>33</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line33'><pre>          <span class="ident">javascript_include_tag</span><span class="punct">(*</span><span class="ident">sources</span><span class="punct">.</span><span class="ident">insert</span><span class="punct">(-</span><span class="number">1</span><span class="punct">,</span> <span class="ident">options</span><span class="punct">))</span>
+</pre></a></td></tr><tr><td valign='top'><small>34</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line34'><pre>        <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>35</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line35'><pre>      <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>36</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line36'><pre>
+</pre></a></td></tr><tr><td valign='top'><small>37</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line37'><pre>      <span class="ident">private</span>
+</pre></a></td></tr><tr><td valign='top'><small>38</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line38'><pre>
+</pre></a></td></tr><tr><td valign='top'><small>39</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line39'><pre>      <span class="comment"># Anex the &quot;_mobile&quot; sulfix to each string in the array,</span>
+</pre></a></td></tr><tr><td valign='top'><small>40</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line40'><pre>      <span class="comment"># before the .#{extension}, if it exists</span>
+</pre></a></td></tr><tr><td valign='top'><small>41</small></td><td valign='top'><ul><li>Score of 5.06 &raquo; flog</li></ul></td><td valign='top'><a name='line41'><pre>      <span class="keyword">def </span><span class="method">sulfix_mobile_assets</span><span class="punct">(</span><span class="ident">sources</span><span class="punct">,</span> <span class="ident">extension</span><span class="punct">)</span>
+</pre></a></td></tr><tr><td valign='top'><small>42</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line42'><pre>        <span class="ident">sources</span><span class="punct">.</span><span class="ident">map</span> <span class="keyword">do</span> <span class="punct">|</span><span class="ident">source</span><span class="punct">|</span>
+</pre></a></td></tr><tr><td valign='top'><small>43</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line43'><pre>          <span class="keyword">if</span> <span class="ident">source</span> <span class="punct">=~</span> <span class="punct">/</span><span class="regex">.<span class="expr">#{extension}</span></span><span class="punct">/</span>
+</pre></a></td></tr><tr><td valign='top'><small>44</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line44'><pre>            <span class="punct">&quot;</span><span class="string"><span class="expr">#{source.split(/.#{extension}$/)[0]}</span>_mobile.<span class="expr">#{extension}</span></span><span class="punct">&quot;</span>
+</pre></a></td></tr><tr><td valign='top'><small>45</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line45'><pre>          <span class="keyword">else</span>
+</pre></a></td></tr><tr><td valign='top'><small>46</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line46'><pre>            <span class="punct">&quot;</span><span class="string"><span class="expr">#{source}</span>_mobile</span><span class="punct">&quot;</span>
+</pre></a></td></tr><tr><td valign='top'><small>47</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line47'><pre>          <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>48</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line48'><pre>        <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>49</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line49'><pre>      <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>50</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line50'><pre>    <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>51</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line51'><pre>
+</pre></a></td></tr><tr><td valign='top'><small>52</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line52'><pre>  <span class="keyword">end</span>
+</pre></a></td></tr><tr><td valign='top'><small>53</small></td><td valign='top'>&nbsp;</td><td valign='top'><a name='line53'><pre><span class="keyword">end</span>
+</pre></a></td></tr><table></body></html>
