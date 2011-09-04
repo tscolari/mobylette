@@ -1,0 +1,1540 @@
+---
+:churn:
+  :changes:
+  - :file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+    :times_changed: 16
+  - :file_path: README.rdoc
+    :times_changed: 16
+  - :file_path: Gemfile.lock
+    :times_changed: 12
+  - :file_path: Gemfile
+    :times_changed: 11
+  - :file_path: spec/spec_helper.rb
+    :times_changed: 10
+  - :file_path: lib/mobylette/controllers/helpers.rb
+    :times_changed: 10
+  - :file_path: spec/controllers/home_controller_spec.rb
+    :times_changed: 8
+  - :file_path: spec/dummy/config/routes.rb
+    :times_changed: 8
+  - :file_path: lib/mobylette.rb
+    :times_changed: 8
+  - :file_path: lib/mobylette/engine.rb
+    :times_changed: 5
+  - :file_path: lib/mobylette/helmet.rb
+    :times_changed: 5
+  - :file_path: .gitignore
+    :times_changed: 4
+  - :file_path: spec/controllers/application_controller_spec.rb
+    :times_changed: 4
+  - :file_path: TODO.rdoc
+    :times_changed: 4
+  - :file_path: spec/dummy/app/controllers/home_controller.rb
+    :times_changed: 4
+  - :file_path: CHANGELOG.rdoc
+    :times_changed: 3
+  - :file_path: lib/mobylette/version.rb
+    :times_changed: 3
+  - :file_path: spec/controllers/desktop_only_controller_spec.rb
+    :times_changed: 3
+  - :file_path: spec/dummy/app/controllers/application_controller.rb
+    :times_changed: 3
+  - :file_path: spec/controllers/actioncontroller_base_spec.rb
+    :times_changed: 3
+  - :file_path: config/initializers/mobile_mime_types.rb
+    :times_changed: 3
+  - :file_path: mobylette.gemspec
+    :times_changed: 3
+  - :file_path: lib/mobylette/railtie.rb
+    :times_changed: 3
+  - :file_path: lib/mobylette/helmet/helpers.rb
+    :times_changed: 3
+  - :file_path: spec/helpers/mobylette_helpers_spec.rb
+    :times_changed: 3
+  - :file_path: spec/dummy/app/views/layouts/application.html.erb
+    :times_changed: 3
+  - :file_path: spec/dummy/app/views/layouts/application.mobile.erb
+    :times_changed: 3
+  - :file_path: spec/dummy/app/views/home/index.html.erb
+    :times_changed: 3
+  :class_churn: []
+  :method_churn: []
+  :changed_files:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  :changed_classes: []
+  :changed_methods: []
+:flog:
+  :total: 148.0925330349174
+  :average: 6.170522209788225
+  :method_containers:
+  - :name: Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods
+    :path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+    :total_score: 26.494046915888696
+    :highest_score: 25.194046915888695
+    :average_score: 13.247023457944348
+    :methods:
+      Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#none:
+        :operators:
+          :private: 1.3000000000000005
+        :score: 1.3000000000000005
+        :path: !!null 
+      Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#handle_mobile:
+        :operators:
+          :branch: 7.300000000000004
+          :is_mobile_request?: 1.4000000000000006
+          :assignment: 3.200000000000002
+          :request: 5.700000000000003
+          :format: 1.800000000000001
+          :to_sym: 1.600000000000001
+          :fall_back_format: 6.3000000000000025
+          :==: 1.600000000000001
+          :formats: 1.900000000000001
+          :new: 1.900000000000001
+          :<<: 1.700000000000001
+        :score: 25.194046915888695
+        :path: lib/mobylette/controllers/respond_to_mobile_requests.rb:76
+  - :name: Mobylette::Controllers::RespondToMobileRequests::InstanceMethods
+    :path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+    :total_score: 20.604144632694826
+    :highest_score: 19.304144632694825
+    :average_score: 10.302072316347413
+    :methods:
+      Mobylette::Controllers::RespondToMobileRequests::InstanceMethods#none:
+        :operators:
+          :private: 1.3000000000000005
+        :score: 1.3000000000000005
+        :path: !!null 
+      Mobylette::Controllers::RespondToMobileRequests::InstanceMethods#is_mobile_request?:
+        :operators:
+          :branch: 2.800000000000001
+          :request: 4.100000000000001
+          :format: 1.9000000000000006
+          :to_s: 3.300000000000001
+          :==: 3.0000000000000013
+          :params: 1.9000000000000006
+          :[]: 1.7000000000000006
+          :user_agent: 1.8000000000000005
+          :downcase: 1.4000000000000006
+        :score: 19.304144632694825
+        :path: lib/mobylette/controllers/respond_to_mobile_requests.rb:52
+  - :name: Mobylette::Controllers::RespondToMobileRequests
+    :path: ''
+    :total_score: 14.051334456200241
+    :highest_score: 14.051334456200241
+    :average_score: 14.051334456200241
+    :methods:
+      Mobylette::Controllers::RespondToMobileRequests#none:
+        :operators:
+          :extend: 2.4000000000000004
+          :branch: 1.2000000000000002
+          :included: 1.2000000000000002
+          :helper_method: 1.4000000000000004
+          :+: 9.000000000000004
+        :score: 14.051334456200241
+        :path: !!null 
+  - :name: Mobylette::Controllers::Helpers
+    :path: lib/mobylette/controllers/helpers.rb
+    :total_score: 28.052336776102663
+    :highest_score: 9.847334664770973
+    :average_score: 7.013084194025666
+    :methods:
+      Mobylette::Controllers::Helpers#none:
+        :operators:
+          :extend: 2.2
+          :private: 1.1
+        :score: 3.3000000000000003
+        :path: !!null 
+      Mobylette::Controllers::Helpers#mobylette_stylesheet_link_tag:
+        :operators:
+          :assignment: 1.2000000000000002
+          :extract_options!: 1.2000000000000002
+          :branch: 1.2000000000000002
+          :is_mobile_request?: 1.2000000000000002
+          :sulfix_mobile_assets: 1.7000000000000002
+          :insert: 3.0000000000000004
+          :stylesheet_link_tag: 2.6000000000000005
+        :score: 9.847334664770973
+        :path: lib/mobylette/controllers/helpers.rb:16
+      Mobylette::Controllers::Helpers#mobylette_javascript_include_tag:
+        :operators:
+          :assignment: 1.2000000000000002
+          :extract_options!: 1.2000000000000002
+          :branch: 1.2000000000000002
+          :is_mobile_request?: 1.2000000000000002
+          :sulfix_mobile_assets: 1.7000000000000002
+          :insert: 3.0000000000000004
+          :javascript_include_tag: 2.6000000000000005
+        :score: 9.847334664770973
+        :path: lib/mobylette/controllers/helpers.rb:26
+      Mobylette::Controllers::Helpers#sulfix_mobile_assets:
+        :operators:
+          :branch: 2.5000000000000004
+          :map: 1.2000000000000002
+          :assignment: 1.3000000000000003
+          :split: 1.6000000000000003
+          :[]: 1.4000000000000004
+        :score: 5.057667446560718
+        :path: lib/mobylette/controllers/helpers.rb:40
+  - :name: Mobylette::Controllers::RespondToMobileRequests::ClassMethods
+    :path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+    :total_score: 9.743715923609436
+    :highest_score: 9.743715923609436
+    :average_score: 9.743715923609436
+    :methods:
+      Mobylette::Controllers::RespondToMobileRequests::ClassMethods#respond_to_mobile_requests:
+        :operators:
+          :assignment: 2.600000000000001
+          :branch: 1.3000000000000005
+          :included_modules: 1.5000000000000004
+          :include?: 1.3000000000000005
+          :cattr_accessor: 1.3000000000000005
+          :[]: 1.3000000000000005
+          :send: 3.9000000000000012
+        :score: 9.743715923609436
+        :path: lib/mobylette/controllers/respond_to_mobile_requests.rb:37
+  - :name: Mobylette::Railtie::initializer
+    :path: lib/mobylette/railtie.rb
+    :total_score: 6.873136110975837
+    :highest_score: 6.873136110975837
+    :average_score: 6.873136110975837
+    :methods:
+      Mobylette::Railtie::initializer#mobylette:
+        :operators:
+          :initializer: 1.0000000000000004
+          :branch: 1.0000000000000004
+          :on_load: 1.0000000000000004
+          :send: 3.600000000000002
+          :helper: 1.2000000000000006
+        :score: 6.873136110975837
+        :path: lib/mobylette/railtie.rb:8
+  - :name: Mobylette::Helmet::Helpers
+    :path: lib/mobylette/helmet/helpers.rb
+    :total_score: 15.416187140586324
+    :highest_score: 6.31506136153878
+    :average_score: 3.854046785146581
+    :methods:
+      Mobylette::Helmet::Helpers#none:
+        :operators:
+          :extend: 2.200000000000001
+          :branch: 1.1000000000000005
+          :included: 1.1000000000000005
+          :cattr_accessor: 1.2000000000000006
+          :private: 1.1000000000000005
+        :score: 5.707013229352112
+        :path: !!null 
+      Mobylette::Helmet::Helpers#force_mobile_request_agent:
+        :operators:
+          :insert_faker: 1.2000000000000006
+          :assignment: 1.2000000000000006
+        :score: 1.697056274847715
+        :path: lib/mobylette/helmet/helpers.rb:14
+      Mobylette::Helmet::Helpers#reset_test_request_agent:
+        :operators:
+          :insert_faker: 1.2000000000000006
+          :assignment: 1.2000000000000006
+        :score: 1.697056274847715
+        :path: lib/mobylette/helmet/helpers.rb:19
+      Mobylette::Helmet::Helpers#insert_faker:
+        :operators:
+          :branch: 1.2000000000000006
+          :included_modules: 1.4000000000000006
+          :include?: 1.2000000000000006
+          :send: 3.600000000000002
+        :score: 6.31506136153878
+        :path: lib/mobylette/helmet/helpers.rb:26
+  - :name: Mobylette::Controllers::RespondToMobileRequestsMethods
+    :path: ''
+    :total_score: 5.044799302251778
+    :highest_score: 5.044799302251778
+    :average_score: 5.044799302251778
+    :methods:
+      Mobylette::Controllers::RespondToMobileRequestsMethods#none:
+        :operators:
+          :extend: 2.400000000000001
+          :branch: 1.2000000000000004
+          :included: 1.2000000000000004
+          :before_filter: 1.3000000000000005
+        :score: 5.044799302251778
+        :path: !!null 
+  - :name: Mobylette::Helmet::Faker
+    :path: lib/mobylette/helmet/faker.rb
+    :total_score: 5.83249392876019
+    :highest_score: 4.63249392876019
+    :average_score: 2.916246964380095
+    :methods:
+      Mobylette::Helmet::Faker#none:
+        :operators:
+          :extend: 2.200000000000001
+          :branch: 1.1000000000000005
+          :included: 1.1000000000000005
+          :cattr_accessor: 1.2000000000000006
+        :score: 4.63249392876019
+        :path: !!null 
+      Mobylette::Helmet::Faker#is_mobile_request?:
+        :operators:
+          :is_mobile_request: 1.2000000000000006
+        :score: 1.2000000000000006
+        :path: lib/mobylette/helmet/faker.rb:13
+  - :name: Mobylette::Helmet
+    :path: lib/mobylette/helmet.rb
+    :total_score: 8.780337847847466
+    :highest_score: 4.400000000000002
+    :average_score: 2.926779282615822
+    :methods:
+      Mobylette::Helmet#none:
+        :operators:
+          :extend: 2.200000000000001
+          :autoload: 2.200000000000001
+        :score: 4.400000000000002
+        :path: !!null 
+      Mobylette::Helmet#force_mobile_request_agent:
+        :operators:
+          :assignment: 2.4000000000000012
+          :request: 1.2000000000000006
+        :score: 2.683281572999749
+        :path: lib/mobylette/helmet.rb:23
+      Mobylette::Helmet#reset_test_request_agent:
+        :operators:
+          :assignment: 1.2000000000000006
+          :request: 1.2000000000000006
+        :score: 1.697056274847715
+        :path: lib/mobylette/helmet.rb:38
+  - :name: Mobylette::Controllers
+    :path: ''
+    :total_score: 2.6000000000000005
+    :highest_score: 2.6000000000000005
+    :average_score: 2.6000000000000005
+    :methods:
+      Mobylette::Controllers#none:
+        :operators:
+          :autoload: 2.6000000000000005
+        :score: 2.6000000000000005
+        :path: !!null 
+  - :name: Mobylette
+    :path: ''
+    :total_score: 2.4000000000000004
+    :highest_score: 2.4000000000000004
+    :average_score: 2.4000000000000004
+    :methods:
+      Mobylette#none:
+        :operators:
+          :autoload: 1.2000000000000002
+          :require: 1.2000000000000002
+        :score: 2.4000000000000004
+        :path: !!null 
+  - :name: main
+    :path: ''
+    :total_score: 2.2
+    :highest_score: 2.2
+    :average_score: 2.2
+    :methods:
+      main#none:
+        :operators:
+          :require: 1.1
+          :register_alias: 1.1
+        :score: 2.2
+        :path: !!null 
+:flay:
+  :total_score: '0'
+  :matches: []
+:reek:
+  :matches:
+  - :file_path: lib/mobylette.rb
+    :code_smells: []
+  - :file_path: lib/mobylette/controllers/helpers.rb
+    :code_smells:
+    - :method: Mobylette::Controllers::Helpers#sulfix_mobile_assets
+      :message: doesn't depend on instance state
+      :type: LowCohesion
+    - :method: Mobylette::Controllers::Helpers#sulfix_mobile_assets
+      :message: refers to source more than self
+      :type: LowCohesion
+    - :method: Mobylette::Controllers::Helpers#sulfix_mobile_assets
+      :message: refers to sources more than self
+      :type: LowCohesion
+  - :file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+    :code_smells:
+    - :method: Mobylette::Controllers::RespondToMobileRequests::InstanceMethods#is_mobile_request?
+      :message: calls request twice
+      :type: Duplication
+    - :method: Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#handle_mobile
+      :message: calls request 3 times
+      :type: Duplication
+    - :method: Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#handle_mobile
+      :message: calls self.fall_back_format 3 times
+      :type: Duplication
+  - :file_path: lib/mobylette/helmet.rb
+    :code_smells: []
+  - :file_path: lib/mobylette/helmet/faker.rb
+    :code_smells: []
+  - :file_path: lib/mobylette/helmet/helpers.rb
+    :code_smells:
+    - :method: Mobylette::Helmet::Helpers#insert_faker
+      :message: doesn't depend on instance state
+      :type: LowCohesion
+  - :file_path: lib/mobylette/railtie.rb
+    :code_smells:
+    - :method: Mobylette::Railtie
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+  - :file_path: lib/mobylette/version.rb
+    :code_smells: []
+:roodi:
+  :total: !!null 
+  :problems: []
+:rcov:
+  lib/mobylette/helmet.rb:
+    :lines:
+    - :content: module Mobylette
+      :was_run: false
+    - :content: ! '  # Mobylette::Helmet provides helper methods to help you when
+        testing your controllers'
+      :was_run: true
+    - :content: ! '  # for a mobile request.'
+      :was_run: false
+    - :content: ! '  #'
+      :was_run: false
+    - :content: ! '  # You must include Mobylette::Helmet into your test case, in
+        the README there is more'
+      :was_run: false
+    - :content: ! '  # documentation about how to make this test wide.'
+      :was_run: false
+    - :content: ! '  module Helmet'
+      :was_run: false
+    - :content: ! '    extend ActiveSupport::Concern'
+      :was_run: true
+    - :content: ! '    autoload "Helpers", "mobylette/helmet/helpers"'
+      :was_run: true
+    - :content: ! '    autoload "Faker"  , "mobylette/helmet/faker"'
+      :was_run: true
+    - :content: ! '    # Force the request for the user_agent'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    # Remember to add it BEFORE the request'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    # Example:'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    #   it "should render the mobile_device view on mobile request"
+        do'
+      :was_run: false
+    - :content: ! '    #     force_mobile_request_agent("Android")'
+      :was_run: false
+    - :content: ! '    #     get :index'
+      :was_run: false
+    - :content: ! '    #     response.should render_template(:mobile_device)'
+      :was_run: false
+    - :content: ! '    #   end'
+      :was_run: false
+    - :content: ! '    def force_mobile_request_agent(user_agent = "Android")'
+      :was_run: false
+    - :content: ! '      request.user_agent = user_agent'
+      :was_run: true
+    - :content: ! '    end'
+      :was_run: true
+    - :content: ! '    # Reset the user_aget to the default ("Rails Testing")'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    # Remember to add it BEFORE the request'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    # Example:'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    #   it "should render the normal_view view on mobile request"
+        do'
+      :was_run: false
+    - :content: ! '    #     reset_test_request_agent'
+      :was_run: false
+    - :content: ! '    #     get :index'
+      :was_run: false
+    - :content: ! '    #     response.should render_template(:normal_view)'
+      :was_run: false
+    - :content: ! '    #   end'
+      :was_run: false
+    - :content: ! '    def reset_test_request_agent'
+      :was_run: false
+    - :content: ! '      request.user_agent = "Rails Testing"'
+      :was_run: true
+    - :content: ! '    end'
+      :was_run: true
+    - :content: ! '  end'
+      :was_run: true
+    - :content: end
+      :was_run: true
+    :percent_run: 25
+    :methods:
+      Mobylette#force_mobile_request_agent: 33.33333333333333
+      Mobylette#reset_test_request_agent: 33.33333333333333
+  lib/mobylette.rb:
+    :lines:
+    - :content: module Mobylette
+      :was_run: false
+    - :content: ! '  module Controllers'
+      :was_run: true
+    - :content: ! '    autoload "RespondToMobileRequests", "mobylette/controllers/respond_to_mobile_requests"'
+      :was_run: true
+    - :content: ! '    autoload "Helpers"                , "mobylette/controllers/helpers"'
+      :was_run: true
+    - :content: ! '  end'
+      :was_run: true
+    - :content: ! '  autoload "Helmet"                   , "mobylette/helmet"'
+      :was_run: false
+    - :content: ! '  require ''mobylette/railtie'''
+      :was_run: true
+    - :content: end
+      :was_run: true
+    - :content: require 'action_controller'
+      :was_run: false
+    - :content: Mime::Type.register_alias "text/html", :mobile
+      :was_run: true
+    :percent_run: 70
+    :methods: {}
+  lib/mobylette/controllers/helpers.rb:
+    :lines:
+    - :content: module Mobylette
+      :was_run: false
+    - :content: ! '  module Controllers'
+      :was_run: true
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    # Mobylette::Controllers::Helpers include few methods to'
+      :was_run: false
+    - :content: ! '    # include different css/js files for the mobile and for'
+      :was_run: false
+    - :content: ! '    # the normal version of your layout'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    # Personal note: I''m rethinking and I guess that, since you'
+      :was_run: false
+    - :content: ! '    # may have (and probably will) a different layout file for
+        the'
+      :was_run: false
+    - :content: ! '    # "normal" and mobile version, you probably wont use this at
+        all'
+      :was_run: false
+    - :content: ! '    module Helpers'
+      :was_run: false
+    - :content: ! '      extend ActiveSupport::Concern'
+      :was_run: true
+    - :content: ! '      # Adds a "_mobile" sulfix to the files you include (when
+        the request is mobile)'
+      :was_run: false
+    - :content: ! '      def mobylette_stylesheet_link_tag(*sources)'
+      :was_run: false
+    - :content: ! '        options = sources.extract_options!'
+      :was_run: true
+    - :content: ! '        if is_mobile_request?'
+      :was_run: true
+    - :content: ! '          stylesheet_link_tag(*sulfix_mobile_assets(sources, :css).insert(-1,
+        options))'
+      :was_run: true
+    - :content: ! '        else'
+      :was_run: true
+    - :content: ! '          stylesheet_link_tag(*sources.insert(-1, options))'
+      :was_run: false
+    - :content: ! '        end'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      # Adds a "_mobile" sulfix to the files you include (when
+        the request is mobile)'
+      :was_run: false
+    - :content: ! '      def mobylette_javascript_include_tag(*sources)'
+      :was_run: false
+    - :content: ! '        options = sources.extract_options!'
+      :was_run: true
+    - :content: ! '        if is_mobile_request?'
+      :was_run: true
+    - :content: ! '          javascript_include_tag(*sulfix_mobile_assets(sources,
+        :js).insert(-1, options))'
+      :was_run: true
+    - :content: ! '        else'
+      :was_run: true
+    - :content: ! '          javascript_include_tag(*sources.insert(-1, options))'
+      :was_run: false
+    - :content: ! '        end'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      private'
+      :was_run: false
+    - :content: ! '      #'
+      :was_run: false
+    - :content: ! '      # Anex the "_mobile" sulfix to each string in the array,'
+      :was_run: false
+    - :content: ! '      # before the .#{extension}, if it exists'
+      :was_run: false
+    - :content: ! '      def sulfix_mobile_assets(sources, extension)'
+      :was_run: false
+    - :content: ! '        sources.map do |source|'
+      :was_run: true
+    - :content: ! '          if source =~ /.#{extension}/'
+      :was_run: true
+    - :content: ! '            "#{source.split(/.#{extension}$/)[0]}_mobile.#{extension}"'
+      :was_run: true
+    - :content: ! '          else'
+      :was_run: true
+    - :content: ! '            "#{source}_mobile"'
+      :was_run: false
+    - :content: ! '          end'
+      :was_run: true
+    - :content: ! '        end'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '    end'
+      :was_run: true
+    - :content: ! '  end'
+      :was_run: true
+    - :content: end
+      :was_run: true
+    :percent_run: 52
+    :methods:
+      Mobylette#mobylette_stylesheet_link_tag: 25.0
+      Mobylette#mobylette_javascript_include_tag: 25.0
+      Mobylette#sulfix_mobile_assets: 22.22222222222222
+  lib/mobylette/helmet/helpers.rb:
+    :lines:
+    - :content: module Mobylette
+      :was_run: false
+    - :content: ! '  module Helmet'
+      :was_run: true
+    - :content: ! '    # This module is only for testing the view''s helpers of the
+        module'
+      :was_run: true
+    - :content: ! '    # it simulates the Helmet helpers and the controller methods'
+      :was_run: false
+    - :content: ! '    # that are necessary for the tests'
+      :was_run: false
+    - :content: ! '    module Helpers'
+      :was_run: false
+    - :content: ! '      extend ActiveSupport::Concern'
+      :was_run: true
+    - :content: ! '      included do'
+      :was_run: true
+    - :content: ! '        cattr_accessor :user_agent'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      def force_mobile_request_agent'
+      :was_run: false
+    - :content: ! '        insert_faker'
+      :was_run: true
+    - :content: ! '        ActionController::Base.is_mobile_request = true'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      def reset_test_request_agent'
+      :was_run: false
+    - :content: ! '        insert_faker'
+      :was_run: true
+    - :content: ! '        ActionController::Base.is_mobile_request = false'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      private'
+      :was_run: false
+    - :content: ! '      def insert_faker'
+      :was_run: false
+    - :content: ! '        return if ActionController::Base.included_modules.include?(Mobylette::Helmet::Faker)'
+      :was_run: true
+    - :content: ! '        ActionController::Base.send(:include, Mobylette::Helmet::Faker)'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '    end'
+      :was_run: true
+    - :content: ! '  end'
+      :was_run: true
+    - :content: end
+      :was_run: true
+    :percent_run: 69
+    :methods:
+      Mobylette#force_mobile_request_agent: 25.0
+      Mobylette#reset_test_request_agent: 25.0
+      Mobylette#insert_faker: 25.0
+  lib/mobylette/controllers/respond_to_mobile_requests.rb:
+    :lines:
+    - :content: module Mobylette
+      :was_run: false
+    - :content: ! '  module Controllers'
+      :was_run: true
+    - :content: ! '    # Mobylette::Controllers::RespondToMobileRequests includes
+        the respond_to_mobile_requests'
+      :was_run: false
+    - :content: ! '    # to your ActionController::Base.'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    # The respond_to_mobile_requests method enables the controller
+        mobile handling'
+      :was_run: false
+    - :content: ! '    module RespondToMobileRequests'
+      :was_run: false
+    - :content: ! '      extend ActiveSupport::Concern'
+      :was_run: true
+    - :content: ! '      included do'
+      :was_run: true
+    - :content: ! '        helper_method :is_mobile_request?'
+      :was_run: true
+    - :content: ! '        # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)'
+      :was_run: true
+    - :content: ! '        MOBILE_USER_AGENTS =  ''palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|''
+        +'
+      :was_run: true
+    - :content: ! '                              ''audiovox|motorola|samsung|telit|upg1|windows
+        ce|ucweb|astel|plucker|'' +'
+      :was_run: true
+    - :content: ! '                              ''x320|x240|j2me|sgh|portable|sprint|docomo|kddi|softbank|android|mmp|''
+        +'
+      :was_run: true
+    - :content: ! '                              ''pdxgw|netfront|xiino|vodafone|portalmmm|sagem|mot-|sie-|ipod|up\\.b|''
+        +'
+      :was_run: true
+    - :content: ! '                              ''webos|amoi|novarra|cdm|alcatel|pocket|ipad|iphone|mobileexplorer|''    +'
+      :was_run: true
+    - :content: ! '                              ''mobile'''
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      module ClassMethods'
+      :was_run: false
+    - :content: ! '        # This method enables the controller do handle mobile requests'
+      :was_run: false
+    - :content: ! '        #'
+      :was_run: false
+    - :content: ! '        # You must add this to every controller you want to respond
+        differently to mobile devices,'
+      :was_run: false
+    - :content: ! '        # or make it application wide calling it from the ApplicationController'
+      :was_run: false
+    - :content: ! '        #'
+      :was_run: false
+    - :content: ! '        # Options:'
+      :was_run: false
+    - :content: ! '        # * :fall_back => :html'
+      :was_run: false
+    - :content: ! '        #     You may pass a fall_back option to the method, it
+        will force the render'
+      :was_run: false
+    - :content: ! '        #     to look for that other format, in case there is not
+        a .mobile file for the view.'
+      :was_run: false
+    - :content: ! '        #     By default, it will fall back to the format of the
+        original request.'
+      :was_run: false
+    - :content: ! '        #     If you don''t want fall back at all, pass :fall_back
+        => false'
+      :was_run: false
+    - :content: ! '        #'
+      :was_run: false
+    - :content: ! '        def respond_to_mobile_requests(options = {})'
+      :was_run: false
+    - :content: ! '          return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)'
+      :was_run: true
+    - :content: ! '          cattr_accessor :fall_back_format'
+      :was_run: false
+    - :content: ! '          self.fall_back_format   = options[:fall_back]'
+      :was_run: true
+    - :content: ! '          self.send(:include, Mobylette::Controllers::RespondToMobileRequestsMethods)'
+      :was_run: false
+    - :content: ! '        end'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      module InstanceMethods'
+      :was_run: false
+    - :content: ! '        private'
+      :was_run: false
+    - :content: ! '        # helper method to check if the current request if from
+        a mobile device or not'
+      :was_run: false
+    - :content: ! '        def is_mobile_request?'
+      :was_run: false
+    - :content: ! '          return true if (request.format.to_s == "mobile") or (params[:format]
+        == "mobile")'
+      :was_run: true
+    - :content: ! '          request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/'
+      :was_run: true
+    - :content: ! '        end'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '    end'
+      :was_run: true
+    - :content: ! '    # RespondToMobileRequestsMethods is included by respond_to_mobile_requests'
+      :was_run: false
+    - :content: ! '    #'
+      :was_run: false
+    - :content: ! '    # This will check if the request is from a mobile device and
+        change'
+      :was_run: false
+    - :content: ! '    # the request format to :mobile'
+      :was_run: false
+    - :content: ! '    module RespondToMobileRequestsMethods'
+      :was_run: false
+    - :content: ! '      extend ActiveSupport::Concern'
+      :was_run: true
+    - :content: ! '      included do'
+      :was_run: true
+    - :content: ! '        before_filter :handle_mobile'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      module InstanceMethods'
+      :was_run: false
+    - :content: ! '        private'
+      :was_run: true
+    - :content: ! '        # Changes the request.form to :mobile, when the request
+        is from'
+      :was_run: false
+    - :content: ! '        # a mobile device'
+      :was_run: false
+    - :content: ! '        def handle_mobile'
+      :was_run: false
+    - :content: ! '          if is_mobile_request?'
+      :was_run: true
+    - :content: ! '            original_format   = request.format.to_sym'
+      :was_run: true
+    - :content: ! '            request.format    = :mobile'
+      :was_run: true
+    - :content: ! '            if self.fall_back_format != false'
+      :was_run: true
+    - :content: ! '              request.formats << Mime::Type.new((self.fall_back_format
+        if self.fall_back_format) || original_format)'
+      :was_run: true
+    - :content: ! '            end'
+      :was_run: true
+    - :content: ! '          end'
+      :was_run: true
+    - :content: ! '        end'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '    end'
+      :was_run: true
+    - :content: ! '  end'
+      :was_run: true
+    - :content: end
+      :was_run: true
+    :percent_run: 52
+    :methods:
+      Mobylette#respond_to_mobile_requests: 50.0
+      Mobylette#is_mobile_request?: 25.0
+      Mobylette#handle_mobile: 11.11111111111111
+  lib/mobylette/helmet/faker.rb:
+    :lines:
+    - :content: module Mobylette
+      :was_run: false
+    - :content: ! '  module Helmet'
+      :was_run: true
+    - :content: ! '    # Forces the helper to think that all requests come'
+      :was_run: false
+    - :content: ! '    # from a mobile device'
+      :was_run: false
+    - :content: ! '    module Faker'
+      :was_run: false
+    - :content: ! '      extend ActiveSupport::Concern'
+      :was_run: true
+    - :content: ! '      included do'
+      :was_run: true
+    - :content: ! '        cattr_accessor :is_mobile_request'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '      def is_mobile_request?'
+      :was_run: false
+    - :content: ! '        is_mobile_request'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '    end'
+      :was_run: true
+    - :content: ! '  end'
+      :was_run: true
+    - :content: end
+      :was_run: true
+    :percent_run: 67
+    :methods:
+      Mobylette#is_mobile_request?: 33.33333333333333
+  lib/mobylette/railtie.rb:
+    :lines:
+    - :content: module Mobylette
+      :was_run: false
+    - :content: ! '  class Railtie < ::Rails::Railtie'
+      :was_run: true
+    - :content: ! '    initializer :mobylette do'
+      :was_run: true
+    - :content: ! '      ActiveSupport.on_load(:action_controller) do'
+      :was_run: true
+    - :content: ! '        ::ActionController::Base.send(:include, Mobylette::Controllers::RespondToMobileRequests)'
+      :was_run: true
+    - :content: ! '        ::ActionController::Base.helper Mobylette::Controllers::Helpers'
+      :was_run: true
+    - :content: ! '      end'
+      :was_run: true
+    - :content: ! '    end'
+      :was_run: true
+    - :content: ! '  end'
+      :was_run: true
+    - :content: end
+      :was_run: true
+    :percent_run: 90
+    :methods: {}
+  :global_percent_run: 52.7
+:hotspots:
+  :files:
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 4031988555471547402
+    :details:
+      :churn: detected high level of churn (changed 5 times)
+      :rcov: average uncovered code is 33.3%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/faker.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1320828597441085005
+    :details:
+      :rcov: uncovered code is 33.3%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 117964027637858853
+    :details:
+      :reek: found 3 code smells
+      :churn: detected high level of churn (changed 16 times)
+      :rcov: average uncovered code is 28.7%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/helpers.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -2589091859213638349
+    :details:
+      :reek: found 1 code smells
+      :churn: detected high level of churn (changed 3 times)
+      :rcov: average uncovered code is 25.0%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -2010976377942857437
+    :details:
+      :reek: found 3 code smells
+      :churn: detected high level of churn (changed 10 times)
+      :rcov: average uncovered code is 24.1%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:76
+      class_name: !!null 
+      method_name: !!null 
+      hash: -2673405952775493842
+    :details:
+      :flog: complexity is 25.2
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:52
+      class_name: !!null 
+      method_name: !!null 
+      hash: 2583861898095884453
+    :details:
+      :flog: complexity is 19.3
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb:26
+      class_name: !!null 
+      method_name: !!null 
+      hash: 1295188944676677225
+    :details:
+      :flog: complexity is 9.8
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb:16
+      class_name: !!null 
+      method_name: !!null 
+      hash: 4497399214937041911
+    :details:
+      :flog: complexity is 9.8
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:37
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1357083643028374538
+    :details:
+      :flog: complexity is 9.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/railtie.rb:8
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1204908533049299000
+    :details:
+      :flog: complexity is 6.9
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/helpers.rb:26
+      class_name: !!null 
+      method_name: !!null 
+      hash: -4133621839551933449
+    :details:
+      :flog: complexity is 6.3
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb:40
+      class_name: !!null 
+      method_name: !!null 
+      hash: 3880486540989219889
+    :details:
+      :flog: complexity is 5.1
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet.rb:23
+      class_name: !!null 
+      method_name: !!null 
+      hash: 3220201136002057639
+    :details:
+      :flog: complexity is 2.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/helpers.rb:19
+      class_name: !!null 
+      method_name: !!null 
+      hash: -3938546682885686166
+    :details:
+      :flog: complexity is 1.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/helpers.rb:14
+      class_name: !!null 
+      method_name: !!null 
+      hash: -2523664642780364557
+    :details:
+      :flog: complexity is 1.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet.rb:38
+      class_name: !!null 
+      method_name: !!null 
+      hash: 3309556124977960288
+    :details:
+      :flog: complexity is 1.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/faker.rb:13
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1974011112281426555
+    :details:
+      :flog: complexity is 1.2
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1263139811812968281
+    :details:
+      :churn: detected high level of churn (changed 8 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: Gemfile
+      class_name: !!null 
+      method_name: !!null 
+      hash: -2516335185424333780
+    :details:
+      :churn: detected high level of churn (changed 11 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/spec_helper.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -3359517023979849187
+    :details:
+      :churn: detected high level of churn (changed 10 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: README.rdoc
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1327748734090572649
+    :details:
+      :churn: detected high level of churn (changed 16 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/dummy/config/routes.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -3557814377825911303
+    :details:
+      :churn: detected high level of churn (changed 8 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: Gemfile.lock
+      class_name: !!null 
+      method_name: !!null 
+      hash: 1104042346890023718
+    :details:
+      :churn: detected high level of churn (changed 12 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/engine.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 3228638806505301429
+    :details:
+      :churn: detected high level of churn (changed 5 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/railtie.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 1255688775325308433
+    :details:
+      :reek: found 1 code smells
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: .gitignore
+      class_name: !!null 
+      method_name: !!null 
+      hash: -4504650009409780781
+    :details:
+      :churn: detected high level of churn (changed 4 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/controllers/application_controller_spec.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 2964566127799032686
+    :details:
+      :churn: detected high level of churn (changed 4 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: TODO.rdoc
+      class_name: !!null 
+      method_name: !!null 
+      hash: 2669425395196239458
+    :details:
+      :churn: detected high level of churn (changed 4 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/dummy/app/controllers/home_controller.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1709711208192373868
+    :details:
+      :churn: detected high level of churn (changed 4 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: CHANGELOG.rdoc
+      class_name: !!null 
+      method_name: !!null 
+      hash: -2039361998317327931
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/version.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -2206831346799711886
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/controllers/desktop_only_controller_spec.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1302719736919663957
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/dummy/app/controllers/application_controller.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -268717846351251623
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/controllers/actioncontroller_base_spec.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -4151852866560622810
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: config/initializers/mobile_mime_types.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 1861836418555359750
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: mobylette.gemspec
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1403293196412339159
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/helpers/mobylette_helpers_spec.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 2357911946787872181
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/dummy/app/views/layouts/application.html.erb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 9231446674810798
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/dummy/app/views/layouts/application.mobile.erb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -1312334453419488553
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/dummy/app/views/home/index.html.erb
+      class_name: !!null 
+      method_name: !!null 
+      hash: 3808675372654851053
+    :details:
+      :churn: detected high level of churn (changed 3 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/controllers/home_controller_spec.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -643433951259628329
+    :details:
+      :churn: detected high level of churn (changed 8 times)
+  :classes:
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Mobylette
+      method_name: !!null 
+      hash: 1127078764280111091
+    :details:
+      :flog: complexity is 2.4
+      :rcov: average uncovered code is 27.8%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: RespondToMobileRequests
+      method_name: !!null 
+      hash: 1957992759113255412
+    :details:
+      :flog: complexity is 14.1
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+      class_name: InstanceMethods
+      method_name: !!null 
+      hash: 1703103870811795206
+    :details:
+      :reek: found 3 code smells
+      :flog: average complexity is 11.8
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:37
+      class_name: ClassMethods
+      method_name: !!null 
+      hash: 3050132251966709929
+    :details:
+      :flog: complexity is 9.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/railtie.rb:8
+      class_name: initializer
+      method_name: !!null 
+      hash: -2298043145253401330
+    :details:
+      :flog: complexity is 6.9
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb
+      class_name: Helpers
+      method_name: !!null 
+      hash: -3020320142483559131
+    :details:
+      :reek: found 4 code smells
+      :flog: average complexity is 5.4
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: RespondToMobileRequestsMethods
+      method_name: !!null 
+      hash: 720454466420826181
+    :details:
+      :flog: complexity is 5.0
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Helmet
+      method_name: !!null 
+      hash: 1035421190592118804
+    :details:
+      :flog: average complexity is 2.9
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Faker
+      method_name: !!null 
+      hash: -2785909516004027923
+    :details:
+      :flog: average complexity is 2.9
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Controllers
+      method_name: !!null 
+      hash: -1839539121938893154
+    :details:
+      :flog: complexity is 2.6
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: main
+      method_name: !!null 
+      hash: 841665147017659477
+    :details:
+      :flog: complexity is 2.2
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/railtie.rb
+      class_name: Railtie
+      method_name: !!null 
+      hash: -1815576609427783202
+    :details:
+      :reek: found 1 code smells
+  :methods:
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+      class_name: Mobylette
+      method_name: Mobylette#respond_to_mobile_requests
+      simple_method_name: ! '#respond_to_mobile_requests'
+      hash: 435875292522611010
+    :details:
+      :rcov: uncovered code is 50.0%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet.rb
+      class_name: Mobylette
+      method_name: Mobylette#reset_test_request_agent
+      simple_method_name: ! '#reset_test_request_agent'
+      hash: 30496347127118222
+    :details:
+      :rcov: average uncovered code is 29.2%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet.rb
+      class_name: Mobylette
+      method_name: Mobylette#force_mobile_request_agent
+      simple_method_name: ! '#force_mobile_request_agent'
+      hash: -661758521947166839
+    :details:
+      :rcov: average uncovered code is 29.2%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+      class_name: Mobylette
+      method_name: Mobylette#is_mobile_request?
+      simple_method_name: ! '#is_mobile_request?'
+      hash: -250871125129175485
+    :details:
+      :rcov: average uncovered code is 29.2%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+      class_name: InstanceMethods
+      method_name: InstanceMethods#handle_mobile
+      simple_method_name: ! '#handle_mobile'
+      hash: -161619565808645258
+    :details:
+      :reek: found 2 code smells
+      :flog: complexity is 25.2
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb
+      class_name: Mobylette
+      method_name: Mobylette#mobylette_javascript_include_tag
+      simple_method_name: ! '#mobylette_javascript_include_tag'
+      hash: 460418927741046551
+    :details:
+      :rcov: uncovered code is 25.0%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/helpers.rb
+      class_name: Mobylette
+      method_name: Mobylette#insert_faker
+      simple_method_name: ! '#insert_faker'
+      hash: 202865185818091983
+    :details:
+      :rcov: uncovered code is 25.0%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb
+      class_name: Mobylette
+      method_name: Mobylette#mobylette_stylesheet_link_tag
+      simple_method_name: ! '#mobylette_stylesheet_link_tag'
+      hash: -139747529402004122
+    :details:
+      :rcov: uncovered code is 25.0%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb
+      class_name: Mobylette
+      method_name: Mobylette#sulfix_mobile_assets
+      simple_method_name: ! '#sulfix_mobile_assets'
+      hash: 3831883063641737300
+    :details:
+      :rcov: uncovered code is 22.2%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+      class_name: InstanceMethods
+      method_name: InstanceMethods#is_mobile_request?
+      simple_method_name: ! '#is_mobile_request?'
+      hash: 3859946802256305466
+    :details:
+      :reek: found 1 code smells
+      :flog: complexity is 19.3
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: RespondToMobileRequests
+      method_name: RespondToMobileRequests#none
+      simple_method_name: ! '#none'
+      hash: -1692835556681480748
+    :details:
+      :flog: complexity is 14.1
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
+      class_name: Mobylette
+      method_name: Mobylette#handle_mobile
+      simple_method_name: ! '#handle_mobile'
+      hash: 3407221860435910351
+    :details:
+      :rcov: uncovered code is 11.1%
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb:26
+      class_name: Helpers
+      method_name: Helpers#mobylette_javascript_include_tag
+      simple_method_name: ! '#mobylette_javascript_include_tag'
+      hash: -1009369629486017935
+    :details:
+      :flog: complexity is 9.8
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb:16
+      class_name: Helpers
+      method_name: Helpers#mobylette_stylesheet_link_tag
+      simple_method_name: ! '#mobylette_stylesheet_link_tag'
+      hash: 2592345737306786878
+    :details:
+      :flog: complexity is 9.8
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:37
+      class_name: ClassMethods
+      method_name: ClassMethods#respond_to_mobile_requests
+      simple_method_name: ! '#respond_to_mobile_requests'
+      hash: 3402835281330347563
+    :details:
+      :flog: complexity is 9.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/railtie.rb:8
+      class_name: initializer
+      method_name: initializer#mobylette
+      simple_method_name: ! '#mobylette'
+      hash: 758994720931463807
+    :details:
+      :flog: complexity is 6.9
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/helpers.rb
+      class_name: Helpers
+      method_name: Helpers#insert_faker
+      simple_method_name: ! '#insert_faker'
+      hash: -1032457257041059147
+    :details:
+      :reek: found 1 code smells
+      :flog: complexity is 6.3
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/controllers/helpers.rb
+      class_name: Helpers
+      method_name: Helpers#sulfix_mobile_assets
+      simple_method_name: ! '#sulfix_mobile_assets'
+      hash: 3610269827339442079
+    :details:
+      :reek: found 3 code smells
+      :flog: complexity is 5.1
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: RespondToMobileRequestsMethods
+      method_name: RespondToMobileRequestsMethods#none
+      simple_method_name: ! '#none'
+      hash: 3907795019904669680
+    :details:
+      :flog: complexity is 5.0
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Faker
+      method_name: Faker#none
+      simple_method_name: ! '#none'
+      hash: 1638109036316188838
+    :details:
+      :flog: complexity is 4.6
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Helpers
+      method_name: Helpers#none
+      simple_method_name: ! '#none'
+      hash: 4041480011242348926
+    :details:
+      :flog: average complexity is 4.5
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Helmet
+      method_name: Helmet#none
+      simple_method_name: ! '#none'
+      hash: 1371954594264296735
+    :details:
+      :flog: complexity is 4.4
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet.rb:23
+      class_name: Helmet
+      method_name: Helmet#force_mobile_request_agent
+      simple_method_name: ! '#force_mobile_request_agent'
+      hash: 404959666978006334
+    :details:
+      :flog: complexity is 2.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Controllers
+      method_name: Controllers#none
+      simple_method_name: ! '#none'
+      hash: -4520928572902011146
+    :details:
+      :flog: complexity is 2.6
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: Mobylette
+      method_name: Mobylette#none
+      simple_method_name: ! '#none'
+      hash: -2321303308616815140
+    :details:
+      :flog: complexity is 2.4
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: main
+      method_name: main#none
+      simple_method_name: ! '#none'
+      hash: 4057060770261915198
+    :details:
+      :flog: complexity is 2.2
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet.rb:38
+      class_name: Helmet
+      method_name: Helmet#reset_test_request_agent
+      simple_method_name: ! '#reset_test_request_agent'
+      hash: 3459245677518319831
+    :details:
+      :flog: complexity is 1.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/helpers.rb:14
+      class_name: Helpers
+      method_name: Helpers#force_mobile_request_agent
+      simple_method_name: ! '#force_mobile_request_agent'
+      hash: 1227887528266058019
+    :details:
+      :flog: complexity is 1.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/helpers.rb:19
+      class_name: Helpers
+      method_name: Helpers#reset_test_request_agent
+      simple_method_name: ! '#reset_test_request_agent'
+      hash: 3995456109607318102
+    :details:
+      :flog: complexity is 1.7
+  - :location: !ruby/object:MetricFu::Location
+      file_path: !!null 
+      class_name: InstanceMethods
+      method_name: InstanceMethods#none
+      simple_method_name: ! '#none'
+      hash: -2233112655950772831
+    :details:
+      :flog: average complexity is 1.3
+  - :location: !ruby/object:MetricFu::Location
+      file_path: lib/mobylette/helmet/faker.rb:13
+      class_name: Faker
+      method_name: Faker#is_mobile_request?
+      simple_method_name: ! '#is_mobile_request?'
+      hash: 1016741441638077673
+    :details:
+      :flog: complexity is 1.2
