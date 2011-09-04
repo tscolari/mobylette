@@ -86,4 +86,12 @@ describe HomeController do
     response.body.should contain("THIS IS NOT A MOBILE DEVICE")
   end
 
+  # Testing XHR requests
+  it "should not use mobile format for xhr requests" do
+    force_mobile_request_agent("Android")
+    xhr :get, :index
+    response.should render_template(:index)
+    response.body.should contain("AJAX VIEW")
+  end
+
 end
