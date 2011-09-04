@@ -86,12 +86,32 @@ describe HomeController do
     response.body.should contain("THIS IS NOT A MOBILE DEVICE")
   end
 
+  #######################################################
   # Testing XHR requests
   it "should not use mobile format for xhr requests" do
     force_mobile_request_agent("Android")
     xhr :get, :index
     response.should render_template(:index)
     response.body.should contain("AJAX VIEW")
+  end
+
+  #######################################################
+  # Testing Session Override
+
+  it "should force mobile view if session says it so" do
+    reset_test_request_agent
+    get :index
+    response.should render_template(:index)
+    response.should contain("this is the mobile view")
+    response.should contain("THIS IS NOT A MOBILE DEVICE")
+  end
+
+  it "should ignore mobile view processing if session says it so" do
+    force_mobile_request_agent("Android")
+    get :index
+    response.should render_template(:index)
+    response.should contain("this is the html view")
+    response.should contain("THIS A MOBILE DEVICE")
   end
 
 end
