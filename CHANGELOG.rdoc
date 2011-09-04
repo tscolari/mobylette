@@ -1,5 +1,6 @@
 = Change Log
 
+== 1.1.0
   * XHR requests no longer trigger the mobile format
   * Added a new method 'is_mobile_view?'
     * The 'is_mobile_device?' now checks only for the user agent, no longer
