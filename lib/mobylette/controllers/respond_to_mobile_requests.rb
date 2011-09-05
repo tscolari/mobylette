@@ -48,12 +48,14 @@ module Mobylette
 
         private
 
+        # :doc:
         # This helper returns exclusively if the request's  user_aget is from a mobile
         # device or not.
         def is_mobile_request?
           request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
         end
 
+        # :doc:
         # This helper returns exclusively if the current format is mobile or not
         def is_mobile_view?
           true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
@@ -77,6 +79,7 @@ module Mobylette
       module InstanceMethods
         private
 
+        # :doc:
         # Changes the request.form to :mobile, when the request is from
         # a mobile device
         def handle_mobile
