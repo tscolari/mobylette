@@ -17,7 +17,6 @@ describe DefaultFallbackController do
     response.body.should contain("HTML VIEW")
   end
 
-
   it "should fall back to the default request format when it doesnt" do
     force_mobile_request_agent
     get :test
@@ -31,6 +30,4 @@ describe DefaultFallbackController do
     response.should render_template(:test)
     response.body.should contain("JS VIEW")
   end
-
-
 end
