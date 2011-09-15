@@ -57,6 +57,15 @@ This would force all views (mobile) to fall back to the html views. You may also
 
     respond_to_mobile_requests :fall_back => false
 
+
+== XHR Requests
+
+By default the mobile device verification will skip XHR requests, and these will be served as if mobylette wasn't there. You can override this behavior by passing the :skip_xhr_requests => false to the respond_to_mobile_requests call.
+
+    respond_to_mobile_requests :skip_xhr_requests => false
+
+You may need to use this if you are using JQuery mobile or something similar in your application.
+
 == Forcing/Ignoring Mobile Requests
 
 You may force your user to aways render the mobile format, or to aways render the default request format (when the request comes from a mobile device). You can use the session var :mobylette_override for doing it:

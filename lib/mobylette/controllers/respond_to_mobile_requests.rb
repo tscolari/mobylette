@@ -33,12 +33,24 @@ module Mobylette
         #     to look for that other format, in case there is not a .mobile file for the view.
         #     By default, it will fall back to the format of the original request.
         #     If you don't want fall back at all, pass :fall_back => false
+        # * :skip_xhr_requests => true/false
+        #     By default this is set to true. When a xhr request enters in, it will skip the
+        #     mobile verification. This will let your ajax calls to work as intended.
+        #     You may disable this (actually you will have to) if you are using JQuery Mobile, or
+        #     other js framework that uses ajax. To disable, set :skip_xhr_requests => false
         #
         def respond_to_mobile_requests(options = {})
           return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
 
-          cattr_accessor :fall_back_format
-          self.fall_back_format   = options[:fall_back]
+          options.reverse_merge!({
+            :skip_xhr_requests => true
+          })
+
+          cattr_accessor :mobylette_fall_back_format
+          self.mobylette_fall_back_format   = options[:fall_back]
+
+          cattr_accessor :mobylette_skip_xhr_requests
+          self.mobylette_skip_xhr_requests = options[:skip_xhr_requests]
 
           self.send(:include, Mobylette::Controllers::RespondToMobileRequestsMethods)
         end
@@ -79,16 +91,24 @@ module Mobylette
       module InstanceMethods
         private
 
+        def respond_as_mobile?
+          (not request_xhr? and ((session[:mobylette_override] == :force_mobile) or (is_mobile_request?)))
+        end
+
+        def request_xhr?
+          self.mobylette_skip_xhr_requests and request.xhr?
+        end
+
         # :doc:
         # Changes the request.form to :mobile, when the request is from
         # a mobile device
         def handle_mobile
           return if session[:mobylette_override] == :ignore_mobile
-          if not request.xhr? and ((session[:mobylette_override] == :force_mobile) or (is_mobile_request?))
+          if respond_as_mobile?
             original_format   = request.format.to_sym
             request.format    = :mobile
-            if self.fall_back_format != false
-              request.formats << Mime::Type.new((self.fall_back_format if self.fall_back_format) || original_format)
+            if self.mobylette_fall_back_format != false
+              request.formats << Mime::Type.new(self.mobylette_fall_back_format || original_format)
             end
           end
         end
