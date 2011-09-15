@@ -6,9 +6,10 @@
       g.marker_font_size = "10px"
 
         g.title = 'Reek: code smells';
-        g.data('Duplication', [3,4])
-g.data('IrresponsibleModule', [1,1])
-g.data('LowCohesion', [4,4])
+        g.data('Duplication', [3,4,2])
+g.data('IrresponsibleModule', [1,1,1])
+g.data('LongMethod', [,,1])
+g.data('LowCohesion', [4,4,4])
 
-        g.labels = {"0":"9/3","1":"9/4"};
+        g.labels = {"0":"9/3","1":"9/4","2":"9/15"};
         g.draw();

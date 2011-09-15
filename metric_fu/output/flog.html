@@ -544,11 +544,11 @@ table td.score {
 
 
 <canvas id="graph"></canvas>
-<script language="javascript" src="flog.js?1315161310" type="text/javascript"></script>
+<script language="javascript" src="flog.js?1316113359" type="text/javascript"></script>
 
 
-<h2>Total Flog score for all methods: 163.3</h2>
-<h2>Average Flog score for all methods: 6.3</h2>
+<h2>Total Flog score for all methods: 169.3</h2>
+<h2>Average Flog score for all methods: 6.0</h2>
 
 <table>
   <tr>
@@ -561,10 +561,18 @@ table td.score {
     
     <tr>
       <td><a href="#lib_mobylette_controllers_respond_to_mobile_requests_rb">lib/mobylette/controllers/respond_to_mobile_requests.rb</a></td>
-      <td>40.7</td>
-      <td>2</td>
-      <td>20.3</td>
-      <td>39.4</td>
+      <td>42.6</td>
+      <td>4</td>
+      <td>10.6</td>
+      <td>27.4</td>
+    </tr>
+  
+    <tr>
+      <td><a href="#lib_mobylette_controllers_respond_to_mobile_requests_rb">lib/mobylette/controllers/respond_to_mobile_requests.rb</a></td>
+      <td>13.8</td>
+      <td>1</td>
+      <td>13.8</td>
+      <td>13.8</td>
     </tr>
   
     <tr>
@@ -589,14 +597,6 @@ table td.score {
       <td>4</td>
       <td>7.0</td>
       <td>9.8</td>
-    </tr>
-  
-    <tr>
-      <td><a href="#lib_mobylette_controllers_respond_to_mobile_requests_rb">lib/mobylette/controllers/respond_to_mobile_requests.rb</a></td>
-      <td>9.7</td>
-      <td>1</td>
-      <td>9.7</td>
-      <td>9.7</td>
     </tr>
   
     <tr>
@@ -666,7 +666,7 @@ table td.score {
 </table>
 
 
-  <h2 id="lib_mobylette_controllers_respond_to_mobile_requests_rb"><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/respond_to_mobile_requests.rb'>lib/mobylette/controllers/respond_to_mobile_requests.rb</a></h2>
+  <h2 id="lib_mobylette_controllers_respond_to_mobile_requests_rb"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb'>lib/mobylette/controllers/respond_to_mobile_requests.rb</a></h2>
 
     
       
@@ -686,8 +686,8 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=82'>Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#handle_mobile</a></p>
-      <p>Total Score: 39.4</p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=94'>Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#respond_as_mobile?</a></p>
+      <p>Total Score: 9.0</p>
       <table>
         <tr>
           <th>Score</th>
@@ -695,27 +695,58 @@ table td.score {
         </tr>
         
           <tr>
-            <td>11.6</td>
+            <td>2.9</td>
             <td>branch</td>
           </tr>
         
           <tr>
-            <td>3.8</td>
+            <td>1.5</td>
+            <td>request_xhr?</td>
+          </tr>
+        
+          <tr>
+            <td>2.0</td>
             <td>session</td>
           </tr>
         
           <tr>
-            <td>3.4</td>
+            <td>1.8</td>
             <td>[]</td>
           </tr>
         
           <tr>
-            <td>4.6</td>
+            <td>1.6</td>
             <td>==</td>
           </tr>
         
           <tr>
-            <td>7.4</td>
+            <td>1.6</td>
+            <td>is_mobile_request?</td>
+          </tr>
+        
+      </table>
+    
+      
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=98'>Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#request_xhr?</a></p>
+      <p>Total Score: 4.9</p>
+      <table>
+        <tr>
+          <th>Score</th>
+          <th>Operator</th>
+        </tr>
+        
+          <tr>
+            <td>1.4</td>
+            <td>branch</td>
+          </tr>
+        
+          <tr>
+            <td>1.5</td>
+            <td>mobylette_skip_xhr_requests</td>
+          </tr>
+        
+          <tr>
+            <td>1.7</td>
             <td>request</td>
           </tr>
         
@@ -724,14 +755,50 @@ table td.score {
             <td>xhr?</td>
           </tr>
         
+      </table>
+    
+      
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=105'>Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#handle_mobile</a></p>
+      <p>Total Score: 27.4</p>
+      <table>
+        <tr>
+          <th>Score</th>
+          <th>Operator</th>
+        </tr>
+        
+          <tr>
+            <td>6.5</td>
+            <td>branch</td>
+          </tr>
+        
+          <tr>
+            <td>1.8</td>
+            <td>session</td>
+          </tr>
+        
           <tr>
             <td>1.6</td>
-            <td>is_mobile_request?</td>
+            <td>[]</td>
+          </tr>
+        
+          <tr>
+            <td>3.0</td>
+            <td>==</td>
+          </tr>
+        
+          <tr>
+            <td>1.4</td>
+            <td>respond_as_mobile?</td>
           </tr>
         
           <tr>
             <td>3.2</td>
             <td>assignment</td>
+          </tr>
+        
+          <tr>
+            <td>5.7</td>
+            <td>request</td>
           </tr>
         
           <tr>
@@ -745,8 +812,8 @@ table td.score {
           </tr>
         
           <tr>
-            <td>6.3</td>
-            <td>fall_back_format</td>
+            <td>4.0</td>
+            <td>mobylette_fall_back_format</td>
           </tr>
         
           <tr>
@@ -767,7 +834,62 @@ table td.score {
       </table>
     
 
-  <h2 id=""><a href='https://github.com/tscolari/mobylette/tree/v1.0.0'></a></h2>
+  <h2 id="lib_mobylette_controllers_respond_to_mobile_requests_rb"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb'>lib/mobylette/controllers/respond_to_mobile_requests.rb</a></h2>
+
+    
+      
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=42'>Mobylette::Controllers::RespondToMobileRequests::ClassMethods#respond_to_mobile_requests</a></p>
+      <p>Total Score: 13.8</p>
+      <table>
+        <tr>
+          <th>Score</th>
+          <th>Operator</th>
+        </tr>
+        
+          <tr>
+            <td>3.9</td>
+            <td>assignment</td>
+          </tr>
+        
+          <tr>
+            <td>1.3</td>
+            <td>branch</td>
+          </tr>
+        
+          <tr>
+            <td>1.5</td>
+            <td>included_modules</td>
+          </tr>
+        
+          <tr>
+            <td>1.3</td>
+            <td>include?</td>
+          </tr>
+        
+          <tr>
+            <td>1.3</td>
+            <td>reverse_merge!</td>
+          </tr>
+        
+          <tr>
+            <td>2.6</td>
+            <td>cattr_accessor</td>
+          </tr>
+        
+          <tr>
+            <td>2.6</td>
+            <td>[]</td>
+          </tr>
+        
+          <tr>
+            <td>3.9</td>
+            <td>send</td>
+          </tr>
+        
+      </table>
+    
+
+  <h2 id=""><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette'></a></h2>
 
     
       
@@ -807,7 +929,7 @@ table td.score {
       </table>
     
 
-  <h2 id="lib_mobylette_controllers_respond_to_mobile_requests_rb"><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/respond_to_mobile_requests.rb'>lib/mobylette/controllers/respond_to_mobile_requests.rb</a></h2>
+  <h2 id="lib_mobylette_controllers_respond_to_mobile_requests_rb"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb'>lib/mobylette/controllers/respond_to_mobile_requests.rb</a></h2>
 
     
       
@@ -827,7 +949,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=53'>Mobylette::Controllers::RespondToMobileRequests::InstanceMethods#is_mobile_request?</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=66'>Mobylette::Controllers::RespondToMobileRequests::InstanceMethods#is_mobile_request?</a></p>
       <p>Total Score: 6.8</p>
       <table>
         <tr>
@@ -858,7 +980,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=58'>Mobylette::Controllers::RespondToMobileRequests::InstanceMethods#is_mobile_view?</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=72'>Mobylette::Controllers::RespondToMobileRequests::InstanceMethods#is_mobile_view?</a></p>
       <p>Total Score: 12.6</p>
       <table>
         <tr>
@@ -904,7 +1026,7 @@ table td.score {
       </table>
     
 
-  <h2 id="lib_mobylette_controllers_helpers_rb"><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/helpers.rb'>lib/mobylette/controllers/helpers.rb</a></h2>
+  <h2 id="lib_mobylette_controllers_helpers_rb"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/helpers.rb'>lib/mobylette/controllers/helpers.rb</a></h2>
 
     
       
@@ -929,7 +1051,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/helpers.rb&line=18'>Mobylette::Controllers::Helpers#mobylette_stylesheet_link_tag</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/helpers.rb&line=18'>Mobylette::Controllers::Helpers#mobylette_stylesheet_link_tag</a></p>
       <p>Total Score: 9.8</p>
       <table>
         <tr>
@@ -975,7 +1097,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/helpers.rb&line=28'>Mobylette::Controllers::Helpers#mobylette_javascript_include_tag</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/helpers.rb&line=28'>Mobylette::Controllers::Helpers#mobylette_javascript_include_tag</a></p>
       <p>Total Score: 9.8</p>
       <table>
         <tr>
@@ -1021,7 +1143,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/helpers.rb&line=41'>Mobylette::Controllers::Helpers#sulfix_mobile_assets</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/helpers.rb&line=41'>Mobylette::Controllers::Helpers#sulfix_mobile_assets</a></p>
       <p>Total Score: 5.1</p>
       <table>
         <tr>
@@ -1057,61 +1179,11 @@ table td.score {
       </table>
     
 
-  <h2 id="lib_mobylette_controllers_respond_to_mobile_requests_rb"><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/respond_to_mobile_requests.rb'>lib/mobylette/controllers/respond_to_mobile_requests.rb</a></h2>
+  <h2 id="lib_mobylette_railtie_rb"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb'>lib/mobylette/railtie.rb</a></h2>
 
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=37'>Mobylette::Controllers::RespondToMobileRequests::ClassMethods#respond_to_mobile_requests</a></p>
-      <p>Total Score: 9.7</p>
-      <table>
-        <tr>
-          <th>Score</th>
-          <th>Operator</th>
-        </tr>
-        
-          <tr>
-            <td>2.6</td>
-            <td>assignment</td>
-          </tr>
-        
-          <tr>
-            <td>1.3</td>
-            <td>branch</td>
-          </tr>
-        
-          <tr>
-            <td>1.5</td>
-            <td>included_modules</td>
-          </tr>
-        
-          <tr>
-            <td>1.3</td>
-            <td>include?</td>
-          </tr>
-        
-          <tr>
-            <td>1.3</td>
-            <td>cattr_accessor</td>
-          </tr>
-        
-          <tr>
-            <td>1.3</td>
-            <td>[]</td>
-          </tr>
-        
-          <tr>
-            <td>3.9</td>
-            <td>send</td>
-          </tr>
-        
-      </table>
-    
-
-  <h2 id="lib_mobylette_railtie_rb"><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/railtie.rb'>lib/mobylette/railtie.rb</a></h2>
-
-    
-      
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/railtie.rb&line=8'>Mobylette::Railtie::initializer#mobylette</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=8'>Mobylette::Railtie::initializer#mobylette</a></p>
       <p>Total Score: 6.9</p>
       <table>
         <tr>
@@ -1147,7 +1219,7 @@ table td.score {
       </table>
     
 
-  <h2 id="lib_mobylette_helmet_helpers_rb"><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet/helpers.rb'>lib/mobylette/helmet/helpers.rb</a></h2>
+  <h2 id="lib_mobylette_helmet_helpers_rb"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb'>lib/mobylette/helmet/helpers.rb</a></h2>
 
     
       
@@ -1187,7 +1259,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet/helpers.rb&line=14'>Mobylette::Helmet::Helpers#force_mobile_request_agent</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=14'>Mobylette::Helmet::Helpers#force_mobile_request_agent</a></p>
       <p>Total Score: 1.7</p>
       <table>
         <tr>
@@ -1208,7 +1280,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet/helpers.rb&line=19'>Mobylette::Helmet::Helpers#reset_test_request_agent</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=19'>Mobylette::Helmet::Helpers#reset_test_request_agent</a></p>
       <p>Total Score: 1.7</p>
       <table>
         <tr>
@@ -1229,7 +1301,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet/helpers.rb&line=26'>Mobylette::Helmet::Helpers#insert_faker</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=26'>Mobylette::Helmet::Helpers#insert_faker</a></p>
       <p>Total Score: 6.3</p>
       <table>
         <tr>
@@ -1260,7 +1332,7 @@ table td.score {
       </table>
     
 
-  <h2 id=""><a href='https://github.com/tscolari/mobylette/tree/v1.0.0'></a></h2>
+  <h2 id=""><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette'></a></h2>
 
     
       
@@ -1295,7 +1367,7 @@ table td.score {
       </table>
     
 
-  <h2 id="lib_mobylette_helmet_faker_rb"><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet/faker.rb'>lib/mobylette/helmet/faker.rb</a></h2>
+  <h2 id="lib_mobylette_helmet_faker_rb"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/faker.rb'>lib/mobylette/helmet/faker.rb</a></h2>
 
     
       
@@ -1330,7 +1402,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet/faker.rb&line=13'>Mobylette::Helmet::Faker#is_mobile_request?</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/faker.rb&line=13'>Mobylette::Helmet::Faker#is_mobile_request?</a></p>
       <p>Total Score: 1.2</p>
       <table>
         <tr>
@@ -1346,7 +1418,7 @@ table td.score {
       </table>
     
 
-  <h2 id="lib_mobylette_helmet_rb"><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet.rb'>lib/mobylette/helmet.rb</a></h2>
+  <h2 id="lib_mobylette_helmet_rb"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet.rb'>lib/mobylette/helmet.rb</a></h2>
 
     
       
@@ -1371,7 +1443,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet.rb&line=23'>Mobylette::Helmet#force_mobile_request_agent</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet.rb&line=23'>Mobylette::Helmet#force_mobile_request_agent</a></p>
       <p>Total Score: 2.7</p>
       <table>
         <tr>
@@ -1392,7 +1464,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet.rb&line=38'>Mobylette::Helmet#reset_test_request_agent</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet.rb&line=38'>Mobylette::Helmet#reset_test_request_agent</a></p>
       <p>Total Score: 1.7</p>
       <table>
         <tr>
@@ -1413,7 +1485,7 @@ table td.score {
       </table>
     
       
-      <p><a href='https://github.com/tscolari/mobylette/tree/v1.0.0/lib/mobylette/helmet.rb&line=47'>Mobylette::Helmet#set_session_override</a></p>
+      <p><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet.rb&line=47'>Mobylette::Helmet#set_session_override</a></p>
       <p>Total Score: 1.7</p>
       <table>
         <tr>
@@ -1434,7 +1506,7 @@ table td.score {
       </table>
     
 
-  <h2 id=""><a href='https://github.com/tscolari/mobylette/tree/v1.0.0'></a></h2>
+  <h2 id=""><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette'></a></h2>
 
     
       
@@ -1454,7 +1526,7 @@ table td.score {
       </table>
     
 
-  <h2 id=""><a href='https://github.com/tscolari/mobylette/tree/v1.0.0'></a></h2>
+  <h2 id=""><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette'></a></h2>
 
     
       
@@ -1479,7 +1551,7 @@ table td.score {
       </table>
     
 
-  <h2 id=""><a href='https://github.com/tscolari/mobylette/tree/v1.0.0'></a></h2>
+  <h2 id=""><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette'></a></h2>
 
     
       
@@ -1504,7 +1576,7 @@ table td.score {
       </table>
     
 
-<p>Generated on 2011-09-04 15:35:10 -0300</p>
+<p>Generated on 2011-09-15 16:02:39 -0300</p>
 
     </div>
   </body>

@@ -6,6 +6,6 @@
       g.marker_font_size = "10px"
 
         g.title = 'Rcov: code coverage';
-        g.data('rcov', [52.7,50.0]);
-        g.labels = {"0":"9/3","1":"9/4"};
+        g.data('rcov', [52.7,50.0,49.4]);
+        g.labels = {"0":"9/3","1":"9/4","2":"9/15"};
         g.draw();
