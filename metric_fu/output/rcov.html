@@ -545,10 +545,10 @@ table td.score {
 
 
 <canvas id="graph"></canvas>
-<script language="javascript" src="rcov.js?1316113360" type="text/javascript"></script>
+<script language="javascript" src="rcov.js?1316197677" type="text/javascript"></script>
 
 
-<p>Total Coverage: 49.4% </p>
+<p>Total Coverage: 47.6% </p>
 <table>
   <tr>
     <th>File Path</th>
@@ -570,7 +570,7 @@ table td.score {
   
     <tr>
       <td><a href="#lib_mobylette_controllers_respond_to_mobile_requests_rb">lib/mobylette/controllers/respond_to_mobile_requests.rb</a></td>
-      <td>49</td>
+      <td>48</td>
     </tr>
     
   
@@ -581,20 +581,20 @@ table td.score {
     
   
     <tr>
-      <td><a href="#lib_mobylette_helmet_faker_rb">lib/mobylette/helmet/faker.rb</a></td>
-      <td>67</td>
-    </tr>
-    
-  
-    <tr>
       <td><a href="#lib_mobylette_helmet_helpers_rb">lib/mobylette/helmet/helpers.rb</a></td>
-      <td>69</td>
+      <td>62</td>
     </tr>
     
   
     <tr>
       <td><a href="#lib_mobylette_railtie_rb">lib/mobylette/railtie.rb</a></td>
-      <td>90</td>
+      <td>64</td>
+    </tr>
+    
+  
+    <tr>
+      <td><a href="#lib_mobylette_helmet_faker_rb">lib/mobylette/helmet/faker.rb</a></td>
+      <td>67</td>
     </tr>
     
   
@@ -1301,117 +1301,152 @@ table td.score {
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=75'><pre>        def respond_as_mobile?</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=75'><pre>        # Returns true if this request should be treated as a mobile request</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=76'><pre>          (not request_xhr? and ((session[:mobylette_override] == :force_mobile) or (is_mobile_request?)))</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=76'><pre>        def respond_as_mobile?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=77'><pre>        end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=77'><pre>          processing_xhr_requests? and (force_mobile_by_session? or is_mobile_request?)</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=78'><pre>        def request_xhr?</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=78'><pre>        end</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=79'><pre>          self.mobylette_skip_xhr_requests and request.xhr?</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=79'><pre>        # Returns true if the visitor has de force_mobile session</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=80'><pre>        end</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=80'><pre>        def force_mobile_by_session?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=81'><pre>        # :doc:</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=81'><pre>          session[:mobylette_override] == :force_mobile</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=82'><pre>        # Changes the request.form to :mobile, when the request is from</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=82'><pre>        end</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=83'><pre>        # a mobile device</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=83'><pre>        # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=84'><pre>        def handle_mobile</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=84'><pre>        # or when this is a non xhr request</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=85'><pre>          return if session[:mobylette_override] == :ignore_mobile</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=85'><pre>        def processing_xhr_requests?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=86'><pre>          if respond_as_mobile?</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=86'><pre>          not self.mobylette_skip_xhr_requests && request.xhr?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=87'><pre>            original_format   = request.format.to_sym</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=87'><pre>        end</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=88'><pre>            request.format    = :mobile</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=88'><pre>        # :doc:</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=89'><pre>            if self.mobylette_fall_back_format != false</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=89'><pre>        # Changes the request.form to :mobile, when the request is from</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=90'><pre>              request.formats << Mime::Type.new(self.mobylette_fall_back_format || original_format)</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=90'><pre>        # a mobile device</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=91'><pre>            end</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=91'><pre>        def handle_mobile</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=92'><pre>          end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=92'><pre>          return if session[:mobylette_override] == :ignore_mobile</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=93'><pre>        end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=93'><pre>          if respond_as_mobile?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=94'><pre>      end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=94'><pre>            original_format   = request.format.to_sym</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=95'><pre>    end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=95'><pre>            request.format    = :mobile</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=96'><pre>  end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=96'><pre>            if self.mobylette_fall_back_format != false</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=97'><pre>end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=97'><pre>              request.formats << Mime::Type.new(self.mobylette_fall_back_format || original_format)</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=98'><pre>            end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=99'><pre>          end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=100'><pre>        end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=101'><pre>      end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=102'><pre>    end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=103'><pre>  end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=104'><pre>end</pre></a></td>
       </tr>
     
     </table>
@@ -1659,6 +1694,235 @@ table td.score {
     </table>
   </div>
 
+  <h2 id="lib_mobylette_helmet_helpers_rb"> lib/mobylette/helmet/helpers.rb</h2>
+  <div class="rcov_overflow">
+    <table class="rcov_code">
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=1'><pre>module Mobylette</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=2'><pre>  module Helmet</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=3'><pre>    # This module is only for testing the view's helpers of the module</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=4'><pre>    # it simulates the Helmet helpers and the controller methods</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=5'><pre>    # that are necessary for the tests</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=6'><pre>    module Helpers</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=7'><pre>      extend ActiveSupport::Concern</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=8'><pre>      included do</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=9'><pre>        cattr_accessor :user_agent</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=10'><pre>      end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=11'><pre>      # Force the request to be a mobile request</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=12'><pre>      def force_mobile_request_agent</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=13'><pre>        insert_faker</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=14'><pre>        ActionController::Base.is_mobile_request = true</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=15'><pre>      end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=16'><pre>      # Reset the request mobile agent of the request</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=17'><pre>      def reset_test_request_agent</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=18'><pre>        insert_faker</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=19'><pre>        ActionController::Base.is_mobile_request = false</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=20'><pre>      end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=21'><pre>      private</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=22'><pre>      # includes the faker module for faking mobile requests</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=23'><pre>      def insert_faker</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=24'><pre>        return if ActionController::Base.included_modules.include?(Mobylette::Helmet::Faker)</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=25'><pre>        ActionController::Base.send(:include, Mobylette::Helmet::Faker)</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=26'><pre>      end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=27'><pre>    end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=28'><pre>  end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=29'><pre>end</pre></a></td>
+      </tr>
+    
+    </table>
+  </div>
+
+  <h2 id="lib_mobylette_railtie_rb"> lib/mobylette/railtie.rb</h2>
+  <div class="rcov_overflow">
+    <table class="rcov_code">
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=1'><pre>module Mobylette</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=2'><pre>  # Gem's Configuration as Railtie</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=3'><pre>  #</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=4'><pre>  # Automatic inlcudes Mobylette::Controllers::RespondToMobileRequests to ActiveController::Base and</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=5'><pre>  # load Mobylette::Controllers::Helpers as ActionController::Base helpers</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=6'><pre>  class Railtie < ::Rails::Railtie</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=7'><pre>    initializer :mobylette do</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=8'><pre>      ActiveSupport.on_load(:action_controller) do</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=9'><pre>        ::ActionController::Base.send(:include, Mobylette::Controllers::RespondToMobileRequests)</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=10'><pre>        ::ActionController::Base.helper Mobylette::Controllers::Helpers</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=11'><pre>      end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=12'><pre>    end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=13'><pre>  end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=14'><pre>end</pre></a></td>
+      </tr>
+    
+    </table>
+  </div>
+
   <h2 id="lib_mobylette_helmet_faker_rb"> lib/mobylette/helmet/faker.rb</h2>
   <div class="rcov_overflow">
     <table class="rcov_code">
@@ -1741,201 +2005,7 @@ table td.score {
     </table>
   </div>
 
-  <h2 id="lib_mobylette_helmet_helpers_rb"> lib/mobylette/helmet/helpers.rb</h2>
-  <div class="rcov_overflow">
-    <table class="rcov_code">
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=1'><pre>module Mobylette</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=2'><pre>  module Helmet</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=3'><pre>    # This module is only for testing the view's helpers of the module</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=4'><pre>    # it simulates the Helmet helpers and the controller methods</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=5'><pre>    # that are necessary for the tests</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=6'><pre>    module Helpers</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=7'><pre>      extend ActiveSupport::Concern</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=8'><pre>      included do</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=9'><pre>        cattr_accessor :user_agent</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=10'><pre>      end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=11'><pre>      def force_mobile_request_agent</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=12'><pre>        insert_faker</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=13'><pre>        ActionController::Base.is_mobile_request = true</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=14'><pre>      end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=15'><pre>      def reset_test_request_agent</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=16'><pre>        insert_faker</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=17'><pre>        ActionController::Base.is_mobile_request = false</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=18'><pre>      end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=19'><pre>      private</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=20'><pre>      def insert_faker</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=21'><pre>        return if ActionController::Base.included_modules.include?(Mobylette::Helmet::Faker)</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=22'><pre>        ActionController::Base.send(:include, Mobylette::Helmet::Faker)</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=23'><pre>      end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=24'><pre>    end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=25'><pre>  end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/helmet/helpers.rb&line=26'><pre>end</pre></a></td>
-      </tr>
-    
-    </table>
-  </div>
-
-  <h2 id="lib_mobylette_railtie_rb"> lib/mobylette/railtie.rb</h2>
-  <div class="rcov_overflow">
-    <table class="rcov_code">
-    
-      <tr>
-        
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=1'><pre>module Mobylette</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=2'><pre>  class Railtie < ::Rails::Railtie</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=3'><pre>    initializer :mobylette do</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=4'><pre>      ActiveSupport.on_load(:action_controller) do</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=5'><pre>        ::ActionController::Base.send(:include, Mobylette::Controllers::RespondToMobileRequests)</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=6'><pre>        ::ActionController::Base.helper Mobylette::Controllers::Helpers</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=7'><pre>      end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=8'><pre>    end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=9'><pre>  end</pre></a></td>
-      </tr>
-    
-      <tr>
-        
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/railtie.rb&line=10'><pre>end</pre></a></td>
-      </tr>
-    
-    </table>
-  </div>
-
-<p>Generated on 2011-09-15 16:02:40 -0300</p>
+<p>Generated on 2011-09-16 15:27:57 -0300</p>
 
     </div>
   </body>
