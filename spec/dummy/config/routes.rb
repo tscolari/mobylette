@@ -1,5 +1,7 @@
 Dummy::Application.routes.draw do
 
+  get "skip_xhr_request/index"
+
   get "fallbacks/index"
 
   get "testing" => "testing#index"
