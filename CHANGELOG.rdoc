@@ -1,5 +1,9 @@
 = Change Log
 
+== 1.2.1
+  * Internal methods refactoring
+  * Adding more documentation
+
 == 1.2.0
   * Created a new option (:skip_xhr_request) for the respond_to_mobile_requests method. Default is true.
 

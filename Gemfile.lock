@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mobylette (1.2.0)
+    mobylette (1.2.1)
       rails (~> 3.1.0)
 
 GEM
