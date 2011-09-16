@@ -91,12 +91,20 @@ module Mobylette
       module InstanceMethods
         private
 
+        # Returns true if this request should be treated as a mobile request
         def respond_as_mobile?
-          (not request_xhr? and ((session[:mobylette_override] == :force_mobile) or (is_mobile_request?)))
+          processing_xhr_requests? and (force_mobile_by_session? or is_mobile_request?)
         end
 
-        def request_xhr?
-          self.mobylette_skip_xhr_requests and request.xhr?
+        # Returns true if the visitor has de force_mobile session
+        def force_mobile_by_session?
+          session[:mobylette_override] == :force_mobile
+        end
+
+        # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or
+        # or when this is a non xhr request
+        def processing_xhr_requests?
+          not self.mobylette_skip_xhr_requests && request.xhr?
         end
 
         # :doc:
