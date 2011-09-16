@@ -10,12 +10,13 @@ module Mobylette
         cattr_accessor :user_agent
       end
 
-
+      # Force the request to be a mobile request
       def force_mobile_request_agent
         insert_faker
         ActionController::Base.is_mobile_request = true
       end
 
+      # Reset the request mobile agent of the request
       def reset_test_request_agent
         insert_faker
         ActionController::Base.is_mobile_request = false
@@ -23,6 +24,7 @@ module Mobylette
 
       private
 
+      # includes the faker module for faking mobile requests
       def insert_faker
         return if ActionController::Base.included_modules.include?(Mobylette::Helmet::Faker)
         ActionController::Base.send(:include, Mobylette::Helmet::Faker)
