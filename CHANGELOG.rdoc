@@ -1,5 +1,8 @@
 = Change Log
 
+== 1.2.0
+  * Created a new option (:skip_xhr_request) for the respond_to_mobile_requests method. Default is true.
+
 == 1.1.0
   * XHR requests no longer trigger the mobile format
   * Added a new method 'is_mobile_view?'
