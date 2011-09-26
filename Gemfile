@@ -5,11 +5,13 @@ source "http://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem 'rspec'
-gem 'rspec-rails'
-gem 'cucumber'
-gem 'cucumber-rails'
-gem 'webrat'
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'webrat'
+end
 
 gem 'metric_fu'
 gem 'map'
