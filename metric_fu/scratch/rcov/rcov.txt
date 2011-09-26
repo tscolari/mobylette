@@ -1,15 +1,7 @@
 ** WARNING: Ruby 1.9 Support is experimental at best. Don't expect correct results! **
-Loaded suite /Users/tscolari/.rvm/gems/ruby-1.9.2-p290@mobylette/bin/rcov
-Started
-
-Finished in 0.002588 seconds.
-
-0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 5533
 ............................................
 
-Finished in 0.97391 seconds
+Finished in 0.9189 seconds
 44 examples, 0 failures
 ================================================================================
 lib/mobylette.rb
