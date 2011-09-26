@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    mobylette (1.2.1)
-      rails (~> 3.1.0)
+    mobylette (1.2.2)
+      rails (~> 3.0)
 
 GEM
   remote: http://rubygems.org/
