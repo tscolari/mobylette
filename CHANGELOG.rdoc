@@ -1,5 +1,11 @@
 = Change Log
 
+== 1.3.0
+  * Adding a new view path for mobile views at app/mobile_views. This new behavior is optional and should not change any old behavior.
+
+== 1.2.2
+  * Gem dependency changed from rails 3.1 to 3.0. Contribution from billywatson (https://github.com/tscolari/mobylette/pull/1).
+
 == 1.2.1
   * Internal methods refactoring
   * Adding more documentation

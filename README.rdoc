@@ -49,7 +49,7 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
 
 == Mobile View Path
 
-Mobylette will look your mobile templates first at app/mobile_views. This default behavior may be disabled by passing the :ignore_mobile_view_path => true option. Or it can be ignored, it will look there first, but at app/view after that. This is just an extra organization option you may use.
+Mobylette will look your mobile templates first at app/mobile_views. This default behavior may be disabled by passing the :ignore_mobile_view_path => true option. Or it can be ignored, it will look there first, but at app/view after that. This is just an extra organization option you may use if you prefer.
 
     respond_to_mobile_requests :ignore_mobile_view_path => true
 
