@@ -10,6 +10,8 @@ Dummy::Application.routes.draw do
   get "respond_to_test(.:format)" => "home#respond_to_test"
   get "no_mobile_view(.:format)"  => "home#no_mobile_view"
 
+  get "load_from_mobile_path"     => "view_path#index"
+  get "ignore_mobile_path"        => "ignore_mobile_path"
 
   get "no_fallback/index(.:format)" => "no_fallback#index"
   get "no_fallback/test(.:format)"  => "no_fallback#test"
