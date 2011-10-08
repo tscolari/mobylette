@@ -51,9 +51,11 @@ module Mobylette
             :ignore_mobile_view_path  => false
           })
           
-          valid_options = [:fall_back, :skip_xhr_requests, :ignore_mobile_view_path]
           cattr_accessor :mobylette_options
-          self.mobylette_options = options.select {|option| valid_options.include?(option)}
+          # works on 1.9, but not on 1.8
+          #valid_options = [:fall_back, :skip_xhr_requests, :ignore_mobile_view_path]
+          #self.mobylette_options = options.reject {|option| !valid_options.include?(option)}
+          self.mobylette_options = options
 
           self.send(:include, Mobylette::Controllers::RespondToMobileRequestsMethods)
         end
