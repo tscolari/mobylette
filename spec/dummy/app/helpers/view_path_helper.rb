@@ -1,0 +1,2 @@
+module ViewPathHelper
+end

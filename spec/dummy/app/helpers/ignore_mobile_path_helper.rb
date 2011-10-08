@@ -1,0 +1,2 @@
+module IgnoreMobilePathHelper
+end

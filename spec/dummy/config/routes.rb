@@ -11,7 +11,7 @@ Dummy::Application.routes.draw do
   get "no_mobile_view(.:format)"  => "home#no_mobile_view"
 
   get "load_from_mobile_path"     => "view_path#index"
-  get "ignore_mobile_path"        => "ignore_mobile_path"
+  get "ignore_mobile_path"        => "ignore_mobile_path#index"
 
   get "no_fallback/index(.:format)" => "no_fallback#index"
   get "no_fallback/test(.:format)"  => "no_fallback#test"

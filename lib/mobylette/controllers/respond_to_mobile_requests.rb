@@ -1,3 +1,5 @@
+require 'ruby-debug'
+
 module Mobylette
   module Controllers
 
@@ -38,12 +40,17 @@ module Mobylette
         #     mobile verification. This will let your ajax calls to work as intended.
         #     You may disable this (actually you will have to) if you are using JQuery Mobile, or
         #     other js framework that uses ajax. To disable, set :skip_xhr_requests => false
+        # * :ignore_mobile_view_path => true/false
+        #     False by default. This will force rails to look for the mobile views in the
+        #     app/mobile_views path before app/views. This behavior is only for mobile requests.
+        #     You may ignore this path aswell, it is just an extra organization option you have.
         #
         def respond_to_mobile_requests(options = {})
           return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
 
           options.reverse_merge!({
-            :skip_xhr_requests => true
+            :skip_xhr_requests        => true,
+            :ignore_mobile_view_path  => false
           })
 
           cattr_accessor :mobylette_fall_back_format
@@ -51,6 +58,9 @@ module Mobylette
 
           cattr_accessor :mobylette_skip_xhr_requests
           self.mobylette_skip_xhr_requests = options[:skip_xhr_requests]
+
+          cattr_accessor :mobylette_ignore_mobile_view_path
+          self.mobylette_ignore_mobile_view_path = options[:ignore_mobile_view_path]
 
           self.send(:include, Mobylette::Controllers::RespondToMobileRequestsMethods)
         end
@@ -93,7 +103,7 @@ module Mobylette
 
         # Returns true if this request should be treated as a mobile request
         def respond_as_mobile?
-          processing_xhr_requests? and (force_mobile_by_session? or is_mobile_request?)
+          processing_xhr_requests? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))
         end
 
         # Returns true if the visitor has de force_mobile session
@@ -113,6 +123,11 @@ module Mobylette
         def handle_mobile
           return if session[:mobylette_override] == :ignore_mobile
           if respond_as_mobile?
+
+            unless self.mobylette_ignore_mobile_view_path
+              prepend_view_path File.join(Rails.root, 'app', 'mobile_views')
+            end
+
             original_format   = request.format.to_sym
             request.format    = :mobile
             if self.mobylette_fall_back_format != false
