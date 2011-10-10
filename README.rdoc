@@ -47,12 +47,6 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
 
   Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
 
-== Mobile View Path
-
-Mobylette will look your mobile templates first at app/mobile_views. This default behavior may be disabled by passing the :ignore_mobile_view_path => true option. Or it can be ignored, it will look there first, but at app/view after that. This is just an extra organization option you may use if you prefer.
-
-    respond_to_mobile_requests :ignore_mobile_view_path => true
-
 == Fall Backs
 
 By default, when the mobile format is not found, mobylette will fall back to the request original format. For example, if a cell phone makes a request by html, and there is no mobile view, it will render the html. You may force it always to fall back to a especific format, by passing the :fall_back parameter to the respond_to_mobile_requests method:

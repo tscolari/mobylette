@@ -38,11 +38,6 @@ module Mobylette
         #     mobile verification. This will let your ajax calls to work as intended.
         #     You may disable this (actually you will have to) if you are using JQuery Mobile, or
         #     other js framework that uses ajax. To disable, set :skip_xhr_requests => false
-        # * :ignore_mobile_view_path => true/false
-        #     False by default. This will force rails to look for the mobile views in the
-        #     app/mobile_views path before app/views. This behavior is only for mobile requests.
-        #     You may ignore this path aswell, it is just an extra organization option you have.
-        #
         def respond_to_mobile_requests(options = {})
           return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
 
@@ -121,10 +116,6 @@ module Mobylette
         def handle_mobile
           return if session[:mobylette_override] == :ignore_mobile
           if respond_as_mobile?
-
-            unless self.mobylette_ignore_mobile_view_path
-              prepend_view_path File.join(Rails.root, 'app', 'mobile_views')
-            end
 
             original_format   = request.format.to_sym
             request.format    = :mobile
