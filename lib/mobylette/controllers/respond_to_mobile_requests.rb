@@ -42,18 +42,14 @@ module Mobylette
           return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
 
           options.reverse_merge!({
-            :skip_xhr_requests        => true,
-            :ignore_mobile_view_path  => false
+            :skip_xhr_requests        => true
           })
 
-          cattr_accessor :mobylette_fall_back_format
-          self.mobylette_fall_back_format   = options[:fall_back]
-
-          cattr_accessor :mobylette_skip_xhr_requests
-          self.mobylette_skip_xhr_requests = options[:skip_xhr_requests]
-
-          cattr_accessor :mobylette_ignore_mobile_view_path
-          self.mobylette_ignore_mobile_view_path = options[:ignore_mobile_view_path]
+          cattr_accessor :mobylette_options
+          # works on 1.9, but not on 1.8
+          #valid_options = [:fall_back, :skip_xhr_requests]
+          #self.mobylette_options = options.reject {|option| !valid_options.include?(option)}
+          self.mobylette_options = options
 
           self.send(:include, Mobylette::Controllers::RespondToMobileRequestsMethods)
         end
@@ -75,9 +71,7 @@ module Mobylette
         def is_mobile_view?
           true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
         end
-
       end
-
     end
 
     # RespondToMobileRequestsMethods is included by respond_to_mobile_requests
@@ -107,7 +101,7 @@ module Mobylette
         # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or
         # or when this is a non xhr request
         def processing_xhr_requests?
-          not self.mobylette_skip_xhr_requests && request.xhr?
+          not self.mobylette_options[:skip_xhr_requests] && request.xhr?
         end
 
         # :doc:
@@ -119,11 +113,12 @@ module Mobylette
 
             original_format   = request.format.to_sym
             request.format    = :mobile
-            if self.mobylette_fall_back_format != false
-              request.formats << Mime::Type.new(self.mobylette_fall_back_format || original_format)
+            if self.mobylette_options[:fall_back] != false
+              request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)
             end
           end
         end
+
       end
     end
   end
