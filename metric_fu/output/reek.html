@@ -545,7 +545,7 @@ table td.score {
 
 
 <canvas id="graph"></canvas>
-<script language="javascript" src="reek.js?1318046647" type="text/javascript"></script>
+<script language="javascript" src="reek.js?1318289466" type="text/javascript"></script>
 
 
 <table>
@@ -607,13 +607,13 @@ table td.score {
       <tr class='dark'>
         <td><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb'>lib/mobylette/controllers/respond_to_mobile_requests.rb</a></td>
         <td>
-          Mobylette::Controllers::RespondToMobileRequests::ClassMethods#respond_to_mobile_requests
+          Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#handle_mobile
         </td>
         <td>
-          has approx 9 statements
+          calls request 3 times
         </td>
         <td>
-          LongMethod
+          Duplication
         </td>
       </tr>
       
@@ -624,7 +624,7 @@ table td.score {
           Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#handle_mobile
         </td>
         <td>
-          calls request 3 times
+          calls self.mobylette_options twice
         </td>
         <td>
           Duplication
@@ -638,7 +638,7 @@ table td.score {
           Mobylette::Controllers::RespondToMobileRequestsMethods::InstanceMethods#handle_mobile
         </td>
         <td>
-          calls self.mobylette_fall_back_format twice
+          calls self.mobylette_options[:fall_back] twice
         </td>
         <td>
           Duplication
@@ -673,7 +673,7 @@ table td.score {
   
 
 </table>
-<p>Generated on 2011-10-08 01:04:07 -0300</p>
+<p>Generated on 2011-10-10 20:31:06 -0300</p>
 
     </div>
   </body>
