@@ -29,21 +29,21 @@ describe HomeController do
       @controller.send(:is_mobile_request?).should be_false
     end
 
-    it "should have respond to mobile requests" do
+    it "should, on a mobile request, have 'is_mobile_request?' == true" do
       force_mobile_request_agent("Android")
       get :index
       request.user_agent.should == "Android"
       @controller.send(:is_mobile_request?).should be_true
     end
 
-    it "should render the mobile mime_type" do
+    it "should, on a mobile request, render the mobile type of view" do
       force_mobile_request_agent
       get :index
       @controller.send(:is_mobile_request?).should be_true
       response.body.should contain("this is the mobile view")
     end
 
-    it "reset_test_request_agent should reset the user_agent to Rails Testing" do
+    it "should, on reset_test_request_agent call, reset the user_agent to default (Rails Testing)" do
       force_mobile_request_agent("Iphone")
       reset_test_request_agent
       get :index
@@ -52,7 +52,7 @@ describe HomeController do
     end
   end
 
-  describe "render output" do
+  describe "Output Rendering" do
     it "should display THIS A MOBILE DEVICE on index from mobile" do
       force_mobile_request_agent("Android")
       get :index
@@ -78,7 +78,7 @@ describe HomeController do
     end
   end
 
-  describe "respond_to with difference views per request type" do
+  describe "respond_to with different views for different request types" do
     it "should render desktop view on non mobile request" do
       reset_test_request_agent
       get :respond_to_test
@@ -91,7 +91,7 @@ describe HomeController do
       response.should render_template(:mobile)
     end
 
-    it "should render mobile view on mobile request when .mobile" do
+    it "should render mobile view when format => 'mobile' is passed" do
       get :respond_to_test, :format => "mobile"
       response.should render_template(:mobile)
     end
@@ -100,7 +100,7 @@ describe HomeController do
   #######################################################
   # Testing XHR requests
   describe "XHR Requests" do
-    it "should not use mobile format for xhr requests" do
+    it "should not use mobile format for xhr requests by default" do
       force_mobile_request_agent("Android")
       xhr :get, :index
       response.should render_template(:index)
@@ -129,4 +129,17 @@ describe HomeController do
       response.should contain("THIS A MOBILE DEVICE")
     end
   end
+
+  ###################################################
+  # Param forcing
+  describe "Forcing to skip mobile by param" do
+    it "should not render mobile view if skip_mobile param is present and set to true" do
+      force_mobile_request_agent
+      get :index, :skip_mobile => 'true'
+      response.should render_template(:index)
+      response.should contain("this is the html view")
+      response.should contain("THIS A MOBILE DEVICE")
+    end
+  end
+
 end

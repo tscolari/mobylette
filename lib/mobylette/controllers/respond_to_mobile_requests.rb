@@ -90,12 +90,17 @@ module Mobylette
 
         # Returns true if this request should be treated as a mobile request
         def respond_as_mobile?
-          processing_xhr_requests? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))
+          processing_xhr_requests? and skip_mobile_param_not_present? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))
         end
 
         # Returns true if the visitor has de force_mobile session
         def force_mobile_by_session?
           session[:mobylette_override] == :force_mobile
+        end
+
+        # Returns true when ?skip_mobile=true is not passed to the request
+        def skip_mobile_param_not_present?
+          params[:skip_mobile] != 'true'
         end
 
         # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or
