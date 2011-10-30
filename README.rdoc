@@ -70,6 +70,12 @@ By default the mobile device verification will skip XHR requests, and these will
 
 You may need to use this if you are using JQuery mobile or something similar in your application.
 
+== Skiping mobile filter
+
+In the case you need to skip a mobile_request for been treated as mobile, you can pass the `skip_mobile=true` param to the url/request.
+
+For example, you are using jquery_mobile and by that `:skip_xhr_requests => false`, but there is a special case where you need to process an Ajax, then you can use this param.
+
 == Forcing/Ignoring Mobile Requests
 
 You may force your user to aways render the mobile format, or to aways render the default request format (when the request comes from a mobile device). You can use the session var :mobylette_override for doing it:
