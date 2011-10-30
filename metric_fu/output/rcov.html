@@ -545,7 +545,7 @@ table td.score {
 
 
 <canvas id="graph"></canvas>
-<script language="javascript" src="rcov.js?1318289466" type="text/javascript"></script>
+<script language="javascript" src="rcov.js?1319995842" type="text/javascript"></script>
 
 
 <p>Total Coverage: 46.9% </p>
@@ -1311,7 +1311,7 @@ table td.score {
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=77'><pre>          processing_xhr_requests? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=77'><pre>          processing_xhr_requests? and skip_mobile_param_not_present? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))</pre></a></td>
       </tr>
     
       <tr>
@@ -1341,112 +1341,132 @@ table td.score {
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=83'><pre>        # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=83'><pre>        # Returns true when ?skip_mobile=true is not passed to the request</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=84'><pre>        # or when this is a non xhr request</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=84'><pre>        def skip_mobile_param_not_present?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=85'><pre>        def processing_xhr_requests?</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=85'><pre>          params[:skip_mobile] != 'true'</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=86'><pre>          not self.mobylette_options[:skip_xhr_requests] && request.xhr?</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=86'><pre>        end</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=87'><pre>        end</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=87'><pre>        # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=88'><pre>        # :doc:</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=88'><pre>        # or when this is a non xhr request</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=89'><pre>        # Changes the request.form to :mobile, when the request is from</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=89'><pre>        def processing_xhr_requests?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=90'><pre>        # a mobile device</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=90'><pre>          not self.mobylette_options[:skip_xhr_requests] && request.xhr?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=91'><pre>        def handle_mobile</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=91'><pre>        end</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=92'><pre>          return if session[:mobylette_override] == :ignore_mobile</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=92'><pre>        # :doc:</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=93'><pre>          if respond_as_mobile?</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=93'><pre>        # Changes the request.form to :mobile, when the request is from</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=94'><pre>            original_format   = request.format.to_sym</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=94'><pre>        # a mobile device</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=95'><pre>            request.format    = :mobile</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=95'><pre>        def handle_mobile</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=96'><pre>            if self.mobylette_options[:fall_back] != false</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=96'><pre>          return if session[:mobylette_override] == :ignore_mobile</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=97'><pre>              request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=97'><pre>          if respond_as_mobile?</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=98'><pre>            end</pre></a></td>
+        <td class="rcov_not_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=98'><pre>            original_format   = request.format.to_sym</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=99'><pre>          end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=99'><pre>            request.format    = :mobile</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=100'><pre>        end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=100'><pre>            if self.mobylette_options[:fall_back] != false</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=101'><pre>      end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=101'><pre>              request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=102'><pre>    end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=102'><pre>            end</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=103'><pre>  end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=103'><pre>          end</pre></a></td>
       </tr>
     
       <tr>
         
-        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=104'><pre>end</pre></a></td>
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=104'><pre>        end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=105'><pre>      end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=106'><pre>    end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=107'><pre>  end</pre></a></td>
+      </tr>
+    
+      <tr>
+        
+        <td class="rcov_run"><a href='txmt://open/?url=file:///Users/tscolari/Projetos/mobylette/lib/mobylette/controllers/respond_to_mobile_requests.rb&line=108'><pre>end</pre></a></td>
       </tr>
     
     </table>
@@ -2005,7 +2025,7 @@ table td.score {
     </table>
   </div>
 
-<p>Generated on 2011-10-10 20:31:06 -0300</p>
+<p>Generated on 2011-10-30 15:30:42 -0200</p>
 
     </div>
   </body>
