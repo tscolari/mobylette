@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe SkipXhrRequestController do
+  # This controller calls: respond_to_mobile_requests :skip_xhr_requests => false
+
   render_views
 
   #######################################################

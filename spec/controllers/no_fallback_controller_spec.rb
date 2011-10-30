@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe NoFallbackController do
+  # This controller has fallbacks disabled by: respond_to_mobile_requests :fall_back => false
+
   render_views
 
   it "should find the correct view when it exists" do

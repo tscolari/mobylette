@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe ForceFallbackController do
+  # this controller calls respond_to_mobile_requests :fall_back => :js
+  # forcing fallback to be javascript
+  # index action has html, js and mobile views
+  # test  action has html and js only
+
   render_views
 
   it "should find the correct view (mobile) when it exists" do

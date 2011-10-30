@@ -1,10 +1,14 @@
 require 'spec_helper'
 
 describe HomeController do
+  # This controller calls respond_to_mobile_requests with no params
+  # no_mobile_view action has only html
+  # mobile action has only mobile
+  # index action has html, js and mobile
+  # desktop action has only html
   render_views
 
   it "should have the :handle_mobile method" do
-    #
     # Works on ruby 1.9.2 but not on 1.8.7
     # @controller.private_methods.include?(:handle_mobile).should be_true
     # this is a hack, not perfect, but if it didnt have the method it would

@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe DefaultFallbackController do
+  # This controller calls respond_to_mobile_requests with no params
+  # Index action has views for html, js and mobile
+  # Test  action has only html and js
+
   render_views
 
   it "should find the correct view when it exists" do
