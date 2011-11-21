@@ -1,12 +1,13 @@
 = Change Log
 
+== 1.4.2
+  * Creating a initializer to alias to_mobile => to_html (responders)
+
 == 1.4.1
-  * Creating a skip_mobile=true url param that skips any mobile request from
-  been treated as mobile
+  * Creating a skip_mobile=true url param that skips any mobile request from been treated as mobile
 
 == 1.4.0
-  * The mobile_view path (v 1.3.0) was a terrible idea and I removed it. I'm
-  sorry.
+  * The mobile_view path (v 1.3.0) was a terrible idea and I removed it. I'm sorry.
   * Internal refactoring.
 
 == 1.3.0
@@ -25,14 +26,11 @@
 == 1.1.0
   * XHR requests no longer trigger the mobile format
   * Added a new method 'is_mobile_view?'
-    * The 'is_mobile_device?' now checks only for the user agent, no longer
-    check for the request.format to return true/false
-    * The new 'is_mobile_view?' checks only for the reqeust.format /
-    params[:format] to return true/false
+    * The 'is_mobile_device?' now checks only for the user agent, no longer check for the request.format to return true/false
+    * The new 'is_mobile_view?' checks only for the reqeust.format / params[:format] to return true/false
 
 == 1.0.0
-  * Added fall back from mobile views to others when there is no mobile view
-  avaible
+  * Added fall back from mobile views to others when there is no mobile view avaible
 
 == 0.0.2
   * Fixing the view helpers (stylesheet and javascript includes)
