@@ -1,7 +1,7 @@
 ** WARNING: Ruby 1.9 Support is experimental at best. Don't expect correct results! **
 .............................................
 
-Finished in 0.94567 seconds
+Finished in 0.92843 seconds
 45 examples, 0 failures
 ================================================================================
 lib/mobylette.rb
