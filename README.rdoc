@@ -47,10 +47,6 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
 
   Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
 
-== Mobile View Path
-
-This was a terrible idea I introduced in version 1.3.0, and completely removed in 1.4.0. I'm really sorry for that.
-
 == Fall Backs
 
 By default, when the mobile format is not found, mobylette will fall back to the request original format. For example, if a cell phone makes a request by html, and there is no mobile view, it will render the html. You may force it always to fall back to a especific format, by passing the :fall_back parameter to the respond_to_mobile_requests method:
