@@ -96,7 +96,7 @@ This will disable any override (default).
 
 http://tscolari.github.com/mobylette/mobylette_images/helmet.jpg
 
-Don't drive your mobylette without your Helmet! It's always safer do tests!
+Don't drive your mobylette without your Helmet! It's safer to do tests!
 
 For testing, include the Mobylette::Helmet module to your test/test_helpers.rb:
 
@@ -110,9 +110,9 @@ For RSpec: add to your spec/spec_helpers.rb or create a spec/support/mobylette.r
 
 This will add 2 methods to your test scope:
 
-    force_mobile_request_agent(device = "Android")
+    force_mobile_request_agent
 
-this one will force your user_agent to the one specified, allowing you to test mobile requests.
+this one will force a mobile user_agent, allowing you to test mobile requests.
 
     reset_test_request_agent
 
