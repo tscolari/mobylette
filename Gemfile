@@ -8,15 +8,15 @@ gemspec
 group :test do
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'cucumber'
-  gem 'cucumber-rails'
   gem 'webrat'
 end
 
-gem 'metric_fu'
-gem 'map'
-gem 'fattr'
-gem 'arrayfields'
+group :development do
+  gem 'metric_fu'
+  gem 'map'
+  gem 'fattr'
+  gem 'arrayfields'
+end
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
