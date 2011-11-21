@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if [[ -d "$rvm_path/environments" && -s "$rvm_path/environments/ruby-1.9.2@mobylette" ]] ; then
-  \. "$rvm_path/environments/ruby-1.9.2@mobylette"
+if [[ -d "$rvm_path/environments" && -s "$rvm_path/environments/ruby-1.9.3@mobylette" ]] ; then
+  \. "$rvm_path/environments/ruby-1.9.3@mobylette"
 else
-  rvm --create use  "ruby-1.9.2@mobylette"
+  rvm --create use  "ruby-1.9.3@mobylette"
 fi
