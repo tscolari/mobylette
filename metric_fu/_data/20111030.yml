@@ -6,38 +6,34 @@
   - :file_path: README.rdoc
     :times_changed: 25
   - :file_path: Gemfile.lock
-    :times_changed: 25
+    :times_changed: 24
   - :file_path: Gemfile
-    :times_changed: 15
+    :times_changed: 14
   - :file_path: spec/controllers/home_controller_spec.rb
     :times_changed: 14
-  - :file_path: lib/mobylette/version.rb
-    :times_changed: 11
-  - :file_path: spec/spec_helper.rb
-    :times_changed: 11
-  - :file_path: CHANGELOG.rdoc
+  - :file_path: lib/mobylette/controllers/helpers.rb
     :times_changed: 11
   - :file_path: spec/dummy/config/routes.rb
     :times_changed: 11
-  - :file_path: lib/mobylette/controllers/helpers.rb
-    :times_changed: 11
+  - :file_path: spec/spec_helper.rb
+    :times_changed: 10
+  - :file_path: lib/mobylette/version.rb
+    :times_changed: 10
   - :file_path: lib/mobylette.rb
     :times_changed: 9
-  - :file_path: lib/mobylette/helmet.rb
-    :times_changed: 6
+  - :file_path: CHANGELOG.rdoc
+    :times_changed: 9
   - :file_path: mobylette.gemspec
     :times_changed: 6
-  - :file_path: spec/dummy/app/controllers/home_controller.rb
-    :times_changed: 5
+  - :file_path: lib/mobylette/helmet.rb
+    :times_changed: 6
   - :file_path: lib/mobylette/engine.rb
     :times_changed: 5
   - :file_path: TODO.rdoc
     :times_changed: 5
+  - :file_path: spec/dummy/app/controllers/home_controller.rb
+    :times_changed: 5
   - :file_path: spec/controllers/application_controller_spec.rb
-    :times_changed: 4
-  - :file_path: lib/mobylette/helmet/helpers.rb
-    :times_changed: 4
-  - :file_path: lib/mobylette/railtie.rb
     :times_changed: 4
   - :file_path: .gitignore
     :times_changed: 4
@@ -49,8 +45,10 @@
     :times_changed: 4
   - :file_path: spec/dummy/app/views/home/index.html.erb
     :times_changed: 4
-  - :file_path: .rvmrc
-    :times_changed: 3
+  - :file_path: lib/mobylette/helmet/helpers.rb
+    :times_changed: 4
+  - :file_path: lib/mobylette/railtie.rb
+    :times_changed: 4
   - :file_path: spec/dummy/app/views/home/index.mobile.erb
     :times_changed: 3
   - :file_path: spec/dummy/app/views/skip_xhr_request/index.mobile.erb
@@ -70,8 +68,9 @@
   :class_churn: []
   :method_churn: []
   :changed_files:
-  - .rvmrc
-  - .travis.yml
+  - Gemfile.lock
+  - README.rdoc
+  - lib/mobylette/version.rb
   :changed_classes: []
   :changed_methods: []
 :flog:
@@ -1085,7 +1084,7 @@
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
       class_name: !!null 
       method_name: !!null 
-      hash: -1560981153077663223
+      hash: 2691306662731507763
     :details:
       :reek: found 3 code smells
       :churn: detected high level of churn (changed 31 times)
@@ -1094,7 +1093,7 @@
       file_path: lib/mobylette/helmet.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 3937116166783438788
+      hash: -4472378457841521917
     :details:
       :churn: detected high level of churn (changed 6 times)
       :rcov: average uncovered code is 33.3%
@@ -1102,21 +1101,21 @@
       file_path: lib/mobylette/helmet/faker.rb
       class_name: !!null 
       method_name: !!null 
-      hash: -53673928311105792
+      hash: 1849598418619512458
     :details:
       :rcov: uncovered code is 33.3%
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:115
       class_name: !!null 
       method_name: !!null 
-      hash: 4592523485734924351
+      hash: 3757244678964071753
     :details:
       :flog: complexity is 31.6
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/helmet/helpers.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 955277490086453990
+      hash: -2207017370434071139
     :details:
       :reek: found 1 code smells
       :churn: detected high level of churn (changed 4 times)
@@ -1125,7 +1124,7 @@
       file_path: lib/mobylette/controllers/helpers.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 718974812703639568
+      hash: 2852873040903081625
     :details:
       :reek: found 3 code smells
       :churn: detected high level of churn (changed 11 times)
@@ -1134,329 +1133,322 @@
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:92
       class_name: !!null 
       method_name: !!null 
-      hash: 3501428232854287724
+      hash: -3300904671500684545
     :details:
       :flog: complexity is 14.0
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:71
       class_name: !!null 
       method_name: !!null 
-      hash: 3215294316835492683
+      hash: -4449092174102836041
     :details:
       :flog: complexity is 12.6
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/helpers.rb:18
       class_name: !!null 
       method_name: !!null 
-      hash: -306741796994189991
+      hash: 2751040627931865139
     :details:
       :flog: complexity is 9.8
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/helpers.rb:28
       class_name: !!null 
       method_name: !!null 
-      hash: 3095279785362511729
+      hash: 3219776740411755812
     :details:
       :flog: complexity is 9.8
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:41
       class_name: !!null 
       method_name: !!null 
-      hash: -3262402373059021130
+      hash: -931420630444449053
     :details:
       :flog: complexity is 9.7
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/railtie.rb:12
       class_name: !!null 
       method_name: !!null 
-      hash: 1144044502980758189
+      hash: -1128423434690674278
     :details:
       :flog: complexity is 6.9
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:65
       class_name: !!null 
       method_name: !!null 
-      hash: -3109267512223198275
+      hash: -106823186801385267
     :details:
       :flog: complexity is 6.8
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:108
       class_name: !!null 
       method_name: !!null 
-      hash: 74410098642700682
+      hash: 1399185279486084163
     :details:
       :flog: complexity is 6.6
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/helmet/helpers.rb:28
       class_name: !!null 
       method_name: !!null 
-      hash: 3211212064863987230
+      hash: -239496707929065113
     :details:
       :flog: complexity is 6.3
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/helpers.rb:41
       class_name: !!null 
       method_name: !!null 
-      hash: 1673380927874218949
+      hash: -1641119025788032530
     :details:
       :flog: complexity is 5.1
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:102
       class_name: !!null 
       method_name: !!null 
-      hash: 2927659300014082153
+      hash: -3429957033654639597
     :details:
       :flog: complexity is 4.8
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:97
       class_name: !!null 
       method_name: !!null 
-      hash: -2064913080359221270
+      hash: 4464752830775036266
     :details:
       :flog: complexity is 4.8
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/helmet.rb:23
       class_name: !!null 
       method_name: !!null 
-      hash: -4193506876158148603
+      hash: 1673314075589881887
     :details:
       :flog: complexity is 2.7
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/helmet.rb:38
       class_name: !!null 
       method_name: !!null 
-      hash: 693094170768926308
+      hash: -4609491075132936681
     :details:
       :flog: complexity is 1.7
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/helmet/helpers.rb:14
       class_name: !!null 
       method_name: !!null 
-      hash: 4530055166200276908
+      hash: -1661434347819056032
     :details:
       :flog: complexity is 1.7
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/helmet/helpers.rb:20
       class_name: !!null 
       method_name: !!null 
-      hash: -2923927006109959247
+      hash: -2905745358733150817
     :details:
       :flog: complexity is 1.7
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/helmet.rb:47
       class_name: !!null 
       method_name: !!null 
-      hash: -4383368120366202042
+      hash: 961858008801328754
     :details:
       :flog: complexity is 1.7
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/helmet/faker.rb:13
       class_name: !!null 
       method_name: !!null 
-      hash: -444150410946639645
+      hash: 4483434160235564244
     :details:
       :flog: complexity is 1.2
   - :location: !ruby/object:MetricFu::Location
-      file_path: spec/dummy/config/routes.rb
+      file_path: lib/mobylette.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 927318144355588370
+      hash: 4528179158824028507
     :details:
-      :churn: detected high level of churn (changed 11 times)
+      :churn: detected high level of churn (changed 9 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/controllers/home_controller_spec.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 2990777415223231269
+      hash: 1732106580723361187
     :details:
       :churn: detected high level of churn (changed 14 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: Gemfile.lock
       class_name: !!null 
       method_name: !!null 
-      hash: -2658360214560626758
+      hash: 3553434279509816321
     :details:
-      :churn: detected high level of churn (changed 25 times)
+      :churn: detected high level of churn (changed 24 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/spec_helper.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 2988698903101871947
+      hash: 3790594962655542466
     :details:
-      :churn: detected high level of churn (changed 11 times)
+      :churn: detected high level of churn (changed 10 times)
   - :location: !ruby/object:MetricFu::Location
-      file_path: CHANGELOG.rdoc
+      file_path: lib/mobylette/version.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 907726650346456673
+      hash: 3953504461115096921
     :details:
-      :churn: detected high level of churn (changed 11 times)
+      :churn: detected high level of churn (changed 10 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: Gemfile
       class_name: !!null 
       method_name: !!null 
-      hash: -2579850681359772714
+      hash: 4197975836661622526
     :details:
-      :churn: detected high level of churn (changed 15 times)
+      :churn: detected high level of churn (changed 14 times)
   - :location: !ruby/object:MetricFu::Location
-      file_path: lib/mobylette.rb
+      file_path: CHANGELOG.rdoc
       class_name: !!null 
       method_name: !!null 
-      hash: 2902097992234153945
+      hash: -2052578362939295607
     :details:
       :churn: detected high level of churn (changed 9 times)
-  - :location: !ruby/object:MetricFu::Location
-      file_path: README.rdoc
-      class_name: !!null 
-      method_name: !!null 
-      hash: 1431349458554446935
-    :details:
-      :churn: detected high level of churn (changed 25 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: mobylette.gemspec
       class_name: !!null 
       method_name: !!null 
-      hash: -2417018796942995507
+      hash: -4059570078969681354
     :details:
       :churn: detected high level of churn (changed 6 times)
   - :location: !ruby/object:MetricFu::Location
-      file_path: spec/dummy/app/controllers/home_controller.rb
+      file_path: README.rdoc
       class_name: !!null 
       method_name: !!null 
-      hash: -2766590992867146055
+      hash: -67297282394283518
     :details:
-      :churn: detected high level of churn (changed 5 times)
+      :churn: detected high level of churn (changed 25 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/engine.rb
       class_name: !!null 
       method_name: !!null 
-      hash: -2219910578255906123
+      hash: 3451201447955716247
     :details:
       :churn: detected high level of churn (changed 5 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: TODO.rdoc
       class_name: !!null 
       method_name: !!null 
-      hash: 1275913292394536793
+      hash: 1278676576354349282
+    :details:
+      :churn: detected high level of churn (changed 5 times)
+  - :location: !ruby/object:MetricFu::Location
+      file_path: spec/dummy/app/controllers/home_controller.rb
+      class_name: !!null 
+      method_name: !!null 
+      hash: -3828443205534478400
     :details:
       :churn: detected high level of churn (changed 5 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/controllers/application_controller_spec.rb
       class_name: !!null 
       method_name: !!null 
-      hash: -4201118151676181706
-    :details:
-      :churn: detected high level of churn (changed 4 times)
-  - :location: !ruby/object:MetricFu::Location
-      file_path: lib/mobylette/railtie.rb
-      class_name: !!null 
-      method_name: !!null 
-      hash: 1194662272641818914
+      hash: 2985517239740378301
     :details:
       :churn: detected high level of churn (changed 4 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: .gitignore
       class_name: !!null 
       method_name: !!null 
-      hash: -2872223753917119862
+      hash: -4249128627046490805
     :details:
       :churn: detected high level of churn (changed 4 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/dummy/app/views/home/mobile.mobile.erb
       class_name: !!null 
       method_name: !!null 
-      hash: -682158606322168478
+      hash: 3336086037762988884
     :details:
       :churn: detected high level of churn (changed 4 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/controllers/desktop_only_controller_spec.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 2016161339898859442
+      hash: -980463720288783605
     :details:
       :churn: detected high level of churn (changed 4 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/controllers/actioncontroller_base_spec.rb
       class_name: !!null 
       method_name: !!null 
-      hash: -1384735764081356733
+      hash: -4006702649284098053
     :details:
       :churn: detected high level of churn (changed 4 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/dummy/app/views/home/index.html.erb
       class_name: !!null 
       method_name: !!null 
-      hash: -198877001706090214
+      hash: -2594418930648989699
     :details:
       :churn: detected high level of churn (changed 4 times)
   - :location: !ruby/object:MetricFu::Location
-      file_path: .rvmrc
+      file_path: lib/mobylette/railtie.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 38734827604898099
+      hash: -1798025776207160827
     :details:
-      :churn: detected high level of churn (changed 3 times)
+      :churn: detected high level of churn (changed 4 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/dummy/app/views/home/index.mobile.erb
       class_name: !!null 
       method_name: !!null 
-      hash: -2541893588630438866
+      hash: 1600610182218238085
     :details:
       :churn: detected high level of churn (changed 3 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/dummy/app/views/skip_xhr_request/index.mobile.erb
       class_name: !!null 
       method_name: !!null 
-      hash: 3133166980057204609
+      hash: 2867104924294324383
     :details:
       :churn: detected high level of churn (changed 3 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/dummy/app/controllers/application_controller.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 1815762714317528357
+      hash: 3413572313197162175
     :details:
       :churn: detected high level of churn (changed 3 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: config/initializers/mobile_mime_types.rb
       class_name: !!null 
       method_name: !!null 
-      hash: -3040449330305239507
+      hash: -1312735713075063096
     :details:
       :churn: detected high level of churn (changed 3 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/controllers/default_fallback_controller_spec.rb
       class_name: !!null 
       method_name: !!null 
-      hash: -4411006960615199388
+      hash: 1129941203346659932
     :details:
       :churn: detected high level of churn (changed 3 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/helpers/mobylette_helpers_spec.rb
       class_name: !!null 
       method_name: !!null 
-      hash: -2941057449598524791
+      hash: 1805614660739065944
     :details:
       :churn: detected high level of churn (changed 3 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/dummy/app/views/layouts/application.html.erb
       class_name: !!null 
       method_name: !!null 
-      hash: 3762712877676334670
+      hash: -2711649992759725550
     :details:
       :churn: detected high level of churn (changed 3 times)
   - :location: !ruby/object:MetricFu::Location
       file_path: spec/dummy/app/views/layouts/application.mobile.erb
       class_name: !!null 
       method_name: !!null 
-      hash: 3498641038923987554
+      hash: -1505990141894625749
     :details:
       :churn: detected high level of churn (changed 3 times)
   - :location: !ruby/object:MetricFu::Location
-      file_path: lib/mobylette/version.rb
+      file_path: spec/dummy/config/routes.rb
       class_name: !!null 
       method_name: !!null 
-      hash: 1445829933043298655
+      hash: 895766018273294445
     :details:
       :churn: detected high level of churn (changed 11 times)
   :classes:
@@ -1464,7 +1456,7 @@
       file_path: !!null 
       class_name: Mobylette
       method_name: !!null 
-      hash: -184388675566377438
+      hash: -3514719536078503604
     :details:
       :flog: complexity is 2.4
       :rcov: average uncovered code is 30.6%
@@ -1472,21 +1464,21 @@
       file_path: !!null 
       class_name: RespondToMobileRequests
       method_name: !!null 
-      hash: -2936531175390821490
+      hash: -4143205942905698640
     :details:
       :flog: complexity is 13.3
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb:41
       class_name: ClassMethods
       method_name: !!null 
-      hash: -1648915330025684432
+      hash: -2604300093557671603
     :details:
       :flog: complexity is 9.7
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/respond_to_mobile_requests.rb
       class_name: InstanceMethods
       method_name: !!null 
-      hash: 3532264491969792758
+      hash: 1095613457228641596
     :details:
       :reek: found 3 code smells
       :flog: average complexity is 9.3
@@ -1494,14 +1486,14 @@
       file_path: lib/mobylette/railtie.rb:12
       class_name: initializer
       method_name: !!null 
-      hash: 2836836404794478764
+      hash: -2771838729337645716
     :details:
       :flog: complexity is 6.9
   - :location: !ruby/object:MetricFu::Location
       file_path: lib/mobylette/controllers/helpers.rb
       class_name: Helpers
       method_name: !!null 
-      hash: 4553815458970518075
+      hash: -4411890080177948722
     :details:
       :reek: found 4 code smells
       :flog: average complexity is 5.4
@@ -1509,35 +1501,35 @@
       file_path: !!null 
       class_name: RespondToMobileRequestsMethods
       method_name: !!null 
-      hash: -1893405770017564398
+      hash: -1896374902320267886
     :details:
       :flog: complexity is 5.0
   - :location: !ruby/object:MetricFu::Location
       file_path: !!null 
       class_name: Faker
       method_name: !!null 
-      hash: -2046463643395381733
+      hash: 3789623999430408511
     :details:
       :flog: average complexity is 2.9
   - :location: !ruby/object:MetricFu::Location
       file_path: !!null 
       class_name: Helmet
       method_name: !!null 
-      hash: -913998795778108607
+      hash: 710887859952589738
     :details:
       :flog: average complexity is 2.6
   - :location: !ruby/object:MetricFu::Location
       file_path: !!null 
       class_name: Controllers
       method_name: !!null 
-      hash: 2849270131480924332
+      hash: 928191173333107741
     :details:
       :flog: complexity is 2.6
   - :location: !ruby/object:MetricFu::Location
       file_path: !!null 
       class_name: main
       method_name: !!null 
-      hash: 2840721920011637065
+      hash: -2717060784850091140
     :details:
       :flog: complexity is 2.2
   :methods:
@@ -1546,7 +1538,7 @@
       class_name: Mobylette
       method_name: Mobylette#respond_to_mobile_requests
       simple_method_name: ! '#respond_to_mobile_requests'
-      hash: -2090143976624046225
+      hash: 2232256992759341422
     :details:
       :rcov: uncovered code is 50.0%
   - :location: !ruby/object:MetricFu::Location
@@ -1554,7 +1546,7 @@
       class_name: Mobylette
       method_name: Mobylette#processing_xhr_requests?
       simple_method_name: ! '#processing_xhr_requests?'
-      hash: 1803801709861139909
+      hash: 1383196623954680038
     :details:
       :rcov: uncovered code is 33.3%
   - :location: !ruby/object:MetricFu::Location
@@ -1562,7 +1554,7 @@
       class_name: Mobylette
       method_name: Mobylette#set_session_override
       simple_method_name: ! '#set_session_override'
-      hash: -3162279552600772722
+      hash: -1902532466513633112
     :details:
       :rcov: uncovered code is 33.3%
   - :location: !ruby/object:MetricFu::Location
@@ -1570,7 +1562,7 @@
       class_name: Mobylette
       method_name: Mobylette#respond_as_mobile?
       simple_method_name: ! '#respond_as_mobile?'
-      hash: -3334519441525575759
+      hash: -951472943044655903
     :details:
       :rcov: uncovered code is 33.3%
   - :location: !ruby/object:MetricFu::Location
@@ -1578,7 +1570,7 @@
       class_name: Mobylette
       method_name: Mobylette#is_mobile_request?
       simple_method_name: ! '#is_mobile_request?'
-      hash: -2542898027877820600
+      hash: -429543571787951085
     :details:
       :rcov: average uncovered code is 33.3%
   - :location: !ruby/object:MetricFu::Location
@@ -1586,7 +1578,7 @@
       class_name: Mobylette
       method_name: Mobylette#is_mobile_view?
       simple_method_name: ! '#is_mobile_view?'
-      hash: -3790847821052864041
+      hash: -3025061136880507536
     :details:
       :rcov: uncovered code is 33.3%
   - :location: !ruby/object:MetricFu::Location
@@ -1594,7 +1586,7 @@
       class_name: Mobylette
       method_name: Mobylette#force_mobile_by_session?
       simple_method_name: ! '#force_mobile_by_session?'
-      hash: -3297851398718880089
+      hash: 2901848271869065840
     :details:
       :rcov: uncovered code is 33.3%
   - :location: !ruby/object:MetricFu::Location
@@ -1602,7 +1594,7 @@
       class_name: Mobylette
       method_name: Mobylette#skip_mobile_param_not_present?
       simple_method_name: ! '#skip_mobile_param_not_present?'
-      hash: -2393862075930505371
+      hash: -348551881367758683
     :details:
       :rcov: uncovered code is 33.3%
   - :location: !ruby/object:MetricFu::Location
@@ -1610,7 +1602,7 @@
       class_name: InstanceMethods
       method_name: InstanceMethods#handle_mobile
       simple_method_name: ! '#handle_mobile'
-      hash: -2872895724820254002
+      hash: -94850649829887104
     :details:
       :reek: found 3 code smells
       :flog: complexity is 31.6
@@ -1619,7 +1611,7 @@
       class_name: Mobylette
       method_name: Mobylette#force_mobile_request_agent
       simple_method_name: ! '#force_mobile_request_agent'
-      hash: -1562729351662051378
+      hash: -2444117430293198039
     :details:
       :rcov: average uncovered code is 29.2%
   - :location: !ruby/object:MetricFu::Location
@@ -1627,7 +1619,7 @@
       class_name: Mobylette
       method_name: Mobylette#reset_test_request_agent
       simple_method_name: ! '#reset_test_request_agent'
-      hash: -3124389193526649291
+      hash: -2758405928602930333
     :details:
       :rcov: average uncovered code is 29.2%
   - :location: !ruby/object:MetricFu::Location
@@ -1635,7 +1627,7 @@
       class_name: Mobylette
       method_name: Mobylette#mobylette_javascript_include_tag
       simple_method_name: ! '#mobylette_javascript_include_tag'
-      hash: 4212443114425580325
+      hash: -867040808517601338
     :details:
       :rcov: uncovered code is 25.0%
   - :location: !ruby/object:MetricFu::Location
@@ -1643,7 +1635,7 @@
       class_name: Mobylette
       method_name: Mobylette#mobylette_stylesheet_link_tag
       simple_method_name: ! '#mobylette_stylesheet_link_tag'
-      hash: -3999190536313349509
+      hash: -2165562898652289736
     :details:
       :rcov: uncovered code is 25.0%
   - :location: !ruby/object:MetricFu::Location
@@ -1651,7 +1643,7 @@
       class_name: Mobylette
       method_name: Mobylette#insert_faker
       simple_method_name: ! '#insert_faker'
-      hash: -1607545412202004905
+      hash: -4195239469667007352
     :details:
       :rcov: uncovered code is 25.0%
   - :location: !ruby/object:MetricFu::Location
@@ -1659,7 +1651,7 @@
       class_name: Mobylette
       method_name: Mobylette#sulfix_mobile_assets
       simple_method_name: ! '#sulfix_mobile_assets'
-      hash: -1678457940758815842
+      hash: 1601024089222423704
     :details:
       :rcov: uncovered code is 22.2%
   - :location: !ruby/object:MetricFu::Location
@@ -1667,7 +1659,7 @@
       class_name: Mobylette
       method_name: Mobylette#handle_mobile
       simple_method_name: ! '#handle_mobile'
-      hash: -1725248618762251142
+      hash: 2871994424932493893
     :details:
       :rcov: uncovered code is 20.0%
   - :location: !ruby/object:MetricFu::Location
@@ -1675,7 +1667,7 @@
       class_name: InstanceMethods
       method_name: InstanceMethods#respond_as_mobile?
       simple_method_name: ! '#respond_as_mobile?'
-      hash: -3259145740938240456
+      hash: -2716096967112040871
     :details:
       :flog: complexity is 14.0
   - :location: !ruby/object:MetricFu::Location
@@ -1683,7 +1675,7 @@
       class_name: RespondToMobileRequests
       method_name: RespondToMobileRequests#none
       simple_method_name: ! '#none'
-      hash: -1561622681975817198
+      hash: 2111599848352064213
     :details:
       :flog: complexity is 13.3
   - :location: !ruby/object:MetricFu::Location
@@ -1691,7 +1683,7 @@
       class_name: InstanceMethods
       method_name: InstanceMethods#is_mobile_view?
       simple_method_name: ! '#is_mobile_view?'
-      hash: 893598393171205708
+      hash: -2232072594804172948
     :details:
       :flog: complexity is 12.6
   - :location: !ruby/object:MetricFu::Location
@@ -1699,7 +1691,7 @@
       class_name: Helpers
       method_name: Helpers#mobylette_stylesheet_link_tag
       simple_method_name: ! '#mobylette_stylesheet_link_tag'
-      hash: 2581699423367759976
+      hash: -3798113267298902611
     :details:
       :flog: complexity is 9.8
   - :location: !ruby/object:MetricFu::Location
@@ -1707,7 +1699,7 @@
       class_name: Helpers
       method_name: Helpers#mobylette_javascript_include_tag
       simple_method_name: ! '#mobylette_javascript_include_tag'
-      hash: 3274651197095707068
+      hash: 2705471523892936230
     :details:
       :flog: complexity is 9.8
   - :location: !ruby/object:MetricFu::Location
@@ -1715,7 +1707,7 @@
       class_name: ClassMethods
       method_name: ClassMethods#respond_to_mobile_requests
       simple_method_name: ! '#respond_to_mobile_requests'
-      hash: -3708128455568992771
+      hash: 2658264524040732663
     :details:
       :flog: complexity is 9.7
   - :location: !ruby/object:MetricFu::Location
@@ -1723,7 +1715,7 @@
       class_name: initializer
       method_name: initializer#mobylette
       simple_method_name: ! '#mobylette'
-      hash: 1238739109672839512
+      hash: 248362546722567846
     :details:
       :flog: complexity is 6.9
   - :location: !ruby/object:MetricFu::Location
@@ -1731,7 +1723,7 @@
       class_name: InstanceMethods
       method_name: InstanceMethods#is_mobile_request?
       simple_method_name: ! '#is_mobile_request?'
-      hash: -380519079597301905
+      hash: -453712335433733669
     :details:
       :flog: complexity is 6.8
   - :location: !ruby/object:MetricFu::Location
@@ -1739,7 +1731,7 @@
       class_name: InstanceMethods
       method_name: InstanceMethods#processing_xhr_requests?
       simple_method_name: ! '#processing_xhr_requests?'
-      hash: 1158149414901059709
+      hash: -3092359455024818455
     :details:
       :flog: complexity is 6.6
   - :location: !ruby/object:MetricFu::Location
@@ -1747,7 +1739,7 @@
       class_name: Helpers
       method_name: Helpers#insert_faker
       simple_method_name: ! '#insert_faker'
-      hash: 985626177914053074
+      hash: -3767097650779621506
     :details:
       :reek: found 1 code smells
       :flog: complexity is 6.3
@@ -1756,7 +1748,7 @@
       class_name: Helpers
       method_name: Helpers#sulfix_mobile_assets
       simple_method_name: ! '#sulfix_mobile_assets'
-      hash: 3008237274158964638
+      hash: -1144742731264103511
     :details:
       :reek: found 3 code smells
       :flog: complexity is 5.1
@@ -1765,7 +1757,7 @@
       class_name: RespondToMobileRequestsMethods
       method_name: RespondToMobileRequestsMethods#none
       simple_method_name: ! '#none'
-      hash: 1560552443180616924
+      hash: -2567043033020363111
     :details:
       :flog: complexity is 5.0
   - :location: !ruby/object:MetricFu::Location
@@ -1773,7 +1765,7 @@
       class_name: InstanceMethods
       method_name: InstanceMethods#force_mobile_by_session?
       simple_method_name: ! '#force_mobile_by_session?'
-      hash: 3240798282853785145
+      hash: -2915235273310992133
     :details:
       :flog: complexity is 4.8
   - :location: !ruby/object:MetricFu::Location
@@ -1781,7 +1773,7 @@
       class_name: InstanceMethods
       method_name: InstanceMethods#skip_mobile_param_not_present?
       simple_method_name: ! '#skip_mobile_param_not_present?'
-      hash: -1134342472592883060
+      hash: 1555215922994150817
     :details:
       :flog: complexity is 4.8
   - :location: !ruby/object:MetricFu::Location
@@ -1789,7 +1781,7 @@
       class_name: Faker
       method_name: Faker#none
       simple_method_name: ! '#none'
-      hash: 3082415489786492575
+      hash: 709980618706364930
     :details:
       :flog: complexity is 4.6
   - :location: !ruby/object:MetricFu::Location
@@ -1797,7 +1789,7 @@
       class_name: Helpers
       method_name: Helpers#none
       simple_method_name: ! '#none'
-      hash: 203650023066994193
+      hash: -1722221976866089468
     :details:
       :flog: average complexity is 4.5
   - :location: !ruby/object:MetricFu::Location
@@ -1805,7 +1797,7 @@
       class_name: Helmet
       method_name: Helmet#none
       simple_method_name: ! '#none'
-      hash: -761196194745174552
+      hash: 1937165690341475318
     :details:
       :flog: complexity is 4.4
   - :location: !ruby/object:MetricFu::Location
@@ -1813,7 +1805,7 @@
       class_name: Helmet
       method_name: Helmet#force_mobile_request_agent
       simple_method_name: ! '#force_mobile_request_agent'
-      hash: 2761952865825423726
+      hash: 2222171876495733882
     :details:
       :flog: complexity is 2.7
   - :location: !ruby/object:MetricFu::Location
@@ -1821,7 +1813,7 @@
       class_name: Controllers
       method_name: Controllers#none
       simple_method_name: ! '#none'
-      hash: -204332927750879341
+      hash: 4311220280769282204
     :details:
       :flog: complexity is 2.6
   - :location: !ruby/object:MetricFu::Location
@@ -1829,7 +1821,7 @@
       class_name: Mobylette
       method_name: Mobylette#none
       simple_method_name: ! '#none'
-      hash: 1016933292939111523
+      hash: -4057404516616255279
     :details:
       :flog: complexity is 2.4
   - :location: !ruby/object:MetricFu::Location
@@ -1837,7 +1829,7 @@
       class_name: main
       method_name: main#none
       simple_method_name: ! '#none'
-      hash: -113238723668918081
+      hash: -1010855753795427138
     :details:
       :flog: complexity is 2.2
   - :location: !ruby/object:MetricFu::Location
@@ -1845,7 +1837,7 @@
       class_name: Helpers
       method_name: Helpers#force_mobile_request_agent
       simple_method_name: ! '#force_mobile_request_agent'
-      hash: 4023942789463386060
+      hash: -2048751881137914404
     :details:
       :flog: complexity is 1.7
   - :location: !ruby/object:MetricFu::Location
@@ -1853,7 +1845,7 @@
       class_name: Helmet
       method_name: Helmet#reset_test_request_agent
       simple_method_name: ! '#reset_test_request_agent'
-      hash: -1262484625181626979
+      hash: -3413846118969530282
     :details:
       :flog: complexity is 1.7
   - :location: !ruby/object:MetricFu::Location
@@ -1861,7 +1853,7 @@
       class_name: Helpers
       method_name: Helpers#reset_test_request_agent
       simple_method_name: ! '#reset_test_request_agent'
-      hash: -4559405188916346345
+      hash: 2820864905349304774
     :details:
       :flog: complexity is 1.7
   - :location: !ruby/object:MetricFu::Location
@@ -1869,7 +1861,7 @@
       class_name: Helmet
       method_name: Helmet#set_session_override
       simple_method_name: ! '#set_session_override'
-      hash: -2843506844633563091
+      hash: 1817804119537097180
     :details:
       :flog: complexity is 1.7
   - :location: !ruby/object:MetricFu::Location
@@ -1877,7 +1869,7 @@
       class_name: InstanceMethods
       method_name: InstanceMethods#none
       simple_method_name: ! '#none'
-      hash: -3280487816955124512
+      hash: -4357227102220288898
     :details:
       :flog: average complexity is 1.3
   - :location: !ruby/object:MetricFu::Location
@@ -1885,6 +1877,6 @@
       class_name: Faker
       method_name: Faker#is_mobile_request?
       simple_method_name: ! '#is_mobile_request?'
-      hash: 1510944351410370417
+      hash: -72397242857508657
     :details:
       :flog: complexity is 1.2
