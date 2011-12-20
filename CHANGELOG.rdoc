@@ -1,5 +1,9 @@
 = Change Log
 
+== 1.5
+	* Removed rails dependency. Now mobylette depends on actionpack only.
+	* All calls for autoload were removed, as it is deprecated now.
+
 == 1.4.2
   * Creating a initializer to alias to_mobile => to_html (responders)
 

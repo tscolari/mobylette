@@ -2,12 +2,12 @@
 # Rails automatic mobile request support
 module Mobylette
   module Controllers
-    autoload "RespondToMobileRequests", "mobylette/controllers/respond_to_mobile_requests"
-    autoload "Helpers"                , "mobylette/controllers/helpers"
+    require "mobylette/controllers/respond_to_mobile_requests"
+    require "mobylette/controllers/helpers"
   end
 
   # TestHelpers
-  autoload "Helmet"                   , "mobylette/helmet"
+  # require "mobylette/helmet"
 
   require 'mobylette/railtie'
 end

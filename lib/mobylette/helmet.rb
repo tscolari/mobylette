@@ -6,8 +6,8 @@ module Mobylette
   # documentation about how to make this test wide.
   module Helmet
     extend ActiveSupport::Concern
-    autoload "Helpers", "mobylette/helmet/helpers"
-    autoload "Faker"  , "mobylette/helmet/faker"
+    require "mobylette/helmet/helpers"
+    require "mobylette/helmet/faker"
 
     # Force the request for the user_agent
     #

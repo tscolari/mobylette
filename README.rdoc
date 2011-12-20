@@ -1,5 +1,7 @@
 http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg
 
+    Note: At next version (1.6) only ruby >= 1.9 will be supported.
+
 = Mobylette http://travis-ci.org/tscolari/mobylette.png
 
 This gem works by adding the 'mobile' format to your rails application. Whenever a request come from a mobile device, if you have your controller mobile enabled, it shall render the view.mobile.erb instead of the view.html.erb (or haml, or whatever).
@@ -96,10 +98,12 @@ Don't drive your mobylette without your Helmet! It's safer to do tests!
 
 For testing, include the Mobylette::Helmet module to your test/test_helpers.rb:
 
+    require 'mobylette/helmet'
     include Mobylette::Helmet
 
 For RSpec: add to your spec/spec_helpers.rb or create a spec/support/mobylette.rb with the following:
 
+    require 'mobylette/helmet' 
     RSpec.configure do |config|
       config.include Mobylette::Helmet, :type => :controller
     end
