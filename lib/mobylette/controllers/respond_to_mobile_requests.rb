@@ -28,21 +28,21 @@ module Mobylette
         # or make it application wide calling it from the ApplicationController
         #
         # Options:
-        # * :fall_back => :html
+        # * fall_back: :html
         #     You may pass a fall_back option to the method, it will force the render
         #     to look for that other format, in case there is not a .mobile file for the view.
         #     By default, it will fall back to the format of the original request.
-        #     If you don't want fall back at all, pass :fall_back => false
-        # * :skip_xhr_requests => true/false
+        #     If you don't want fall back at all, pass fall_back: false
+        # * skip_xhr_requests: true/false
         #     By default this is set to true. When a xhr request enters in, it will skip the
         #     mobile verification. This will let your ajax calls to work as intended.
         #     You may disable this (actually you will have to) if you are using JQuery Mobile, or
-        #     other js framework that uses ajax. To disable, set :skip_xhr_requests => false
+        #     other js framework that uses ajax. To disable, set skip_xhr_requests: false
         def respond_to_mobile_requests(options = {})
           return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
 
           options.reverse_merge!({
-            :skip_xhr_requests        => true
+            skip_xhr_requests: true
           })
 
           cattr_accessor :mobylette_options

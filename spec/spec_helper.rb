@@ -29,7 +29,7 @@ RSpec.configure do |config|
   require 'rspec/expectations'
   config.include RSpec::Matchers
 
-  config.include Mobylette::Helmet, :type => :controller
+  config.include Mobylette::Helmet, type: :controller
 
   # == Mock Framework
   config.mock_with :rspec
