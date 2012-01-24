@@ -55,22 +55,19 @@ module Mobylette
         end
       end
 
-      module InstanceMethods
+      private
 
-        private
+      # :doc:
+      # This helper returns exclusively if the request's  user_aget is from a mobile
+      # device or not.
+      def is_mobile_request?
+        request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
+      end
 
-        # :doc:
-        # This helper returns exclusively if the request's  user_aget is from a mobile
-        # device or not.
-        def is_mobile_request?
-          request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
-        end
-
-        # :doc:
-        # This helper returns exclusively if the current format is mobile or not
-        def is_mobile_view?
-          true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
-        end
+      # :doc:
+      # This helper returns exclusively if the current format is mobile or not
+      def is_mobile_view?
+        true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
       end
     end
 
@@ -85,46 +82,44 @@ module Mobylette
         before_filter :handle_mobile
       end
 
-      module InstanceMethods
-        private
+      private
 
-        # Returns true if this request should be treated as a mobile request
-        def respond_as_mobile?
-          processing_xhr_requests? and skip_mobile_param_not_present? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))
-        end
+      # Returns true if this request should be treated as a mobile request
+      def respond_as_mobile?
+        processing_xhr_requests? and skip_mobile_param_not_present? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))
+      end
 
-        # Returns true if the visitor has de force_mobile session
-        def force_mobile_by_session?
-          session[:mobylette_override] == :force_mobile
-        end
+      # Returns true if the visitor has de force_mobile session
+      def force_mobile_by_session?
+        session[:mobylette_override] == :force_mobile
+      end
 
-        # Returns true when ?skip_mobile=true is not passed to the request
-        def skip_mobile_param_not_present?
-          params[:skip_mobile] != 'true'
-        end
+      # Returns true when ?skip_mobile=true is not passed to the request
+      def skip_mobile_param_not_present?
+        params[:skip_mobile] != 'true'
+      end
 
-        # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or
-        # or when this is a non xhr request
-        def processing_xhr_requests?
-          not self.mobylette_options[:skip_xhr_requests] && request.xhr?
-        end
+      # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or
+      # or when this is a non xhr request
+      def processing_xhr_requests?
+        not self.mobylette_options[:skip_xhr_requests] && request.xhr?
+      end
 
-        # :doc:
-        # Changes the request.form to :mobile, when the request is from
-        # a mobile device
-        def handle_mobile
-          return if session[:mobylette_override] == :ignore_mobile
-          if respond_as_mobile?
+      # :doc:
+      # Changes the request.form to :mobile, when the request is from
+      # a mobile device
+      def handle_mobile
+        return if session[:mobylette_override] == :ignore_mobile
+        if respond_as_mobile?
 
-            original_format   = request.format.to_sym
-            request.format    = :mobile
-            if self.mobylette_options[:fall_back] != false
-              request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)
-            end
+          original_format   = request.format.to_sym
+          request.format    = :mobile
+          if self.mobylette_options[:fall_back] != false
+            request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)
           end
         end
-
       end
+
     end
   end
 end
