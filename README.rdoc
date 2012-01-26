@@ -1,6 +1,7 @@
 http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg
 
-    Note: At next version (1.6) only ruby >= 1.9 will be supported.
+  Mobylette 1.6+ only supports Ruby 1.9.2+
+  For Ruby 1.8.7 support, please use version > 1.6
 
 = Mobylette http://travis-ci.org/tscolari/mobylette.png
 
