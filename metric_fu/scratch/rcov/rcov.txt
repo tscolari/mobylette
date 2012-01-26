@@ -1,7 +1,7 @@
 ** WARNING: Ruby 1.9 Support is experimental at best. Don't expect correct results! **
 .............................................
 
-Finished in 0.89781 seconds
+Finished in 0.9142 seconds
 45 examples, 0 failures
 ================================================================================
 lib/mobylette.rb
@@ -10,13 +10,13 @@ lib/mobylette.rb
 !! # Rails automatic mobile request support
 !! module Mobylette
      module Controllers
-       autoload "RespondToMobileRequests", "mobylette/controllers/respond_to_mobile_requests"
-       autoload "Helpers"                , "mobylette/controllers/helpers"
+       require "mobylette/controllers/respond_to_mobile_requests"
+       require "mobylette/controllers/helpers"
      end
    
 !!   # TestHelpers
-!!   autoload "Helmet"                   , "mobylette/helmet"
-   
+!!   # require "mobylette/helmet"
+!! 
 !!   require 'mobylette/railtie'
    end
    
@@ -34,8 +34,8 @@ lib/mobylette/helmet.rb
 !!   # documentation about how to make this test wide.
 !!   module Helmet
        extend ActiveSupport::Concern
-       autoload "Helpers", "mobylette/helmet/helpers"
-       autoload "Faker"  , "mobylette/helmet/faker"
+       require "mobylette/helmet/helpers"
+       require "mobylette/helmet/faker"
    
 !!     # Force the request for the user_agent
 !!     #
@@ -111,21 +111,21 @@ lib/mobylette/controllers/respond_to_mobile_requests.rb
 !!         # or make it application wide calling it from the ApplicationController
 !!         #
 !!         # Options:
-!!         # * :fall_back => :html
+!!         # * fall_back: :html
 !!         #     You may pass a fall_back option to the method, it will force the render
 !!         #     to look for that other format, in case there is not a .mobile file for the view.
 !!         #     By default, it will fall back to the format of the original request.
-!!         #     If you don't want fall back at all, pass :fall_back => false
-!!         # * :skip_xhr_requests => true/false
+!!         #     If you don't want fall back at all, pass fall_back: false
+!!         # * skip_xhr_requests: true/false
 !!         #     By default this is set to true. When a xhr request enters in, it will skip the
 !!         #     mobile verification. This will let your ajax calls to work as intended.
 !!         #     You may disable this (actually you will have to) if you are using JQuery Mobile, or
-!!         #     other js framework that uses ajax. To disable, set :skip_xhr_requests => false
+!!         #     other js framework that uses ajax. To disable, set skip_xhr_requests: false
 !!         def respond_to_mobile_requests(options = {})
              return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
    
              options.reverse_merge!({
-               :skip_xhr_requests        => true
+               skip_xhr_requests: true
              })
 !! 
 !!           cattr_accessor :mobylette_options
@@ -138,22 +138,19 @@ lib/mobylette/controllers/respond_to_mobile_requests.rb
            end
          end
    
-!!       module InstanceMethods
+!!       private
    
-!!         private
+!!       # :doc:
+!!       # This helper returns exclusively if the request's  user_aget is from a mobile
+!!       # device or not.
+!!       def is_mobile_request?
+           request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
+         end
    
-!!         # :doc:
-!!         # This helper returns exclusively if the request's  user_aget is from a mobile
-!!         # device or not.
-!!         def is_mobile_request?
-             request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
-           end
-   
-!!         # :doc:
-!!         # This helper returns exclusively if the current format is mobile or not
-!!         def is_mobile_view?
-             true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
-           end
+!!       # :doc:
+!!       # This helper returns exclusively if the current format is mobile or not
+!!       def is_mobile_view?
+           true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
          end
        end
    
@@ -168,46 +165,44 @@ lib/mobylette/controllers/respond_to_mobile_requests.rb
            before_filter :handle_mobile
          end
 !! 
-!!       module InstanceMethods
-           private
+!!       private
    
-!!         # Returns true if this request should be treated as a mobile request
-!!         def respond_as_mobile?
-             processing_xhr_requests? and skip_mobile_param_not_present? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))
-           end
+!!       # Returns true if this request should be treated as a mobile request
+!!       def respond_as_mobile?
+           processing_xhr_requests? and skip_mobile_param_not_present? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))
+         end
    
-!!         # Returns true if the visitor has de force_mobile session
-!!         def force_mobile_by_session?
-             session[:mobylette_override] == :force_mobile
-           end
+!!       # Returns true if the visitor has de force_mobile session
+!!       def force_mobile_by_session?
+           session[:mobylette_override] == :force_mobile
+         end
    
-!!         # Returns true when ?skip_mobile=true is not passed to the request
-!!         def skip_mobile_param_not_present?
-             params[:skip_mobile] != 'true'
-           end
+!!       # Returns true when ?skip_mobile=true is not passed to the request
+!!       def skip_mobile_param_not_present?
+           params[:skip_mobile] != 'true'
+         end
    
-!!         # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or
-!!         # or when this is a non xhr request
-!!         def processing_xhr_requests?
-             not self.mobylette_options[:skip_xhr_requests] && request.xhr?
-           end
+!!       # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or
+!!       # or when this is a non xhr request
+!!       def processing_xhr_requests?
+           not self.mobylette_options[:skip_xhr_requests] && request.xhr?
+         end
    
-!!         # :doc:
-!!         # Changes the request.form to :mobile, when the request is from
-!!         # a mobile device
-!!         def handle_mobile
-             return if session[:mobylette_override] == :ignore_mobile
-             if respond_as_mobile?
+!!       # :doc:
+!!       # Changes the request.form to :mobile, when the request is from
+!!       # a mobile device
+!!       def handle_mobile
+           return if session[:mobylette_override] == :ignore_mobile
+           if respond_as_mobile?
    
-!!             original_format   = request.format.to_sym
-               request.format    = :mobile
-               if self.mobylette_options[:fall_back] != false
-                 request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)
-               end
+!!           original_format   = request.format.to_sym
+             request.format    = :mobile
+             if self.mobylette_options[:fall_back] != false
+               request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)
              end
            end
-   
          end
+   
        end
      end
    end
