@@ -46,7 +46,7 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
 
   This works like the stylesheet_link_tag helper, but when the request comes from a mobile device, it adds "_mobile" to the stylesheets before calling stylesheet_link_tag
 
-* ==== mobylette_javascript_include_tag(*soruces)
+* ==== mobylette_javascript_include_tag(*sources)
 
   Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
 
