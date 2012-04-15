@@ -12,6 +12,11 @@ module Mobylette
 
       before_filter :handle_mobile
 
+      cattr_accessor :mobylette_options
+      @@mobylette_options = Hash.new
+      @@mobylette_options[:skip_xhr_requests] = true
+      @@mobylette_options[:fall_back]         = nil
+
       # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)
       MOBILE_USER_AGENTS =  'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
         'audiovox|motorola|samsung|telit|upg1|windows ce|ucweb|astel|plucker|' +
@@ -51,12 +56,8 @@ module Mobylette
       # end
       #
       def mobylette_config
-        yield(self::MobyletteConfiguration)
+        yield(self.mobylette_options)
       end
-    end
-
-    def mobylette_options(option)
-      self.class::MobyletteConfiguration.send(option)
     end
 
     private
@@ -107,7 +108,7 @@ module Mobylette
     # not skip_xhr_requests.
     #
     def stop_processing_because_xhr?
-      if request.xhr? && mobylette_options(:skip_xhr_requests)
+      if request.xhr? && self.mobylette_options[:skip_xhr_requests]
         true
       else
         false
@@ -123,8 +124,8 @@ module Mobylette
 
         original_format   = request.format.to_sym
         request.format    = :mobile
-        if mobylette_options(:fall_back) != false
-          request.formats << Mime::Type.new(mobylette_options(:fall_back) || original_format)
+        if self.mobylette_options[:fall_back] != false
+          request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)
         end
       end
     end
