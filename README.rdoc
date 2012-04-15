@@ -49,7 +49,7 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
 
 == Configuration
 
-You can set the configuration with the mobyllete_config method:
+You can set the configuration with the mobylete_config method:
 
     mobylette_config do |config|
       config[:fall_back] = nil
