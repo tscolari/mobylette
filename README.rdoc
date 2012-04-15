@@ -47,10 +47,6 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
   * is_mobile_request?  -> Exclusively checks for the device from where the request were made
   * is_mobile_view?     -> Exclusively checks for the view format been rendered
 
-* ==== stylesheet and javascript helpers - REMOVED on 1.9.0
-
-  Stylesheet and javascript helpers were removed from the gem. There is no need for them if you can build them by yourself using the other helpers.
-
 == Configuration
 
 You can set the configuration with the mobyllete_config method:
