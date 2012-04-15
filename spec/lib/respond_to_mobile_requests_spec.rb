@@ -5,18 +5,28 @@ module Mobylette
 
     class MockController < ActionController::Base
       include Mobylette::RespondToMobileRequests
+
+      mobylette_config do |config|
+        config.fall_back = :something
+        config.skip_xhr_requests = :something
+      end
     end
 
     subject { MockController.new }
 
     describe "#mobilette_config" do
+      it "should have options configurated" do
+        subject.mobylette_options(:fall_back).should == :something
+        subject.mobylette_options(:fallskip_xhr_requests_back).should == :something
+      end
+
       it "should set mobylette_options" do
-        subject.mobylette_config do |config|
-          config[:fall_back] = :js
-          config[:skip_xhr_requests] = false
+        subject.class.mobylette_config do |config|
+          config.fall_back = :js
+          config.skip_xhr_requests = false
         end
-        subject.mobylette_options[:fall_back].should == :js
-        subject.mobylette_options[:skip_xhr_requests].should be_false
+        subject.mobylette_options(:fall_back).should == :js
+        subject.mobylette_options(:skip_xhr_requests).should be_false
       end
     end
 
@@ -82,12 +92,12 @@ module Mobylette
         end
 
         it "should return false if :skip_xhr_requests is false" do
-          subject.mobylette_options[:skip_xhr_requests] = false
+          subject::MobyletteConfiguration.skip_xhr_requests = false
           subject.send(:stop_processing_because_xhr?).should be_false
         end
 
         it "should return true if :skip_xhr_requests is true" do
-          subject.mobylette_options[:skip_xhr_requests] = true
+          subject::MobyletteConfiguration.skip_xhr_requests = true
           subject.send(:stop_processing_because_xhr?).should be_true
         end
 
@@ -99,12 +109,12 @@ module Mobylette
         end
 
         it "should return false when :skip_xhr_requests is false" do
-          subject.mobylette_options[:skip_xhr_requests] = false
+          subject::MobyletteConfiguration.skip_xhr_requests = false
           subject.send(:stop_processing_because_xhr?).should be_false
         end
 
         it "should return false when :skip_xhr_requests is true" do
-          subject.mobylette_options[:skip_xhr_requests] = true
+          subject::MobyletteConfiguration.skip_xhr_requests = true
           subject.send(:stop_processing_because_xhr?).should be_false
         end
 
@@ -217,7 +227,9 @@ module Mobylette
           @formats = []
           @request.stub(:formats).and_return(@formats)
           subject.stub(:request).and_return(@request)
-          subject.mobylette_options[:fall_back] = false
+          subject.class.mobylette_config do |config|
+            config.fall_back = false
+          end
         end
 
         it "should set request.format to :mobile" do
@@ -226,13 +238,13 @@ module Mobylette
         end
 
         it "should have a fall back to the original format when fall_back is nil" do
-          subject.mobylette_options[:fall_back] = nil
+          subject::MobyletteConfiguration.fall_back = nil
           subject.send(:handle_mobile)
           @formats.include?(Mime::Type.new :old_format).should be_true
         end
 
         it "should have a fall back to :html when fall_back is :html" do
-          subject.mobylette_options[:fall_back] = :html
+          subject::MobyletteConfiguration.fall_back = :html
           subject.send(:handle_mobile)
           @formats.include?(Mime::Type.new :html).should be_true
         end
