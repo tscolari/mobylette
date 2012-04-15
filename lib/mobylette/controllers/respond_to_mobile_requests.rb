@@ -12,102 +12,112 @@ module Mobylette
         helper_method :is_mobile_request?
         helper_method :is_mobile_view?
 
+        before_filter :handle_mobile
+
+        cattr_accessor :mobylette_options
+        @@mobylette_options = Hash.new
+        @@mobylette_options[:skip_xhr_requests] = true
+        @@mobylette_options[:fall_back]         = nil
+
         # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)
         MOBILE_USER_AGENTS =  'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
-                              'audiovox|motorola|samsung|telit|upg1|windows ce|ucweb|astel|plucker|' +
-                              'x320|x240|j2me|sgh|portable|sprint|docomo|kddi|softbank|android|mmp|' +
-                              'pdxgw|netfront|xiino|vodafone|portalmmm|sagem|mot-|sie-|ipod|up\\.b|' +
-                              'webos|amoi|novarra|cdm|alcatel|pocket|iphone|mobileexplorer|mobile'
+          'audiovox|motorola|samsung|telit|upg1|windows ce|ucweb|astel|plucker|' +
+          'x320|x240|j2me|sgh|portable|sprint|docomo|kddi|softbank|android|mmp|' +
+          'pdxgw|netfront|xiino|vodafone|portalmmm|sagem|mot-|sie-|ipod|up\\.b|' +
+          'webos|amoi|novarra|cdm|alcatel|pocket|iphone|mobileexplorer|mobile'
       end
 
-      module ClassMethods
 
-        # This method enables the controller do handle mobile requests
-        #
-        # You must add this to every controller you want to respond differently to mobile devices,
-        # or make it application wide calling it from the ApplicationController
-        #
-        # Options:
-        # * fall_back: :html
-        #     You may pass a fall_back option to the method, it will force the render
-        #     to look for that other format, in case there is not a .mobile file for the view.
-        #     By default, it will fall back to the format of the original request.
-        #     If you don't want fall back at all, pass fall_back: false
-        # * skip_xhr_requests: true/false
-        #     By default this is set to true. When a xhr request enters in, it will skip the
-        #     mobile verification. This will let your ajax calls to work as intended.
-        #     You may disable this (actually you will have to) if you are using JQuery Mobile, or
-        #     other js framework that uses ajax. To disable, set skip_xhr_requests: false
-        def respond_to_mobile_requests(options = {})
-          return if self.included_modules.include?(Mobylette::Controllers::RespondToMobileRequestsMethods)
-
-          options.reverse_merge!({
-            skip_xhr_requests: true
-          })
-
-          cattr_accessor :mobylette_options
-          # works on 1.9, but not on 1.8
-          #valid_options = [:fall_back, :skip_xhr_requests]
-          #self.mobylette_options = options.reject {|option| !valid_options.include?(option)}
-          self.mobylette_options = options
-
-          self.send(:include, Mobylette::Controllers::RespondToMobileRequestsMethods)
-        end
+      # This method enables the controller do handle mobile requests
+      #
+      # You must add this to every controller you want to respond differently to mobile devices,
+      # or make it application wide calling it from the ApplicationController
+      #
+      # Possible options:
+      # * fall_back: :html
+      #     You may pass a fall_back option to the method, it will force the render
+      #     to look for that other format, in case there is not a .mobile file for the view.
+      #     By default, it will fall back to the format of the original request.
+      #     If you don't want fall back at all, pass fall_back: false
+      # * skip_xhr_requests: true/false
+      #     By default this is set to true. When a xhr request enters in, it will skip the
+      #     mobile verification. This will let your ajax calls to work as intended.
+      #     You may disable this (actually you will have to) if you are using JQuery Mobile, or
+      #     other js framework that uses ajax. To disable, set skip_xhr_requests: false
+      #
+      # Example Usage:
+      #
+      # class ApplicationController...
+      #   ...
+      #   mobylette_config do |config|
+      #     config[:fall_back] = :html
+      #     config[:skip_xhr_requests] = false
+      #   end
+      #   ...
+      # end
+      #
+      def mobylette_config
+        yield(@@mobylette_options)
       end
 
       private
 
       # :doc:
-      # This helper returns exclusively if the request's  user_aget is from a mobile
-      # device or not.
+      # Private: Tells if the request comes from a mobile user_agent or not
+      #
       def is_mobile_request?
         request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
       end
 
       # :doc:
-      # This helper returns exclusively if the current format is mobile or not
+      # Private: Helper method that tells if the currently view is mobile or not
+      #
       def is_mobile_view?
-        true if (request.format.to_s == "mobile") or (params[:format] == "mobile")
-      end
-    end
-
-    # RespondToMobileRequestsMethods is included by respond_to_mobile_requests
-    #
-    # This will check if the request is from a mobile device and change
-    # the request format to :mobile
-    module RespondToMobileRequestsMethods
-      extend ActiveSupport::Concern
-
-      included do
-        before_filter :handle_mobile
+        true if (params[:format] == "mobile") || (request.format.to_s == "mobile")
       end
 
-      private
-
-      # Returns true if this request should be treated as a mobile request
+      # Private: This is the method that tells if the request will be threated as mobile
+      #          or not
+      #
       def respond_as_mobile?
-        processing_xhr_requests? and skip_mobile_param_not_present? and (force_mobile_by_session? or is_mobile_request? or (params[:format] == 'mobile'))
+        impediments = stop_processing_because_xhr? || stop_processing_because_param?
+        (not impediments) && (force_mobile_by_session? || is_mobile_request? || params[:format] == 'mobile')
       end
 
-      # Returns true if the visitor has de force_mobile session
+      # Private: Returns true if the visitor has the force_mobile set in it's session
+      #
       def force_mobile_by_session?
         session[:mobylette_override] == :force_mobile
       end
 
-      # Returns true when ?skip_mobile=true is not passed to the request
-      def skip_mobile_param_not_present?
-        params[:skip_mobile] != 'true'
+      # Private: Tells when mobylette should not interfere in the rendering
+      #          process because the `skip_mobile` param is set to true
+      #
+      # Passing :skip_mobile = true to a request will not render it as a mobile
+      #
+      def stop_processing_because_param?
+        return true if params[:skip_mobile] == 'true'
+        false
       end
 
-      # Returns true only if treating XHR requests (when skip_xhr_requests are set to false) or
-      # or when this is a non xhr request
-      def processing_xhr_requests?
-        not self.mobylette_options[:skip_xhr_requests] && request.xhr?
+      # Private: Tells when mobylette should or not interfere in the rendering
+      #          process because of a xhr request.
+      #
+      # if the request is not xhr this will aways return false
+      # this will only return true for xhr requests, when you explicit want to
+      # not skip_xhr_requests.
+      #
+      def stop_processing_because_xhr?
+        if request.xhr? && self.mobylette_options[:skip_xhr_requests]
+          true
+        else
+          false
+        end
       end
 
       # :doc:
-      # Changes the request.form to :mobile, when the request is from
-      # a mobile device
+      # Private: Process the request as mobile
+      #
       def handle_mobile
         return if session[:mobylette_override] == :ignore_mobile
         if respond_as_mobile?
