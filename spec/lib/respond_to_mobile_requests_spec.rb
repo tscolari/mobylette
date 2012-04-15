@@ -37,6 +37,7 @@ module Mobylette
       end
 
       RespondToMobileRequests::MOBILE_USER_AGENTS.split('|').each do |agent|
+        agent.gsub!('\.', '.') # Ugly rack... but otherwise this will fail for up.b
         it "should be true for the agent #{agent}" do
           subject.stub_chain(:request, :user_agent).and_return(agent)
           subject.send(:is_mobile_request?).should be_true
