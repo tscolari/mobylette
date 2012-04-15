@@ -162,7 +162,7 @@ module Mobylette
           subject.send(:respond_as_mobile?).should be_false
         end
 
-        it "should return false if stop_processing_because_xhr? is true" do
+        it "should return false if stop_processing_because_xhr? is false" do
           subject.stub(:stop_processing_because_xhr?).and_return(false)
           subject.send(:respond_as_mobile?).should be_true
         end
