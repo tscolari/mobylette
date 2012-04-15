@@ -2,6 +2,7 @@
 rdoc/*
 *.gem
 log/*.log
+coverage
 tmp/*
 *.swp
 *.swo

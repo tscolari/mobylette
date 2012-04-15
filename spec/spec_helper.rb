@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 # Configure Rails Envinronment
 ENV["RAILS_ENV"] = "test"
 
