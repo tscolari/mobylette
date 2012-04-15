@@ -1,10 +1,7 @@
 #
 # Rails automatic mobile request support
 module Mobylette
-  module Controllers
-    require "mobylette/controllers/respond_to_mobile_requests"
-    require "mobylette/controllers/helpers"
-  end
+  require "mobylette/respond_to_mobile_requests"
 
   # TestHelpers
   # require "mobylette/helmet"

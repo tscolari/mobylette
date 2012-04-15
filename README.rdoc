@@ -1,7 +1,11 @@
 http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg
 
+  Mobylette 2.0+ deprecated the respond_to_mobile_requests method.
+  Now you must use `include Mobylette::RespondToMobileRequests` instead.
+  to configure it, see the configuration.
+
   Mobylette 1.6+ only supports Ruby 1.9.2+
-  For Ruby 1.8.7 support, please use version > 1.6
+  For Ruby 1.8.7 support, please use version < 1.6
 
 = Mobylette http://travis-ci.org/tscolari/mobylette.png
 
@@ -24,7 +28,7 @@ Add the gem to your gemfile:
 
 And add to your ApplicationController.rb (for enabling it to all your controllers) or to the controllers you want this functionality on:
 
-    respond_to_mobile_requests
+    include Mobyllete::RespondToMobileRequests
 
 After that, you may start adding your .mobile. views.
 
@@ -42,30 +46,40 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
   * is_mobile_request?  -> Exclusively checks for the device from where the request were made
   * is_mobile_view?     -> Exclusively checks for the view format been rendered
 
-* ==== mobylette_stylesheet_link_tag(*sources)
+* ==== stylesheet and javascript helpers - REMOVED on 1.9.0
 
-  This works like the stylesheet_link_tag helper, but when the request comes from a mobile device, it adds "_mobile" to the stylesheets before calling stylesheet_link_tag
+  Stylesheet and javascript helpers were removed from the gem. There is no need to add this complexity if you can build this by yourself using the other helpers, and views.
 
-* ==== mobylette_javascript_include_tag(*sources)
+== Configuration
 
-  Same as mobylette_stylesheet_link_tag, but for javascript files and javascript_include_tag
+You can set the configuration with the mobyllete_config method:
+
+    mobylette_config do |config|
+      config[:fall_back] = nil
+      config[:skip_xhr_requests] = false
+    end
 
 == Fall Backs
 
-By default, when the mobile format is not found, mobylette will fall back to the request original format. For example, if a cell phone makes a request by html, and there is no mobile view, it will render the html. You may force it always to fall back to a especific format, by passing the :fall_back parameter to the respond_to_mobile_requests method:
+By default, when the mobile format is not found, mobylette will fall back to the request original format. For example, if a mobile device makes a request by html, and there is no mobile view, it will render the html. You may force it always to fall back to a especific format, by setting the :fall_back option on your controller:
 
-    respond_to_mobile_requests :fall_back => :html
+    mobylette_config do |config|
+      config[:fall_back] = :html
+    end
 
 This would force all views (mobile) to fall back to the html views. You may also disable this behavior, and no fall back will ever occur:
 
-    respond_to_mobile_requests :fall_back => false
-
+    mobylette_config do |config|
+      config[:fall_back] = false
+    end
 
 == XHR Requests
 
-By default the mobile device verification will skip XHR requests, and these will be served as if mobylette wasn't there. You can override this behavior by passing the :skip_xhr_requests => false to the respond_to_mobile_requests call.
+By default the mobile device verification will skip XHR requests, and these will be served as if mobylette wasn't there. You can override this behavior by setting the :skip_xhr_requests option to false on your controller:
 
-    respond_to_mobile_requests :skip_xhr_requests => false
+    mobylette_config do |config|
+      config[:skip_xhr_requests] = false
+    end
 
 You may need to use this if you are using JQuery mobile or something similar in your application.
 
@@ -73,7 +87,7 @@ You may need to use this if you are using JQuery mobile or something similar in 
 
 In the case you need to skip a mobile_request for been treated as mobile, you can pass the `skip_mobile=true` param to the url/request.
 
-For example, you are using jquery_mobile and by that `:skip_xhr_requests => false`, but there is a special case where you need to process an Ajax, then you can use this param.
+For example, you are using jquery_mobile and by that `:skip_xhr_requests = false`, but there is a special case where you need to process an Ajax, then you can use this param.
 
 == Forcing/Ignoring Mobile Requests
 
@@ -104,7 +118,7 @@ For testing, include the Mobylette::Helmet module to your test/test_helpers.rb:
 
 For RSpec: add to your spec/spec_helpers.rb or create a spec/support/mobylette.rb with the following:
 
-    require 'mobylette/helmet' 
+    require 'mobylette/helmet'
     RSpec.configure do |config|
       config.include Mobylette::Helmet, :type => :controller
     end
