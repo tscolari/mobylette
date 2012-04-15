@@ -3,6 +3,7 @@ http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg
   Mobylette 2.0+ deprecated the respond_to_mobile_requests method.
   Now you must use `include Mobylette::RespondToMobileRequests` instead.
   to configure it, see the configuration.
+  Also stylesheet and javascript helpers were removed.
 
   Mobylette 1.6+ only supports Ruby 1.9.2+
   For Ruby 1.8.7 support, please use version < 1.6
@@ -48,7 +49,7 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
 
 * ==== stylesheet and javascript helpers - REMOVED on 1.9.0
 
-  Stylesheet and javascript helpers were removed from the gem. There is no need to add this complexity if you can build this by yourself using the other helpers, and views.
+  Stylesheet and javascript helpers were removed from the gem. There is no need for them if you can build them by yourself using the other helpers.
 
 == Configuration
 
