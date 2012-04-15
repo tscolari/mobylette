@@ -123,23 +123,25 @@ For RSpec: add to your spec/spec_helpers.rb or create a spec/support/mobylette.r
       config.include Mobylette::Helmet, :type => :controller
     end
 
-This will add 2 methods to your test scope:
+This will add 3 methods to your test scope:
 
-    force_mobile_request_agent
+    force_mobile_request_agent(agent = 'Android')
 
-this one will force a mobile user_agent, allowing you to test mobile requests.
+This will force a mobile user_agent, allowing you to test mobile requests.
 
     reset_test_request_agent
 
-and this one will reset your user_agent to the test default "Rails Testing". You don't need to call this everytime, all your requests by default are "Rails Testing" in your test env.
+This will reset your user_agent to the test default "Rails Testing". You don't need to call this everytime, all your requests by default are "Rails Testing" in your test env.
+
+    set_session_override(override_value)
+
+This will force the session_override value in the users session. Values possible values are:  :ignore_mobile and :force_mobile
 
 Friendly note: on your tests, call these functions BEFORE you make the request, otherwise they are useless =p
 
 == Contributions and Credits
 
-This gem is based on the mobile_fu plugin (https://github.com/brendanlim/mobile-fu).
-
-Also, these pages were very usefull when creating the gem:
+these pages were very usefull when creating this gem:
 * http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
 * http://www.arctickiwi.com/blog/mobile-enable-your-ruby-on-rails-site-for-small-screens
 * http://metautonomo.us/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/

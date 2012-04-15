@@ -5,6 +5,7 @@ log/*.log
 coverage
 tmp/*
 *.swp
+doc
 *.swo
 pkg/
 spec/dummy/db/*.sqlite3

@@ -18,6 +18,7 @@ module Mobylette
       @@mobylette_options[:fall_back]         = nil
 
       # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)
+      #
       MOBILE_USER_AGENTS =  'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
         'audiovox|motorola|samsung|telit|upg1|windows ce|ucweb|astel|plucker|' +
         'x320|x240|j2me|sgh|portable|sprint|docomo|kddi|softbank|android|mmp|' +
@@ -45,15 +46,15 @@ module Mobylette
       #
       # Example Usage:
       #
-      # class ApplicationController...
-      #   include Mobylette::RespondToMobileRequests
-      #   ...
-      #   mobylette_config do |config|
-      #     config[:fall_back] = :html
-      #     config[:skip_xhr_requests] = false
+      #   class ApplicationController...
+      #     include Mobylette::RespondToMobileRequests
+      #     ...
+      #     mobylette_config do |config|
+      #       config[:fall_back] = :html
+      #       config[:skip_xhr_requests] = false
+      #     end
+      #     ...
       #   end
-      #   ...
-      # end
       #
       def mobylette_config
         yield(self.mobylette_options)
