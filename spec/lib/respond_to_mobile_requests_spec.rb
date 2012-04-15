@@ -15,7 +15,7 @@ module Mobylette
     subject { MockController.new }
 
     describe "#mobilette_config" do
-      it "should have options configurated" do
+      it "should have options configured" do
         subject.mobylette_options[:fall_back].should == :something
         subject.mobylette_options[:skip_xhr_requests].should == :something
       end
