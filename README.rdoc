@@ -29,7 +29,7 @@ Add the gem to your gemfile:
 
 And add to your ApplicationController.rb (for enabling it to all your controllers) or to the controllers you want this functionality on:
 
-    include Mobyllete::RespondToMobileRequests
+    include Mobylette::RespondToMobileRequests
 
 After that, you may start adding your .mobile. views.
 
