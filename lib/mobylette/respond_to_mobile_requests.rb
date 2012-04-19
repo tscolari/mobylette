@@ -17,6 +17,8 @@ module Mobylette
       @@mobylette_options[:skip_xhr_requests] = true
       @@mobylette_options[:fall_back]         = nil
 
+      append_view_path FallbackResolver.new('app/views', {mobile: [:mobile, :html]})
+
       # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)
       #
       MOBILE_USER_AGENTS =  'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
@@ -122,14 +124,7 @@ module Mobylette
     #
     def handle_mobile
       return if session[:mobylette_override] == :ignore_mobile
-      if respond_as_mobile?
-
-        original_format   = request.format.to_sym
-        request.format    = :mobile
-        if self.mobylette_options[:fall_back] != false
-          request.formats << Mime::Type.new(self.mobylette_options[:fall_back] || original_format)
-        end
-      end
+      request.format    = :mobile if respond_as_mobile?
     end
 
   end

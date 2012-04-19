@@ -2,6 +2,7 @@
 # Rails automatic mobile request support
 module Mobylette
   require "mobylette/respond_to_mobile_requests"
+  require 'mobylette/fallback_resolver'
 
   # TestHelpers
   # require "mobylette/helmet"
