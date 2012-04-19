@@ -17,7 +17,7 @@ module Mobylette
       @@mobylette_options[:skip_xhr_requests] = true
       @@mobylette_options[:fall_back]         = nil
 
-      append_view_path FallbackResolver.new('app/views', {mobile: [:mobile, :html]})
+      append_view_path Mobylette::FallbackResolver.new('app/views')
 
       # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)
       #
