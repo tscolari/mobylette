@@ -42,16 +42,9 @@ module Mobylette
       self.mobylette_fallback_resolver = Mobylette::FallbackResolver.new
       self.mobylette_fallback_resolver.use_fallback(@@mobylette_options[:fall_back])
       append_view_path self.mobylette_fallback_resolver
-
-      # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)
-      #
-      MOBILE_USER_AGENTS =  'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
-        'audiovox|motorola|samsung|telit|upg1|windows ce|ucweb|astel|plucker|' +
-        'x320|x240|j2me|sgh|portable|sprint|docomo|kddi|softbank|android|mmp|' +
-        'pdxgw|netfront|xiino|vodafone|portalmmm|sagem|mot-|sie-|ipod|up\\.b|' +
-        'webos|amoi|novarra|cdm|alcatel|pocket|ipad|iphone|mobileexplorer|' +
-        'mobile|maemo|fennec'
     end
+
+
 
     module ClassMethods
       # This method enables the controller do handle mobile requests
@@ -95,7 +88,7 @@ module Mobylette
     # Private: Tells if the request comes from a mobile user_agent or not
     #
     def is_mobile_request?
-      request.user_agent.to_s.downcase =~ /#{MOBILE_USER_AGENTS}/
+      request.user_agent.to_s.downcase =~ /#{Mobylette::MOBILE_USER_AGENTS}/
     end
 
     # :doc:
