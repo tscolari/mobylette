@@ -22,5 +22,32 @@ module Mobylette
       end
     end
 
+    describe "#find_templates" do
+      before(:each) do
+        @formats = []
+        Array.stub(:wrap).and_return(@formats)
+        @details = {:formats => []}
+      end
+
+      context "mobile request" do
+        before(:each) { @details[:formats] = [:mobile] }
+
+        it "should set the details[:formats]" do
+          Array.should_receive(:wrap)
+          subject.find_templates('', '', '', @details)
+          @details[:formats].should == @formats
+        end
+      end
+
+      context "normal request" do
+        before(:each) { @details[:formats] = [:html] }
+
+        it "should not set the details[:formats]" do
+          subject.find_templates('', '', '', @details)
+          @details[:formats].should == [:html]
+        end
+      end
+    end
+
   end
 end

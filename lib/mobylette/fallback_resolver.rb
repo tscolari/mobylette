@@ -26,13 +26,8 @@ module Mobylette
     #         using fallback if needed
     #
     def find_templates(name, prefix, partial, details)
-      return super unless details[:formats].first == :mobile
-
-      formats = Array.wrap(fallback_list)
-      details_copy = details.dup
-      details_copy[:formats] = formats
-      path = Path.build(name, prefix, partial)
-      query(path, details_copy, formats)
+      details[:formats] = Array.wrap(fallback_list) if details[:formats].first == :mobile
+      super
     end
 
     private
