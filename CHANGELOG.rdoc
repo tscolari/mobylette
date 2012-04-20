@@ -1,10 +1,12 @@
 = Change Log
 
-== 2.2.rc1
+== 2.2.rc1/rc2
   * Fixed fallbacks
     * Fallbacks now have the default value to :html
     * You can disable fall backs by passing config[:fall_back] = false in the
     controller configuration.
+  * Moved the mobile user agents definitions to another module that doesn't
+  get inserted to the controllers.
 
 == 2.1
   * Adding new user_agents: ipad, maemo and fennec
