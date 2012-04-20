@@ -15,9 +15,12 @@ module Mobylette
       cattr_accessor :mobylette_options
       @@mobylette_options = Hash.new
       @@mobylette_options[:skip_xhr_requests] = true
-      @@mobylette_options[:fall_back]         = nil
+      @@mobylette_options[:fall_back]         = :html
 
-      append_view_path Mobylette::FallbackResolver.new('app/views')
+      cattr_accessor :mobylette_fallback_resolver
+      self.mobylette_fallback_resolver = Mobylette::FallbackResolver.new('app/views')
+      self.mobylette_fallback_resolver.use_fallback(@@mobylette_options[:fall_back])
+      append_view_path self.mobylette_fallback_resolver
 
       # List of mobile agents, from mobile_fu (https://github.com/brendanlim/mobile-fu)
       #
@@ -39,7 +42,7 @@ module Mobylette
       # * fall_back: :html
       #     You may pass a fall_back option to the method, it will force the render
       #     to look for that other format, in case there is not a .mobile file for the view.
-      #     By default, it will fall back to the format of the original request.
+      #     By default, it will fall back to the html format.
       #     If you don't want fall back at all, pass fall_back: false
       # * skip_xhr_requests: true/false
       #     By default this is set to true. When a xhr request enters in, it will skip the
@@ -61,6 +64,7 @@ module Mobylette
       #
       def mobylette_config
         yield(self.mobylette_options)
+        self.mobylette_fallback_resolver.use_fallback(self.mobylette_options[:fall_back])
       end
     end
 
@@ -124,7 +128,10 @@ module Mobylette
     #
     def handle_mobile
       return if session[:mobylette_override] == :ignore_mobile
-      request.format    = :mobile if respond_as_mobile?
+
+      if respond_as_mobile?
+        request.format = :mobile
+      end
     end
 
   end

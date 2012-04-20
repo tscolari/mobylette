@@ -52,19 +52,19 @@ There is a difference between is_mobile_view? and is_mobile_request?. You may ha
 You can set the configuration with the mobylette_config method:
 
     mobylette_config do |config|
-      config[:fall_back] = nil
+      config[:fall_back] = false
       config[:skip_xhr_requests] = false
     end
 
 == Fall Backs
 
-By default, when the mobile format is not found, mobylette will fall back to the request original format. For example, if a mobile device makes a request by html, and there is no mobile view, it will render the html. You may force it always to fall back to a especific format, by setting the :fall_back option on your controller:
+By default, when the mobile format is not found, mobylette will fall back to the html format. You may force it to fall back to another format, by setting the :fall_back option on your controller:
 
     mobylette_config do |config|
       config[:fall_back] = :html
     end
 
-This would force all views (mobile) to fall back to the html views. You may also disable this behavior, and no fall back will ever occur:
+This would force all views (mobile) to fall back to the html views. You may also disable fall backs:
 
     mobylette_config do |config|
       config[:fall_back] = false

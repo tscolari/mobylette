@@ -236,17 +236,6 @@ module Mobylette
           @format.should == :mobile
         end
 
-        it "should have a fall back to the original format when fall_back is nil" do
-          subject.mobylette_options[:fall_back] = nil
-          subject.send(:handle_mobile)
-          @formats.include?(Mime::Type.new :old_format).should be_true
-        end
-
-        it "should have a fall back to :html when fall_back is :html" do
-          subject.mobylette_options[:fall_back] = :html
-          subject.send(:handle_mobile)
-          @formats.include?(Mime::Type.new :html).should be_true
-        end
       end
     end
   end
