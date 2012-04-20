@@ -15,8 +15,7 @@ module Mobylette
     # Public: Configures what fallback the resolver should use
     #
     # - fallback:
-    #     * :default => Falls back to the original request format
-    #     * :html/:js/:xml => Falls back to the format
+    #     * :html/:js/:xml/... => Falls back to that format
     #
     def use_fallback(fallback)
       @fallback_to = fallback
