@@ -18,7 +18,7 @@ module Mobylette
       @@mobylette_options[:fall_back]         = :html
 
       cattr_accessor :mobylette_fallback_resolver
-      self.mobylette_fallback_resolver = Mobylette::FallbackResolver.new('app/views')
+      self.mobylette_fallback_resolver = Mobylette::FallbackResolver.new
       self.mobylette_fallback_resolver.use_fallback(@@mobylette_options[:fall_back])
       append_view_path self.mobylette_fallback_resolver
 

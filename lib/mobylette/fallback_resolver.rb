@@ -1,16 +1,37 @@
 module Mobylette
 
-  # Creates a fallback from mobile to another format
+  # This manages the fall back from mobile views
+  # It only interfers on requests where the format is :mobile,
+  # and in case there is no view for the mobile format, it
+  # will fall back to the any other format that is configurated.
+  #
+  # When you insert Mobylette::RespondToMobileRequests to a
+  # controller, this class will be the new resolver for that
+  # controller.
+  #
+  # By default this resolver will not fallback to any format.
+  # Only is @fallback_to is configurated (by use_fallback)
+  #
+  # You should not use this by yourself unless you know what
+  # you are doing.
   #
   # Examples:
   #
-  #   append_view_path Mobylette::FallbackResolver.new('app/views')
+  #   class SomeController < ApplicationController
+  #     append_view_path Mobylette::FallbackResolver.new
+  #   end
   #
-  # Returns:
   #
-  #   if a .mobile view is not found it will look for a .html view
+  #   ...
+  #     my_controller_resolver = Mobylette::FallbackResolver.new
+  #     my_controller_resolver.use_fallback(:html)
+  #   ...
   #
   class FallbackResolver < ::ActionView::FileSystemResolver
+
+    def initialize
+      super('app/views')
+    end
 
     # Public: Configures what fallback the resolver should use
     #

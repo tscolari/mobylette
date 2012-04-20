@@ -3,7 +3,7 @@ require 'spec_helper'
 module Mobylette
   describe FallbackResolver do
 
-    subject { FallbackResolver.new('app/views') }
+    subject { FallbackResolver.new }
 
     describe "#fallback_list" do
 
