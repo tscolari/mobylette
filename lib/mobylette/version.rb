@@ -1,3 +1,3 @@
 module Mobylette
-  VERSION = "2.1"
+  VERSION = "2.2.rc1"
 end

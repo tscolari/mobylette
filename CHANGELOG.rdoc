@@ -1,5 +1,11 @@
 = Change Log
 
+== 2.2.rc1
+  * Fixed fallbacks
+    * Fallbacks now have the default value to :html
+    * You can disable fall backs by passing config[:fall_back] = false in the
+    controller configuration.
+
 == 2.1
   * Adding new user_agents: ipad, maemo and fennec
 
