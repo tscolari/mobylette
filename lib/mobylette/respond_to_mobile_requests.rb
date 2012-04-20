@@ -1,8 +1,29 @@
 module Mobylette
-  # Mobylette::Controllers::RespondToMobileRequests includes the respond_to_mobile_requests
-  # to your ActionController::Base.
+  # Defines the behavior for responding to mobile requests with a different view.
   #
-  # The respond_to_mobile_requests method enables the controller mobile handling
+  # By including this to a controller, it will automaticaly look for a .mobile view
+  # instead of a .html, when the request comes from a mobile device.
+  #
+  # Usage:
+  #
+  #   class AppicationController < ActionController::Base
+  #     include Mobylette::RespondToMobileRequests
+  #   end
+  #
+  #
+  # You can define some options:
+  #
+  #   class...
+  #     include Mobylette::RespondToMobileRequests
+  #     mobylette_config do |config|
+  #       config[:fall_back] = :html
+  #       config[:skip_xhr_requests] = false
+  #     end
+  #     ...
+  #   end
+  #
+  # note: By default it will already fall back to the :html format
+  #
   module RespondToMobileRequests
     extend ActiveSupport::Concern
 
