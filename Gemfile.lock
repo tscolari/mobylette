@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mobylette (2.2.rc2)
+    mobylette (2.2)
       actionpack (>= 3.0)
 
 GEM

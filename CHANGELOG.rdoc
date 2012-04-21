@@ -1,6 +1,6 @@
 = Change Log
 
-== 2.2.rc1/rc2
+== 2.2
   * Fixed fallbacks
     * Fallbacks now have the default value to :html
     * You can disable fall backs by passing config[:fall_back] = false in the
