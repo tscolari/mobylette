@@ -46,8 +46,12 @@ module Mobylette
     #         using fallback if needed
     #
     def find_templates(name, prefix, partial, details)
-      details[:formats] = Array.wrap(fallback_list) if details[:formats].first == :mobile
-      super
+      if details[:formats].first == :mobile
+        details = details.dup
+        details[:formats] = Array.wrap(fallback_list) 
+      end
+
+      super(name, prefix, partial, details)
     end
 
     private
