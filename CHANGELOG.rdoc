@@ -1,5 +1,8 @@
 = Change Log
 
+== 2.3
+	* Added support to kindle (thanks to @zbelzer, https://github.com/zbelzer)
+
 == 2.2
   * Fixed fallbacks
     * Fallbacks now have the default value to :html

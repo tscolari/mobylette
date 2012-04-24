@@ -27,6 +27,7 @@ module Mobylette
         @formats = []
         Array.stub(:wrap).and_return(@formats)
         @details = {:formats => []}
+        @details.stub(:dup).and_return(@details)
       end
 
       context "mobile request" do

@@ -137,9 +137,7 @@ This will force the session_override value in the users session. Values possible
 
 Friendly note: on your tests, call these functions BEFORE you make the request, otherwise they are useless =p
 
-== Contributions and Credits
 
-these pages were very usefull when creating this gem:
-* http://stackoverflow.com/questions/5126085/ruby-on-rails-mobile-application
-* http://www.arctickiwi.com/blog/mobile-enable-your-ruby-on-rails-site-for-small-screens
-* http://metautonomo.us/2011/01/05/mobile-devices-and-rails-maintaining-your-sanity/
+= LICENSE
+
+MIT License. Copyright 2012 Tiago Scolari.
