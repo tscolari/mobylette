@@ -138,6 +138,6 @@ This will force the session_override value in the users session. Values possible
 Friendly note: on your tests, call these functions BEFORE you make the request, otherwise they are useless =p
 
 
-= LICENSE
+= License
 
 MIT License. Copyright 2012 Tiago Scolari.
