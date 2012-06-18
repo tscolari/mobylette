@@ -18,6 +18,7 @@ module Mobylette
   #     mobylette_config do |config|
   #       config[:fall_back] = :html
   #       config[:skip_xhr_requests] = false
+  #       config[:mobile_user_agents] = proc { "iphone" }
   #     end
   #     ...
   #   end
@@ -35,8 +36,9 @@ module Mobylette
 
       cattr_accessor :mobylette_options
       @@mobylette_options = Hash.new
-      @@mobylette_options[:skip_xhr_requests] = true
-      @@mobylette_options[:fall_back]         = :html
+      @@mobylette_options[:skip_xhr_requests]  = true
+      @@mobylette_options[:fall_back]          = :html
+      @@mobylette_options[:mobile_user_agents] = Mobylette::MobileUserAgents.new
 
       cattr_accessor :mobylette_fallback_resolver
       self.mobylette_fallback_resolver = Mobylette::FallbackResolver.new
@@ -72,6 +74,7 @@ module Mobylette
       #     mobylette_config do |config|
       #       config[:fall_back] = :html
       #       config[:skip_xhr_requests] = false
+      #       config[:mobile_user_agents] = proc { "iphone|android" }
       #     end
       #     ...
       #   end
@@ -88,7 +91,7 @@ module Mobylette
     # Private: Tells if the request comes from a mobile user_agent or not
     #
     def is_mobile_request?
-      request.user_agent.to_s.downcase =~ /#{Mobylette::MOBILE_USER_AGENTS}/
+      request.user_agent.to_s.downcase =~ @@mobylette_options[:mobile_user_agents].call
     end
 
     # :doc:
