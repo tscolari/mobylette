@@ -5,17 +5,17 @@ module Mobylette
 
     def initialize
       @devices = {
-        android:  /android/i,
-        android2: /android\s+2\./i,
-        android3: /android\s+3\./i,
-        android4: /android\s+4\./i,
-        iphone:   /iphone/i,
-        ipad:     /ipad/i,
-        ios:      /iphone|ipad/i,
-        ios3:     /(iphone|ipad)\s+os\s+3_/,
-        ios4:     /(iphone|ipad)\s+os\s+4_/,
-        ios5:     /(iphone|ipad)\s+os\s+5_/,
-        ios6:     /(iphone|ipad)\s+os\s+6_/
+        android:  %r{android}i,
+        android2: %r{android\s+2\.}i,
+        android3: %r{android\s+3\.}i,
+        android4: %r{android\s+4\.}i,
+        iphone:   %r{iphone}i,
+        ipad:     %r{ipad}i,
+        ios:      %r{iphone|ipad}i,
+        ios3:     %r{(iphone|ipad)\s+os\s+3_},
+        ios4:     %r{(iphone|ipad)\s+os\s+4_},
+        ios5:     %r{(iphone|ipad)\s+os\s+5_},
+        ios6:     %r{(iphone|ipad)\s+os\s+6_}
       }
     end
 
