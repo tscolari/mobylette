@@ -4,6 +4,7 @@ module Mobylette
   require 'mobylette/respond_to_mobile_requests'
   require 'mobylette/fallback_resolver'
   require 'mobylette/mobile_user_agents'
+  require 'mobylette/devices'
 
   # TestHelpers
   # require "mobylette/helmet"

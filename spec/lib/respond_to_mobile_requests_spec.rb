@@ -28,6 +28,14 @@ module Mobylette
         subject.mobylette_options[:fall_back].should == :js
         subject.mobylette_options[:skip_xhr_requests].should be_false
       end
+
+      it "should register devices to Mobylette::Devices" do
+        subject.class.mobylette_config do |config|
+          config[:devices] = {phone1: %r{phone_1}, phone2: %r{phone_2}}
+        end
+        Mobylette::Devices.instance.device(:phone1).should == /phone_1/
+        Mobylette::Devices.instance.device(:phone2).should == /phone_2/
+      end
     end
 
     describe "#is_mobile_request?" do
@@ -238,5 +246,15 @@ module Mobylette
 
       end
     end
+
+    describe "#device?" do
+      it "should match a device" do
+        subject.stub_chain(:request, :user_agent).and_return('very custom browser WebKit')
+        Mobylette.devices.register(custom_phone: %r{custom\s+browser})
+        subject.send(:device?, :iphone).should be_false
+        subject.send(:device?, :custom_phone).should be_true
+      end
+    end
+
   end
 end

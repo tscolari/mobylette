@@ -44,9 +44,16 @@ After that, you may start adding your .mobile. views.
 
   Returns if the current format is :mobile or not.
 
-There is a difference between is_mobile_view? and is_mobile_request?. You may have a user requesting from a mobile device (is_mobile_request? == true) and at the same time, you may use the sesssion override to render de default format aways (is_mobile_view? == false). There are a lot of other combinations where these 2 functions will return different results.
-  * is_mobile_request?  -> Exclusively checks for the device from where the request were made
-  * is_mobile_view?     -> Exclusively checks for the view format been rendered
+* ==== device?
+
+  Returns true/false if the current request comes from the device passed as parameter.
+
+  Examples:
+    device?(:iphone)
+
+    device?(:android)
+
+  Only :iphone, :ipad, :ios and :android are recognized by default. But you can add other devices, check configuration.
 
 == Configuration
 
@@ -55,7 +62,7 @@ You can set the configuration with the mobylette_config method:
     mobylette_config do |config|
       config[:fall_back] = false
       config[:skip_xhr_requests] = false
-      config[:mobile_user_agents] = proc { /iphone/i }
+      config[:mobile_user_agents] = proc { %r{iphone}i }
     end
 
 === Custom User Agents
@@ -63,7 +70,7 @@ You can set the configuration with the mobylette_config method:
 Mobylette works uppon detecting the user agent of the visitor browser. By default it will detect any mobile user agent. But you can customize this by passing a proc with a regex of any matching user agent you may wish.
 
   mobylette_config do |config|
-    config[:mobile_user_agents] = proc { /iphone|ipad}/i }
+    config[:mobile_user_agents] = proc { %r{iphone|ipad}i }
   end
 
 === Fall Backs
@@ -89,6 +96,17 @@ By default the mobile device verification will skip XHR requests, and these will
    end
 
 You may need to use this if you are using JQuery mobile or something similar in your application.
+
+=== Registering Mobile Devices
+
+Mobylette 3.0+ comes with a `device?` helper. By default only :iphone, :ipad, :ios and :android devices come registered.
+But you can register any device using the `mobylette_config` method:
+
+  mobylette_config do |config|
+    config[:devices] = { my_unique_phone: %r{UniquePhone 1.2.3}, ... }
+  end
+
+Note: This will not add the device to the mobile user_agent detection. For that read #Custom User Agents.
 
 == Skiping mobile filter
 

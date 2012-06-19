@@ -21,13 +21,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "debugger"
-
-  s.post_install_message =<<eos
-  **************************
-  Mobylette gem configuration changed.
-  Use include Mobylette::RespondToMobileRequests instead of respond_to_mobile_requests now.
-  Please refer to the readme for more information.
-  **************************
-eos
-
 end
