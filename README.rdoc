@@ -93,7 +93,7 @@ By default the mobile device verification will skip XHR requests, and these will
 
     mobylette_config do |config|
       config[:skip_xhr_requests] = false
-   end
+    end
 
 You may need to use this if you are using JQuery mobile or something similar in your application.
 
