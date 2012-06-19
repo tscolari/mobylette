@@ -55,9 +55,18 @@ You can set the configuration with the mobylette_config method:
     mobylette_config do |config|
       config[:fall_back] = false
       config[:skip_xhr_requests] = false
+      config[:mobile_user_agents] = proc { /iphone/i }
     end
 
-== Fall Backs
+=== Custom User Agents
+
+Mobylette works uppon detecting the user agent of the visitor browser. By default it will detect any mobile user agent. But you can customize this by passing a proc with a regex of any matching user agent you may wish.
+
+  mobylette_config do |config|
+    config[:mobile_user_agents] = proc { /iphone|ipad}/i }
+  end
+
+=== Fall Backs
 
 By default, when the mobile format is not found, mobylette will fall back to the html format. You may force it to fall back to another format, by setting the :fall_back option on your controller:
 
@@ -71,13 +80,13 @@ This would force all views (mobile) to fall back to the html views. You may also
       config[:fall_back] = false
     end
 
-== XHR Requests
+=== XHR Requests
 
 By default the mobile device verification will skip XHR requests, and these will be served as if mobylette wasn't there. You can override this behavior by setting the :skip_xhr_requests option to false on your controller:
 
     mobylette_config do |config|
       config[:skip_xhr_requests] = false
-    end
+   end
 
 You may need to use this if you are using JQuery mobile or something similar in your application.
 

@@ -18,7 +18,7 @@ module Mobylette
   #     mobylette_config do |config|
   #       config[:fall_back] = :html
   #       config[:skip_xhr_requests] = false
-  #       config[:mobile_user_agents] = proc { /iphone/ }
+  #       config[:mobile_user_agents] = proc { /iphone/i }
   #     end
   #     ...
   #   end
@@ -74,7 +74,7 @@ module Mobylette
       #     mobylette_config do |config|
       #       config[:fall_back] = :html
       #       config[:skip_xhr_requests] = false
-      #       config[:mobile_user_agents] = proc { /iphone|android/ }
+      #       config[:mobile_user_agents] = proc { /iphone|android/i }
       #     end
       #     ...
       #   end
