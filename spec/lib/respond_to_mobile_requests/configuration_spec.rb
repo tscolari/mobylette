@@ -4,25 +4,15 @@ module Mobylette
   describe RespondToMobileRequests do
     describe 'Configuration' do
 
-      class MockController < ActionController::Base
+      class MockConfigurationController < ActionController::Base
         include Mobylette::RespondToMobileRequests
-
-        mobylette_config do |config|
-          config[:fallback_chains]   = { mobile: [:mobile, :html, :json] }
-          config[:skip_xhr_requests] = :something
-        end
       end
 
-      subject { MockController.new }
+      subject { MockConfigurationController.new }
 
       describe "basic configuration delegation" do
 
         describe "#mobilette_config" do
-          it "should have options configured" do
-            subject.mobylette_options[:fallback_chains].should   == { mobile: [:mobile, :html, :json] }
-            subject.mobylette_options[:skip_xhr_requests].should == :something
-          end
-
           it "should set mobylette_options" do
             subject.class.mobylette_config do |config|
               config[:fallback_chains]   = { mobile: [:mobile, :html, :js] }
