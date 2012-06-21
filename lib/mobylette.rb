@@ -2,7 +2,7 @@
 # Rails automatic mobile request support
 module Mobylette
   require 'mobylette/respond_to_mobile_requests'
-  require 'mobylette/fallback_resolver'
+  require 'mobylette/resolvers/chained_fallback_resolver'
   require 'mobylette/mobile_user_agents'
   require 'mobylette/devices'
 

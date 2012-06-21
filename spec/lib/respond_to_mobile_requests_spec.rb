@@ -14,30 +14,6 @@ module Mobylette
 
     subject { MockController.new }
 
-    describe "#mobilette_config" do
-      it "should have options configured" do
-        subject.mobylette_options[:fall_back].should == :something
-        subject.mobylette_options[:skip_xhr_requests].should == :something
-      end
-
-      it "should set mobylette_options" do
-        subject.class.mobylette_config do |config|
-          config[:fall_back] = :js
-          config[:skip_xhr_requests] = false
-        end
-        subject.mobylette_options[:fall_back].should == :js
-        subject.mobylette_options[:skip_xhr_requests].should be_false
-      end
-
-      it "should register devices to Mobylette::Devices" do
-        subject.class.mobylette_config do |config|
-          config[:devices] = {phone1: %r{phone_1}, phone2: %r{phone_2}}
-        end
-        Mobylette::Devices.instance.device(:phone1).should == /phone_1/
-        Mobylette::Devices.instance.device(:phone2).should == /phone_2/
-      end
-    end
-
     describe "#is_mobile_request?" do
       it "should be false for a normal request" do
         subject.stub_chain(:request, :user_agent).and_return('some mozilla')
@@ -228,13 +204,10 @@ module Mobylette
         before(:each) do
           subject.stub(:session).and_return({})
           subject.stub(:respond_as_mobile?).and_return(true)
-          @request = mock("request")
-          @format  = mock("old_format")
-          @format.stub(:to_sym).and_return(:old_format)
-          @request.stub(:format).and_return(@format)
-          @request.stub(:format=).and_return { |new_value| @format = new_value }
+          @format  = double("old_format", to_sym: :old_format)
           @formats = []
-          @request.stub(:formats).and_return(@formats)
+          @request = double("request", user_agent: "android", format: @format, formats: @formats)
+          @request.stub(:format=).and_return { |new_value| @format = new_value }
           subject.stub(:request).and_return(@request)
           subject.mobylette_options[:fall_back] = false
         end
@@ -247,12 +220,31 @@ module Mobylette
       end
     end
 
-    describe "#device?" do
+    describe "#request_device?" do
       it "should match a device" do
         subject.stub_chain(:request, :user_agent).and_return('very custom browser WebKit')
         Mobylette.devices.register(custom_phone: %r{custom\s+browser})
-        subject.send(:device?, :iphone).should be_false
-        subject.send(:device?, :custom_phone).should be_true
+        subject.send(:request_device?, :iphone).should be_false
+        subject.send(:request_device?, :custom_phone).should be_true
+      end
+    end
+
+    describe "#set_mobile_format" do
+      context "matching format in fallback chain" do
+        it "should return the request device format when it is in a chain" do
+          subject.mobylette_options[:fallback_chains] = { html: [:html, :htm], mp3: [:mp3, :wav, :mid] }
+          subject.stub(:request_device?).with(:mp3).and_return(true)
+          subject.stub(:request_device?).with(:html).and_return(false)
+          subject.send(:set_mobile_format).should == :mp3
+        end
+      end
+
+      context "not matching format in fallback chain" do
+        it "should return :mobile" do
+          subject.mobylette_options[:fallback_chains] = { html: [:html, :htm], mp3: [:mp3, :wav, :mid] }
+          subject.stub_chain(:request, :user_agent).and_return("android")
+          subject.send(:set_mobile_format).should == :mobile
+        end
       end
     end
 

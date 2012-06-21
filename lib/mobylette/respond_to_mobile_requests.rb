@@ -31,7 +31,7 @@ module Mobylette
     included do
       helper_method :is_mobile_request?
       helper_method :is_mobile_view?
-      helper_method :device?
+      helper_method :request_device?
 
       before_filter :handle_mobile
 
@@ -42,10 +42,9 @@ module Mobylette
       @@mobylette_options[:mobile_user_agents] = Mobylette::MobileUserAgents.new
       @@mobylette_options[:devices]            = Hash.new
 
-      cattr_accessor :mobylette_fallback_resolver
-      self.mobylette_fallback_resolver = Mobylette::FallbackResolver.new
-      self.mobylette_fallback_resolver.use_fallback(@@mobylette_options[:fall_back])
-      append_view_path self.mobylette_fallback_resolver
+      cattr_accessor :mobylette_resolver
+      self.mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new({ mobile: [:mobile, :html] })
+      append_view_path self.mobylette_resolver
     end
 
 
@@ -72,7 +71,7 @@ module Mobylette
       #     you can send a custom proc/object that returns the matching regex you wish.
       # * devices: {device_name: /device_reg/, device2_name: /device2_reg/, ...}
       #     You may register devices for custom behavior by device.
-      #     Once a device is registered you may call the helper device?(device_symb)
+      #     Once a device is registered you may call the helper request_device?(device_symb)
       #     to see if the request comes from that device or not.
       #     By default :iphone, :ipad, :ios and :android are already registered.
       #
@@ -85,37 +84,62 @@ module Mobylette
       #       config[:fall_back] = :html
       #       config[:skip_xhr_requests] = false
       #       config[:mobile_user_agents] = proc { %r{iphone|android}i }
-      #       config[:devices] = {cool_phone: %r{cool\s+phone}}
+      #       config[:devices] = {cool_phone: %r{cool\s+phone} }
       #     end
       #     ...
       #   end
       #
       def mobylette_config
         yield(self.mobylette_options)
-        self.mobylette_fallback_resolver.use_fallback(self.mobylette_options[:fall_back])
+        configure_fallback_resolver(self.mobylette_options)
         Mobylette.devices.register(self.mobylette_options[:devices]) if self.mobylette_options[:devices]
+      end
+
+      private
+
+      # Private: Configures how the resolver shall handle fallbacks.
+      #
+      # if options has a :fallback_chains key, it will use it 
+      # as the fallback rules for the resolver, the format should
+      # be a hash, where each key defines a array of formats.
+      # Example:
+      #   options[:fallback_chains]
+      #   #=> { iphone: [:iphone, :mobile, :html], mobile: [:mobile, :html] }
+      #
+      # if there is no :fallback_chains, then it will look for a :fall_back
+      # key, that shall define only 1 fallback format to the mobile format.
+      # This keep compatibility with older versions.
+      # Example:
+      #   options[:fall_back]
+      #   #=> :html
+      #
+      def configure_fallback_resolver(options)
+        if options[:fallback_chains]
+          self.mobylette_resolver.replace_fallback_formats_chain(options[:fallback_chains])
+        else
+          if options[:fall_back]
+            self.mobylette_resolver.replace_fallback_formats_chain({ mobile: [:mobile, options[:fall_back]] })
+          end
+        end
       end
     end
 
     private
 
-    # :doc:
     # Private: Tells if the request comes from a mobile user_agent or not
     #
     def is_mobile_request?
       request.user_agent.to_s.downcase =~ @@mobylette_options[:mobile_user_agents].call
     end
 
-    # :doc:
     # Private: Returns if this request comes from the informed device
     #
     # devive - device symbol. It must be previously registered as a device.
     #
-    def device?(device)
+    def request_device?(device)
       (request.user_agent.to_s.downcase =~ (Mobylette.devices.device(device) || %r{not_to_be_matched_please}) ? true : false)
     end
 
-    # :doc:
     # Private: Helper method that tells if the currently view is mobile or not
     #
     def is_mobile_view?
@@ -161,14 +185,26 @@ module Mobylette
       end
     end
 
-    # :doc:
     # Private: Process the request as mobile
     #
     def handle_mobile
       return if session[:mobylette_override] == :ignore_mobile
       if respond_as_mobile?
-        request.format = :mobile
+        request.format = set_mobile_format
       end
+    end
+
+    # Private: Checks if there are fallback_chains defined.
+    # if there is, it will try to match the request browser
+    # agains a fallback_chain key.
+    #
+    def set_mobile_format
+      if self.mobylette_options[:fallback_chains]
+        self.mobylette_options[:fallback_chains].keys.each do |device|
+          return device if request_device?(device)
+        end
+      end
+      :mobile 
     end
 
   end

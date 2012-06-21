@@ -44,14 +44,14 @@ After that, you may start adding your .mobile. views.
 
   Returns if the current format is :mobile or not.
 
-* ==== device?
+* ==== request_device?
 
   Returns true/false if the current request comes from the device passed as parameter.
 
   Examples:
-    device?(:iphone)
+    request_device?(:iphone)
 
-    device?(:android)
+    request_device?(:android)
 
   Only :iphone, :ipad, :ios and :android are recognized by default. But you can add other devices, check configuration.
 
@@ -75,17 +75,28 @@ Mobylette works uppon detecting the user agent of the visitor browser. By defaul
 
 === Fall Backs
 
-By default, when the mobile format is not found, mobylette will fall back to the html format. You may force it to fall back to another format, by setting the :fall_back option on your controller:
+Fall backs are handled as a chain of formats. By default the only chain is `:mobile => [:mobile, :html]`.
+You can override this and add your own fall back chains using the `mobylette_config`.
 
-    mobylette_config do |config|
-      config[:fall_back] = :html
-    end
+  mobylette_config do |config|
+    config[:fallback_chains] = {
+      mobile: [:mobile, :html],
+      iphone: [:iphone, :mobile, :html],
+      ...
+    }
+  end
 
-This would force all views (mobile) to fall back to the html views. You may also disable fall backs:
+When you create custom formats with fall back chains, :iphone for example, you must register them as a Mime::Type:
+  
+  # config/initializers/mime_types.rb
+  Mime::Type.register_alias 'text/html', :iphone
 
-    mobylette_config do |config|
-      config[:fall_back] = false
-    end
+If you don't want any fall backs, just set it to:
+
+  mobylette_config do |config|
+    config[:fallback_chains] = { mobile: [:mobile] }
+  end
+
 
 === XHR Requests
 
@@ -99,7 +110,7 @@ You may need to use this if you are using JQuery mobile or something similar in 
 
 === Registering Mobile Devices
 
-Mobylette 3.0+ comes with a `device?` helper. By default only :iphone, :ipad, :ios and :android devices come registered.
+Mobylette 3.0+ comes with a `request_device?` helper. By default only :iphone, :ipad, :ios and :android devices come registered.
 But you can register any device using the `mobylette_config` method:
 
   mobylette_config do |config|
