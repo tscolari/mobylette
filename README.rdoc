@@ -60,7 +60,7 @@ After that, you may start adding your .mobile. views.
 You can set the configuration with the mobylette_config method:
 
     mobylette_config do |config|
-      config[:fall_back] = false
+    config[:fallback_chains] = { mobile: [:mobile, :html] }
       config[:skip_xhr_requests] = false
       config[:mobile_user_agents] = proc { %r{iphone}i }
     end
@@ -86,7 +86,7 @@ You can override this and add your own fall back chains using the `mobylette_con
     }
   end
 
-When you create custom formats with fall back chains, :iphone for example, you must register them as a Mime::Type:
+When you create custom formats with fall back chains, `:iphone` for example, you must register them as a Mime::Type:
   
   # config/initializers/mime_types.rb
   Mime::Type.register_alias 'text/html', :iphone

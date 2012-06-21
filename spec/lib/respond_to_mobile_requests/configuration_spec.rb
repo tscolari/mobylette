@@ -8,7 +8,7 @@ module Mobylette
         include Mobylette::RespondToMobileRequests
 
         mobylette_config do |config|
-          config[:fall_back] = :something
+          config[:fallback_chains]   = { mobile: [:mobile, :html, :json] }
           config[:skip_xhr_requests] = :something
         end
       end
@@ -19,16 +19,16 @@ module Mobylette
 
         describe "#mobilette_config" do
           it "should have options configured" do
-            subject.mobylette_options[:fall_back].should == :something
+            subject.mobylette_options[:fallback_chains].should   == { mobile: [:mobile, :html, :json] }
             subject.mobylette_options[:skip_xhr_requests].should == :something
           end
 
           it "should set mobylette_options" do
             subject.class.mobylette_config do |config|
-              config[:fall_back] = :js
+              config[:fallback_chains]   = { mobile: [:mobile, :html, :js] }
               config[:skip_xhr_requests] = false
             end
-            subject.mobylette_options[:fall_back].should == :js
+            subject.mobylette_options[:fallback_chains].should == { mobile: [:mobile, :html, :js] }
             subject.mobylette_options[:skip_xhr_requests].should be_false
           end
         end
