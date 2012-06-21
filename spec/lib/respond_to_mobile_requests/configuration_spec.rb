@@ -44,20 +44,10 @@ module Mobylette
         end
 
         describe "fallbacks" do
-          context "single fallback" do
+          context "compatibility with deprecated fall back" do
             it "should configure the fallback device with only one fallback" do
               mobylette_resolver = double("resolver", replace_fallback_formats_chain: "")
               mobylette_resolver.should_receive(:replace_fallback_formats_chain).with({ mobile: [:mobile, :spec] })
-              subject.class.stub(:mobylette_resolver).and_return(mobylette_resolver)
-              subject.class.mobylette_config do |config|
-                config[:fall_back] = :spec
-              end
-            end
-
-            it "should not use the :fall_back option when :fallback_chains is present" do
-              mobylette_resolver = double("resolver", replace_fallback_formats_chain: "")
-              mobylette_resolver.should_not_receive(:replace_fallback_formats_chain).with({ mobile: [:mobile, :spec] })
-              mobylette_resolver.should_receive(:replace_fallback_formats_chain).with({ mobile: [:mobile, :mp3] })
               subject.class.stub(:mobylette_resolver).and_return(mobylette_resolver)
               subject.class.mobylette_config do |config|
                 config[:fall_back] = :spec
@@ -67,11 +57,12 @@ module Mobylette
           end
 
           context "chained fallback" do
-            it "should use the fallback chain when present" do
+            it "should use the fallback chain" do
               mobylette_resolver = double("resolver", replace_fallback_formats_chain: "")
               mobylette_resolver.should_receive(:replace_fallback_formats_chain).with({ iphone: [:iphone, :mobile], mobile: [:mobile, :html] })
               subject.class.stub(:mobylette_resolver).and_return(mobylette_resolver)
               subject.class.mobylette_config do |config|
+                config[:fall_back] = nil # reset to the default state
                 config[:fallback_chains] = { iphone: [:iphone, :mobile], mobile: [:mobile, :html] }
               end
             end

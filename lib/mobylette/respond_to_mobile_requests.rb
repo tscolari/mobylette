@@ -38,12 +38,12 @@ module Mobylette
       cattr_accessor :mobylette_options
       @@mobylette_options = Hash.new
       @@mobylette_options[:skip_xhr_requests]  = true
-      @@mobylette_options[:fall_back]          = :html
+      @@mobylette_options[:fallback_chains]    = { mobile: [:mobile, :html] }
       @@mobylette_options[:mobile_user_agents] = Mobylette::MobileUserAgents.new
       @@mobylette_options[:devices]            = Hash.new
 
       cattr_accessor :mobylette_resolver
-      self.mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new({ mobile: [:mobile, :html] })
+      self.mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new()
       append_view_path self.mobylette_resolver
     end
 
@@ -114,11 +114,12 @@ module Mobylette
       #   #=> :html
       #
       def configure_fallback_resolver(options)
-        if options[:fallback_chains]
-          self.mobylette_resolver.replace_fallback_formats_chain(options[:fallback_chains])
+        if options[:fall_back]
+          logger.warn "DEPRECATED > Mobylette: Please don't user :fall_back to configure fall backs any more. Read the README for :fallback_chains instead."
+          self.mobylette_resolver.replace_fallback_formats_chain({ mobile: [:mobile, options[:fall_back]] })
         else
-          if options[:fall_back]
-            self.mobylette_resolver.replace_fallback_formats_chain({ mobile: [:mobile, options[:fall_back]] })
+          if options[:fallback_chains]
+            self.mobylette_resolver.replace_fallback_formats_chain(options[:fallback_chains])
           end
         end
       end
