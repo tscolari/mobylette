@@ -1,5 +1,14 @@
 = Change Log
 
+== 3.0
+	* New MobileUserAgents class
+		The constant user agents list is now a class that can be replaced.
+	* New device definition.
+		Application can define devices, by user agent regex, to check a matching
+		request.
+	* Brand new fallback resolver, with fallback chains by format.
+		It's possible to define different fallbacks per format, and devices.
+
 == 2.3
 	* Added support to kindle (thanks to @zbelzer, https://github.com/zbelzer)
 
