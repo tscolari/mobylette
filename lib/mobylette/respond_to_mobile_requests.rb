@@ -44,6 +44,7 @@ module Mobylette
 
       cattr_accessor :mobylette_resolver
       self.mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new()
+      self.mobylette_resolver.replace_fallback_formats_chain(@@mobylette_options[:fallback_chains])
       append_view_path self.mobylette_resolver
     end
 
@@ -115,7 +116,7 @@ module Mobylette
       #
       def configure_fallback_resolver(options)
         if options[:fall_back]
-          logger.warn "DEPRECATED > Mobylette: Please don't user :fall_back to configure fall backs any more. Read the README for :fallback_chains instead."
+          logger.warn "DEPRECATED > Mobylette: Please don't user :fall_back to configure fall backs any more. See the README for :fallback_chains instead."
           self.mobylette_resolver.replace_fallback_formats_chain({ mobile: [:mobile, options[:fall_back]] })
         else
           if options[:fallback_chains]
