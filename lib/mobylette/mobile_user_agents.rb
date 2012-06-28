@@ -34,8 +34,7 @@ module Mobylette
       samsung
       telit
       upg1
-      windows
-      ce
+      windows\ ce
       ucweb
       astel
       plucker
