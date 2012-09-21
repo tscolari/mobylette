@@ -5,7 +5,6 @@ module Mobylette
     describe ChainedFallbackResolver do
 
       describe "#find_templates" do
-
         context "single fallback chain" do
           [
             { mobile: [:mobile, :html]},
@@ -17,7 +16,7 @@ module Mobylette
               it "should change details[:formats] to the fallback array" do
                 details = { formats: [fallback_chain.keys.first] }
                 details.stub(:dup).and_return(details)
-                subject.find_templates("", "", "", details)
+                subject.send(:find_templates, "", "", "", details)
                 details[:formats].should == fallback_chain.values.first
               end
 
@@ -34,14 +33,26 @@ module Mobylette
               it "should change details[:formats] to the fallback array" do
                 details = { formats: [format] } 
                 details.stub(:dup).and_return(details)
-                subject.find_templates("", "", "", details)
+                subject.send(:find_templates, "", "", "", details)
                 details[:formats].should == fallback_array
               end
             end
           end
         end
-
       end
+
+      describe "#build_query" do
+        it "should merge paths, formats, and handlers" do
+          details = {:locale=>[:en], :formats=>[:mobile, :html], :handlers=>[:erb, :builder, :coffee]}
+          paths   = ['/app1/home', '/app2/home']
+          path    = ActionView::Resolver::Path.build('index', 'tests', nil)
+          
+          resolver = Mobylette::Resolvers::ChainedFallbackResolver.new({}, paths)
+          query = subject.send :build_query, path, details
+          query.should == "{/app1/home,/app2/home}/tests/index{.{en},}{.{html},}{.{erb,builder,coffee},}"
+        end
+      end
+
     end
   end
 end

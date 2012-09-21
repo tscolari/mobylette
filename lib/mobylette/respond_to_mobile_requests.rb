@@ -43,12 +43,10 @@ module Mobylette
       @@mobylette_options[:devices]            = Hash.new
 
       cattr_accessor :mobylette_resolver
-      self.mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new()
+      self.mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new({}, self.view_paths)
       self.mobylette_resolver.replace_fallback_formats_chain(@@mobylette_options[:fallback_chains])
       append_view_path self.mobylette_resolver
     end
-
-
 
     module ClassMethods
       # This method enables the controller do handle mobile requests
@@ -120,7 +118,7 @@ module Mobylette
           self.mobylette_resolver.replace_fallback_formats_chain({ mobile: [:mobile, options[:fall_back]] })
         else
           if options[:fallback_chains]
-            self.mobylette_resolver.replace_fallback_formats_chain(options[:fallback_chains])
+            self.mobylette_resolver.replace_fallback_formats_chain((options[:fallback_chains] || {}).reverse_merge({ mobile: [:mobile, :html] }))
           end
         end
       end
