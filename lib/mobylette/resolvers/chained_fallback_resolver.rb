@@ -62,7 +62,7 @@ module Mobylette
           query.gsub!(/\:#{ext}/, "{#{variants.compact.uniq.join(',')}}")
         end
 
-        query.gsub!(/\:path/, "{#{@paths.compact.uniq.join(',')}}")
+        query.gsub!(/\:path/, "#{@paths.compact.uniq.join(',')}")
       end
     end
   end

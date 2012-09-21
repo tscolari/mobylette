@@ -43,12 +43,12 @@ module Mobylette
 
       describe "#build_query" do
         it "should merge paths, formats, and handlers" do
-          details = {:locale=>[:en], :formats=>[:mobile, :html], :handlers=>[:erb, :builder, :coffee]}
+          details = {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}
           paths   = ['/app1/home', '/app2/home']
           path    = ActionView::Resolver::Path.build('index', 'tests', nil)
           
           resolver = Mobylette::Resolvers::ChainedFallbackResolver.new({}, paths)
-          query = subject.send :build_query, path, details
+          query = resolver.send :build_query, path, details
           query.should == "{/app1/home,/app2/home}/tests/index{.{en},}{.{html},}{.{erb,builder,coffee},}"
         end
       end
