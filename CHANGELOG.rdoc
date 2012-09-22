@@ -1,5 +1,11 @@
 = Change Log
 
+== 3.2
+	* Fixed fallback for templates inside gems
+
+== 3.1
+	* Fixed regression with windows user agent
+
 == 3.0
 	* New MobileUserAgents class
 		The constant user agents list is now a class that can be replaced.
