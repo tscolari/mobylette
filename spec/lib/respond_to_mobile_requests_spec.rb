@@ -164,6 +164,8 @@ module Mobylette
           subject.stub(:force_mobile_by_session?).and_return(false)
           subject.stub(:is_mobile_request?).and_return(false)
           subject.stub(:params).and_return({})
+          request = double("request", user_agent: "android")
+          subject.stub(:request).and_return(request)
         end
 
         it "should be true if force_mobile_by_session? is true" do
@@ -180,6 +182,34 @@ module Mobylette
           subject.stub(:params).and_return({format: 'mobile'})
           subject.send(:respond_as_mobile?).should be_true
         end
+      end
+
+      context "with skip_user_agents config option set" do
+        before(:each) do
+          subject.stub(:stop_processing_because_xhr?).and_return(false)
+          subject.stub(:stop_processing_because_param?).and_return(false)
+          subject.stub(:force_mobile_by_session?).and_return(false)
+          subject.stub(:is_mobile_request?).and_return(true)
+          subject.stub(:params).and_return({})
+          request = double("request", user_agent: "ipad")
+          subject.stub(:request).and_return(request)
+        end
+
+        it "should be false if skip_user_agents contains the current user agent" do
+          subject.mobylette_options[:skip_user_agents] = [:ipad, :android]
+          subject.send(:respond_as_mobile?).should be_false
+        end
+
+        it "should be true if skip_user_agents is not set" do
+          subject.mobylette_options[:skip_user_agents] = []
+          subject.send(:respond_as_mobile?).should be_true
+        end
+
+        it "should be true if skip_user_agents does not contain the current user agent" do
+          subject.mobylette_options[:skip_user_agents] = [:android]
+          subject.send(:respond_as_mobile?).should be_true
+        end
+
       end
     end
 
