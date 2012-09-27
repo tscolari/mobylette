@@ -1,5 +1,9 @@
 = Change Log
 
+== 3.3.1
+	* Fix to keep the `is_mobile_request?` output if :skip_user_agents is
+	used.
+
 == 3.3
 	* New `:skip_user_agents` option to exclude user agents from mobile
 	requests.

@@ -1,3 +1,3 @@
 module Mobylette
-  VERSION = "3.3"
+  VERSION = "3.3.1"
 end
