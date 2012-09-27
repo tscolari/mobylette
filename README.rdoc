@@ -76,6 +76,14 @@ Mobylette works uppon detecting the user agent of the visitor browser. By defaul
     config[:mobile_user_agents] = proc { %r{iphone|ipad}i }
   end
 
+=== Skipping User Agents
+
+If you need to exclude one or more user agents from the mobile format, lets say ipad for example, you may use the :skip_user_agents option:
+
+  mobylette_config do |config|
+    config[:skip_user_agents] = [:ipad]
+  end
+
 === Fall Backs
 
 Fall backs are handled as a chain of formats. By default the only chain is `:mobile => [:mobile, :html]`.
