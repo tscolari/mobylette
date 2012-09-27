@@ -189,7 +189,7 @@ module Mobylette
           subject.stub(:stop_processing_because_xhr?).and_return(false)
           subject.stub(:stop_processing_because_param?).and_return(false)
           subject.stub(:force_mobile_by_session?).and_return(false)
-          subject.stub(:is_mobile_request?).and_return(true)
+          #subject.stub(:is_mobile_request?).and_return(true)
           subject.stub(:params).and_return({})
           request = double("request", user_agent: "ipad")
           subject.stub(:request).and_return(request)

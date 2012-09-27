@@ -132,7 +132,7 @@ module Mobylette
     # Private: Tells if the request comes from a mobile user_agent or not
     #
     def is_mobile_request?
-      request.user_agent.to_s.downcase =~ @@mobylette_options[:mobile_user_agents].call
+      (not user_agent_excluded?) && request.user_agent.to_s.downcase =~ @@mobylette_options[:mobile_user_agents].call
     end
 
     # Private: Returns if this request comes from the informed device
@@ -154,15 +154,13 @@ module Mobylette
     #
     def respond_as_mobile?
       impediments = stop_processing_because_xhr? || stop_processing_because_param?
-      (not impediments) && (force_mobile_by_session? || allow_mobile_response? || params[:format] == 'mobile')
+      (not impediments) && (force_mobile_by_session? || is_mobile_request? || params[:format] == 'mobile')
     end
 
-    def allow_mobile_response?
-      user_agent_included? && is_mobile_request?
-    end
-
-    def user_agent_included?
-      request.user_agent.to_s.downcase !~ Regexp.union([self.mobylette_options[:skip_user_agents]].flatten.map(&:to_s))
+    # Private: Rertuns true if the current user agent should be skipped by configuration
+    #
+    def user_agent_excluded?
+      request.user_agent.to_s.downcase =~ Regexp.union([self.mobylette_options[:skip_user_agents]].flatten.map(&:to_s))
     end
 
     # Private: Returns true if the visitor has the force_mobile set in it's session
