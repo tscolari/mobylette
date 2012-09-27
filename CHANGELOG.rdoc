@@ -1,5 +1,9 @@
 = Change Log
 
+== 3.3
+	* New `:skip_user_agents` option to exclude user agents from mobile
+	requests.
+
 == 3.2
 	* Fixed fallback for templates inside gems
 
