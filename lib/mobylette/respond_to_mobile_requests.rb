@@ -162,7 +162,7 @@ module Mobylette
     end
 
     def user_agent_included?
-      request.user_agent.to_s.downcase !~ Regexp.union(self.mobylette_options[:skip_user_agents].map(&:to_s))
+      request.user_agent.to_s.downcase !~ Regexp.union([self.mobylette_options[:skip_user_agents]].flatten.map(&:to_s))
     end
 
     # Private: Returns true if the visitor has the force_mobile set in it's session
