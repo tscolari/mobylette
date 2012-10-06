@@ -63,9 +63,7 @@ After that, you may start adding your .mobile. views.
 You can set the configuration with the mobylette_config method:
 
     mobylette_config do |config|
-    config[:fallback_chains] = { mobile: [:mobile, :html] }
-      config[:skip_xhr_requests] = false
-      config[:mobile_user_agents] = proc { %r{iphone}i }
+      ... configuration
     end
 
 === Custom User Agents
