@@ -72,6 +72,7 @@ module Mobylette
       maemo
       fennec
       silk
+      playbook
     )
   end
 end
