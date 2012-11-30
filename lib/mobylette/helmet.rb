@@ -22,7 +22,7 @@ module Mobylette
       request.user_agent = user_agent
     end
 
-    # Reset the user_aget to the default ("Rails Testing")
+    # Reset the user_agent to the default ("Rails Testing")
     #
     # Remember to add it BEFORE the request
     #
