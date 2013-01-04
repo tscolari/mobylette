@@ -152,6 +152,21 @@ This will force the mobile format rendering, no matter from where the user is re
 
 This will disable any override (default).
 
+If you need to customize how mobile requests are identified you can override the `is_mobile_request?` method in your controller, with your own logic.
+For example, if you want the mobile.app.com to render mobile views, and the app.com to render the normal views:
+
+  class ApplicationController << ActionController::Base
+    include Mobylette::RespondToMobileRequests 
+
+    ...
+
+    private
+
+    def is_mobile_request?
+      request.host == "mobile.app.com"
+    end
+  end
+
 == Testing
 
 http://tscolari.github.com/mobylette/mobylette_images/helmet.jpg

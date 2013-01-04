@@ -1,5 +1,9 @@
 = Change Log
 
+== 3.3.2
+  * Removing debugger from Gemfile
+  * Adding support to PlayBook as a mobile user agent
+
 == 3.3.1
 	* Fix to keep the `is_mobile_request?` output if :skip_user_agents is
 	used.
