@@ -8,7 +8,7 @@ http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg
   Mobylette 1.6+ only supports Ruby 1.9.2+
   For Ruby 1.8.7 support, please use version < 1.6
 
-= Mobylette 
+= Mobylette
 {<img src="https://secure.travis-ci.org/tscolari/mobylette.png" />}[http://travis-ci.org/tscolari/mobylette]
 {<img src="https://gemnasium.com/tscolari/mobylette.png" />}[https://gemnasium.com/tscolari/mobylette]
 {<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/tscolari/mobylette]
@@ -25,7 +25,7 @@ By adding "respond_to_mobile_requests" in your application_controller (or any ot
       format.mobile { ... }
     end
 
-== Instalation
+== Installation
 
 Add the gem to your gemfile:
 
@@ -68,7 +68,7 @@ You can set the configuration with the mobylette_config method:
 
 === Custom User Agents
 
-Mobylette works uppon detecting the user agent of the visitor browser. By default it will detect any mobile user agent. But you can customize this by passing a proc with a regex of any matching user agent you may wish.
+Mobylette works upon detecting the user agent of the visitor browser. By default it will detect any mobile user agent. But you can customize this by passing a proc with a regex of any matching user agent you may wish.
 
   mobylette_config do |config|
     config[:mobile_user_agents] = proc { %r{iphone|ipad}i }
@@ -96,7 +96,7 @@ You can override this and add your own fall back chains using the `mobylette_con
   end
 
 When you create a custom format with fall back chains, `:iphone` for example, you must register it as a Mime::Type:
-  
+
   # config/initializers/mime_types.rb
   Mime::Type.register_alias 'text/html', :iphone
   # this is very important, don't forget!
@@ -130,7 +130,7 @@ But you can register any device using the `mobylette_config` method:
 
 Note: This will not add the device to the mobile user_agent detection. For that read #Custom User Agents.
 
-== Skiping mobile filter
+== Skipping mobile filter
 
 In the case you need to skip a mobile_request for been treated as mobile, you can pass the `skip_mobile=true` param to the url/request.
 
@@ -156,7 +156,7 @@ If you need to customize how mobile requests are identified you can override the
 For example, if you want the mobile.app.com to render mobile views, and the app.com to render the normal views:
 
   class ApplicationController << ActionController::Base
-    include Mobylette::RespondToMobileRequests 
+    include Mobylette::RespondToMobileRequests
 
     ...
 
@@ -193,7 +193,7 @@ This will force a mobile user_agent, allowing you to test mobile requests.
 
     reset_test_request_agent
 
-This will reset your user_agent to the test default "Rails Testing". You don't need to call this everytime, all your requests by default are "Rails Testing" in your test env.
+This will reset your user_agent to the test default "Rails Testing". You don't need to call this every time, all your requests by default are "Rails Testing" in your test env.
 
     set_session_override(override_value)
 
