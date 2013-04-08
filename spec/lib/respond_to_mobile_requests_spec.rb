@@ -252,6 +252,11 @@ module Mobylette
         subject.send(:request_device?, :iphone).should be_false
         subject.send(:request_device?, :custom_phone).should be_true
       end
+      it "should match an android phone" do
+        subject.stub_chain(:request, :user_agent).and_return('This is Android browser Mobile')
+        subject.send(:request_device?, :iphone).should be_false
+        subject.send(:request_device?, :android_phone).should be_true
+      end
     end
 
     describe "#set_mobile_format" do
