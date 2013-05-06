@@ -11,7 +11,7 @@ http://tscolari.github.com/mobylette/mobylette_images/mobylette.jpg
 = Mobylette
 {<img src="https://secure.travis-ci.org/tscolari/mobylette.png" />}[http://travis-ci.org/tscolari/mobylette]
 {<img src="https://gemnasium.com/tscolari/mobylette.png" />}[https://gemnasium.com/tscolari/mobylette]
-{<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/tscolari/mobylette]
+{<img src="https://codeclimate.com/github/tscolari/mobylette.png" />}[https://codeclimate.com/github/tscolari/mobylette]
 
 
 This gem works by adding the 'mobile' format to your rails application. Whenever a request come from a mobile device, if you have your controller mobile enabled, it shall render the view.mobile.erb instead of the view.html.erb (or haml, or whatever).
