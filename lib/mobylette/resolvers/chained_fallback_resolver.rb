@@ -24,9 +24,9 @@ module Mobylette
       #     ...
       #   }
       #
-      # It will add the fallback chain array of the 
+      # It will add the fallback chain array of the
       # request.format to the resolver.
-      # 
+      #
       # If the format.request is not defined in formats,
       # it will behave as a normal FileSystemResovler.
       #

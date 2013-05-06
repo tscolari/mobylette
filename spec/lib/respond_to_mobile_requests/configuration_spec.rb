@@ -6,6 +6,10 @@ module Mobylette
 
       class MockConfigurationController < ActionController::Base
         include Mobylette::RespondToMobileRequests
+
+        def self.public_mobylette_options
+          @mobylette_options
+        end
       end
 
       subject { MockConfigurationController.new }
@@ -13,19 +17,19 @@ module Mobylette
       describe "basic configuration delegation" do
 
         describe "#mobilette_config" do
-          it "should set mobylette_options" do
-            subject.class.mobylette_config do |config|
+          it "should set class.public_mobylette_options" do
+            subject.class.send(:mobylette_config) do |config|
               config[:fallback_chains]   = { mobile: [:mobile, :html, :js] }
               config[:skip_xhr_requests] = false
             end
-            subject.mobylette_options[:fallback_chains].should == { mobile: [:mobile, :html, :js] }
-            subject.mobylette_options[:skip_xhr_requests].should be_false
+            subject.class.public_mobylette_options[:fallback_chains].should == { mobile: [:mobile, :html, :js] }
+            subject.class.public_mobylette_options[:skip_xhr_requests].should be_false
           end
         end
 
         describe "devices" do
           it "should register devices to Mobylette::Devices" do
-            subject.class.mobylette_config do |config|
+            subject.class.send(:mobylette_config) do |config|
               config[:devices] = {phone1: %r{phone_1}, phone2: %r{phone_2}}
             end
             Mobylette::Devices.instance.device(:phone1).should == /phone_1/
@@ -39,7 +43,7 @@ module Mobylette
               mobylette_resolver = double("resolver", replace_fallback_formats_chain: "")
               mobylette_resolver.should_receive(:replace_fallback_formats_chain).with({ mobile: [:mobile, :spec] })
               subject.class.stub(:mobylette_resolver).and_return(mobylette_resolver)
-              subject.class.mobylette_config do |config|
+              subject.class.send(:mobylette_config) do |config|
                 config[:fall_back] = :spec
                 config[:fallback_chains] = { mobile: [:mobile, :mp3] }
               end
@@ -51,7 +55,7 @@ module Mobylette
               mobylette_resolver = double("resolver", replace_fallback_formats_chain: "")
               mobylette_resolver.should_receive(:replace_fallback_formats_chain).with({ iphone: [:iphone, :mobile], mobile: [:mobile, :html] })
               subject.class.stub(:mobylette_resolver).and_return(mobylette_resolver)
-              subject.class.mobylette_config do |config|
+              subject.class.send(:mobylette_config) do |config|
                 config[:fall_back] = nil # reset to the default state
                 config[:fallback_chains] = { iphone: [:iphone, :mobile], mobile: [:mobile, :html] }
               end
