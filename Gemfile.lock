@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mobylette (3.4.0)
+    mobylette (3.4.1)
       actionpack (>= 3.0)
 
 GEM
@@ -42,6 +42,7 @@ GEM
     i18n (0.6.0)
     journey (1.0.3)
     json (1.6.6)
+    json (1.6.6-java)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -103,6 +104,7 @@ GEM
     tzinfo (0.3.33)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES

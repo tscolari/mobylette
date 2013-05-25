@@ -1,9 +1,10 @@
 = Change Log
 
+== 3.4.1
+	* Reverting changes of the 3.4.1
+
 == 3.4.0
 	* Moving all methods to be private
-	* Changed configuration and responder variables from class to instance
-	(of class)
 
 == 3.3.2
   * Removing debugger from Gemfile
