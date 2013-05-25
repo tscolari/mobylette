@@ -35,22 +35,21 @@ module Mobylette
 
       before_filter :handle_mobile
 
-      @mobylette_options = Hash.new
-      @mobylette_options[:skip_xhr_requests]  = true
-      @mobylette_options[:fallback_chains]    = { mobile: [:mobile, :html] }
-      @mobylette_options[:mobile_user_agents] = Mobylette::MobileUserAgents.new
-      @mobylette_options[:devices]            = Hash.new
-      @mobylette_options[:skip_user_agents]   = []
+      cattr_accessor :mobylette_options
+      @@mobylette_options = Hash.new
+      @@mobylette_options[:skip_xhr_requests]  = true
+      @@mobylette_options[:fallback_chains]    = { mobile: [:mobile, :html] }
+      @@mobylette_options[:mobile_user_agents] = Mobylette::MobileUserAgents.new
+      @@mobylette_options[:devices]            = Hash.new
+      @@mobylette_options[:skip_user_agents]   = []
 
-      @mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new({}, self.view_paths)
-      mobylette_resolver.replace_fallback_formats_chain(@mobylette_options[:fallback_chains])
-      append_view_path mobylette_resolver
+      cattr_accessor :mobylette_resolver
+      self.mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new({}, self.view_paths)
+      self.mobylette_resolver.replace_fallback_formats_chain(@@mobylette_options[:fallback_chains])
+      append_view_path self.mobylette_resolver
     end
 
     module ClassMethods
-
-      private
-
       # This method enables the controller do handle mobile requests
       #
       # You must add this to every controller you want to respond differently to mobile devices,
@@ -93,10 +92,12 @@ module Mobylette
       #   end
       #
       def mobylette_config
-        yield(mobylette_options)
-        configure_fallback_resolver(mobylette_options)
-        Mobylette.devices.register(mobylette_options[:devices]) if mobylette_options[:devices]
+        yield(self.mobylette_options)
+        configure_fallback_resolver(self.mobylette_options)
+        Mobylette.devices.register(self.mobylette_options[:devices]) if self.mobylette_options[:devices]
       end
+
+      private
 
       # Private: Configures how the resolver shall handle fallbacks.
       #
@@ -117,28 +118,21 @@ module Mobylette
       def configure_fallback_resolver(options)
         if options[:fall_back]
           logger.warn "DEPRECATED > Mobylette: Please don't user :fall_back to configure fall backs any more. See the README for :fallback_chains instead."
-          mobylette_resolver.replace_fallback_formats_chain({ mobile: [:mobile, options[:fall_back]] })
+          self.mobylette_resolver.replace_fallback_formats_chain({ mobile: [:mobile, options[:fall_back]] })
         else
           if options[:fallback_chains]
-            mobylette_resolver.replace_fallback_formats_chain((options[:fallback_chains] || {}).reverse_merge({ mobile: [:mobile, :html] }))
+            self.mobylette_resolver.replace_fallback_formats_chain((options[:fallback_chains] || {}).reverse_merge({ mobile: [:mobile, :html] }))
           end
         end
       end
-
-      def mobylette_options
-        @mobylette_options
-      end
-
-      def mobylette_resolver
-        @mobylette_resolver
-      end
-
     end
+
+    private
 
     # Private: Tells if the request comes from a mobile user_agent or not
     #
     def is_mobile_request?
-      (not user_agent_excluded?) && request.user_agent.to_s.downcase =~ mobylette_options[:mobile_user_agents].call
+      (not user_agent_excluded?) && request.user_agent.to_s.downcase =~ @@mobylette_options[:mobile_user_agents].call
     end
 
     # Private: Returns if this request comes from the informed device
@@ -166,7 +160,7 @@ module Mobylette
     # Private: Rertuns true if the current user agent should be skipped by configuration
     #
     def user_agent_excluded?
-      request.user_agent.to_s.downcase =~ Regexp.union([mobylette_options[:skip_user_agents]].flatten.map(&:to_s))
+      request.user_agent.to_s.downcase =~ Regexp.union([self.mobylette_options[:skip_user_agents]].flatten.map(&:to_s))
     end
 
     # Private: Returns true if the visitor has the force_mobile set in it's session
@@ -193,7 +187,7 @@ module Mobylette
     # not skip_xhr_requests.
     #
     def stop_processing_because_xhr?
-      if request.xhr? && mobylette_options[:skip_xhr_requests]
+      if request.xhr? && self.mobylette_options[:skip_xhr_requests]
         true
       else
         false
@@ -214,16 +208,12 @@ module Mobylette
     # agains a fallback_chain key.
     #
     def set_mobile_format
-      if mobylette_options[:fallback_chains]
-        mobylette_options[:fallback_chains].keys.each do |device|
+      if self.mobylette_options[:fallback_chains]
+        self.mobylette_options[:fallback_chains].keys.each do |device|
           return device if request_device?(device)
         end
       end
       :mobile 
-    end
-
-    def mobylette_options
-      self.class.instance_variable_get(:@mobylette_options)
     end
 
   end

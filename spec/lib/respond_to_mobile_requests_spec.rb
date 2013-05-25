@@ -5,10 +5,6 @@ module Mobylette
 
     class MockController < ActionController::Base
       include Mobylette::RespondToMobileRequests
-
-      def self.public_mobylette_options
-        @mobylette_options
-      end
     end
 
     subject { MockController.new }
@@ -76,12 +72,12 @@ module Mobylette
         end
 
         it "should return false if :skip_xhr_requests is false" do
-          subject.class.public_mobylette_options[:skip_xhr_requests] = false
+          subject.mobylette_options[:skip_xhr_requests] = false
           subject.send(:stop_processing_because_xhr?).should be_false
         end
 
         it "should return true if :skip_xhr_requests is true" do
-          subject.class.public_mobylette_options[:skip_xhr_requests] = true
+          subject.mobylette_options[:skip_xhr_requests] = true
           subject.send(:stop_processing_because_xhr?).should be_true
         end
 
@@ -93,12 +89,12 @@ module Mobylette
         end
 
         it "should return false when :skip_xhr_requests is false" do
-          subject.class.public_mobylette_options[:skip_xhr_requests] = false
+          subject.mobylette_options[:skip_xhr_requests] = false
           subject.send(:stop_processing_because_xhr?).should be_false
         end
 
         it "should return false when :skip_xhr_requests is true" do
-          subject.class.public_mobylette_options[:skip_xhr_requests] = true
+          subject.mobylette_options[:skip_xhr_requests] = true
           subject.send(:stop_processing_because_xhr?).should be_false
         end
 
@@ -200,17 +196,17 @@ module Mobylette
         end
 
         it "should be false if skip_user_agents contains the current user agent" do
-          subject.class.public_mobylette_options[:skip_user_agents] = [:ipad, :android]
+          subject.mobylette_options[:skip_user_agents] = [:ipad, :android]
           subject.send(:respond_as_mobile?).should be_false
         end
 
         it "should be true if skip_user_agents is not set" do
-          subject.class.public_mobylette_options[:skip_user_agents] = []
+          subject.mobylette_options[:skip_user_agents] = []
           subject.send(:respond_as_mobile?).should be_true
         end
 
         it "should be true if skip_user_agents does not contain the current user agent" do
-          subject.class.public_mobylette_options[:skip_user_agents] = [:android]
+          subject.mobylette_options[:skip_user_agents] = [:android]
           subject.send(:respond_as_mobile?).should be_true
         end
 
@@ -238,7 +234,7 @@ module Mobylette
           @request = double("request", user_agent: "android", format: @format, formats: @formats)
           @request.stub(:format=).and_return { |new_value| @format = new_value }
           subject.stub(:request).and_return(@request)
-          subject.class.public_mobylette_options[:fall_back] = false
+          subject.mobylette_options[:fall_back] = false
         end
 
         it "should set request.format to :mobile" do
@@ -266,7 +262,7 @@ module Mobylette
     describe "#set_mobile_format" do
       context "matching format in fallback chain" do
         it "should return the request device format when it is in a chain" do
-          subject.class.public_mobylette_options[:fallback_chains] = { html: [:html, :htm], mp3: [:mp3, :wav, :mid] }
+          subject.mobylette_options[:fallback_chains] = { html: [:html, :htm], mp3: [:mp3, :wav, :mid] }
           subject.stub(:request_device?).with(:mp3).and_return(true)
           subject.stub(:request_device?).with(:html).and_return(false)
           subject.send(:set_mobile_format).should == :mp3
@@ -275,7 +271,7 @@ module Mobylette
 
       context "not matching format in fallback chain" do
         it "should return :mobile" do
-          subject.class.public_mobylette_options[:fallback_chains] = { html: [:html, :htm], mp3: [:mp3, :wav, :mid] }
+          subject.mobylette_options[:fallback_chains] = { html: [:html, :htm], mp3: [:mp3, :wav, :mid] }
           subject.stub_chain(:request, :user_agent).and_return("android")
           subject.send(:set_mobile_format).should == :mobile
         end
