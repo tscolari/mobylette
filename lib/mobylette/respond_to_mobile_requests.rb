@@ -132,7 +132,7 @@ module Mobylette
     # Private: Tells if the request comes from a mobile user_agent or not
     #
     def is_mobile_request?
-      (not user_agent_excluded?) && request.user_agent.to_s.downcase =~ @@mobylette_options[:mobile_user_agents].call
+      (not user_agent_excluded?) && !(request.user_agent.to_s.downcase =~ @@mobylette_options[:mobile_user_agents].call).nil?
     end
 
     # Private: Returns if this request comes from the informed device
