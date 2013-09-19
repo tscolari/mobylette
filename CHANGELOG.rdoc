@@ -1,5 +1,8 @@
 = Change Log
 
+== 3.5
+	* Support for rails 4
+
 == 3.4.1
 	* Reverting changes of the 3.4.1
 
