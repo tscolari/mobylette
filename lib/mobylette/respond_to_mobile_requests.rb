@@ -160,7 +160,7 @@ module Mobylette
     # Private: Rertuns true if the current user agent should be skipped by configuration
     #
     def user_agent_excluded?
-      request.user_agent.to_s.downcase =~ Regexp.union([self.mobylette_options[:skip_user_agents]].flatten.map(&:to_s))
+      request.user_agent.to_s.downcase =~ Regexp.union([self.mobylette_options[:skip_user_agents]].flatten.map(&:to_s).map(&:downcase))
     end
 
     # Private: Returns true if the visitor has the force_mobile set in it's session
