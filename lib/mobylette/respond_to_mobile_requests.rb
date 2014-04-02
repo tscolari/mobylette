@@ -101,7 +101,7 @@ module Mobylette
 
       # Private: Configures how the resolver shall handle fallbacks.
       #
-      # if options has a :fallback_chains key, it will use it 
+      # if options has a :fallback_chains key, it will use it
       # as the fallback rules for the resolver, the format should
       # be a hash, where each key defines a array of formats.
       # Example:
@@ -160,7 +160,7 @@ module Mobylette
     # Private: Rertuns true if the current user agent should be skipped by configuration
     #
     def user_agent_excluded?
-      request.user_agent.to_s.downcase =~ Regexp.union([self.mobylette_options[:skip_user_agents]].flatten.map(&:to_s))
+      request.user_agent.to_s.downcase =~ Regexp.union([self.mobylette_options[:skip_user_agents]].flatten.map{|e| e.is_a?(Regexp) ? e : e.to_s})
     end
 
     # Private: Returns true if the visitor has the force_mobile set in it's session
@@ -213,7 +213,7 @@ module Mobylette
           return device if request_device?(device)
         end
       end
-      :mobile 
+      :mobile
     end
 
   end
