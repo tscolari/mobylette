@@ -45,7 +45,8 @@ module Mobylette
           details = details.dup
           details[:formats] = Array.wrap(@fallback_formats[details[:formats].first])
         end
-        super(name, prefix, partial, details, outside_app_allowed)
+        # Skip fifth argument for compatability with older Rails version
+        super(name, prefix, partial, details)
       end
 
       # Helper for building query glob string based on resolver's pattern.
