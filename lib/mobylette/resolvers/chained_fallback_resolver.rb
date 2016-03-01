@@ -39,13 +39,13 @@ module Mobylette
       # Private: finds the right template on the filesystem,
       #         using fallback if needed
       #
-      def find_templates(name, prefix, partial, details)
+      def find_templates(name, prefix, partial, details, outside_app_allowed = false)
         # checks if the format has a fallback chain
         if @fallback_formats.has_key?(details[:formats].first)
           details = details.dup
           details[:formats] = Array.wrap(@fallback_formats[details[:formats].first]) 
         end
-        super(name, prefix, partial, details)
+        super(name, prefix, partial, details, outside_app_allowed)
       end
 
       # Helper for building query glob string based on resolver's pattern.
