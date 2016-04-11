@@ -36,16 +36,17 @@ module Mobylette
       before_filter :handle_mobile
 
       cattr_accessor :mobylette_options
-      @@mobylette_options = Hash.new
-      @@mobylette_options[:skip_xhr_requests]  = true
-      @@mobylette_options[:fallback_chains]    = { mobile: [:mobile, :html] }
-      @@mobylette_options[:mobile_user_agents] = Mobylette::MobileUserAgents.new
-      @@mobylette_options[:devices]            = Hash.new
-      @@mobylette_options[:skip_user_agents]   = []
+
+      self.mobylette_options = Hash.new
+      self.mobylette_options[:skip_xhr_requests]  = true
+      self.mobylette_options[:fallback_chains]    = { mobile: [:mobile, :html] }
+      self.mobylette_options[:mobile_user_agents] = Mobylette::MobileUserAgents.new
+      self.mobylette_options[:devices]            = Hash.new
+      self.mobylette_options[:skip_user_agents]   = []
 
       cattr_accessor :mobylette_resolver
       self.mobylette_resolver = Mobylette::Resolvers::ChainedFallbackResolver.new({}, self.view_paths)
-      self.mobylette_resolver.replace_fallback_formats_chain(@@mobylette_options[:fallback_chains])
+      self.mobylette_resolver.replace_fallback_formats_chain(self.mobylette_options[:fallback_chains])
       append_view_path self.mobylette_resolver
     end
 
@@ -132,7 +133,7 @@ module Mobylette
     # Private: Tells if the request comes from a mobile user_agent or not
     #
     def is_mobile_request?
-      (not user_agent_excluded?) && !(request.user_agent.to_s.downcase =~ @@mobylette_options[:mobile_user_agents].call).nil?
+      (not user_agent_excluded?) && !(request.user_agent.to_s.downcase =~ self.mobylette_options[:mobile_user_agents].call).nil?
     end
 
     # Private: Returns if this request comes from the informed device
