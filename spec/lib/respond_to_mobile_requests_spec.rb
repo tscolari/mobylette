@@ -200,6 +200,11 @@ module Mobylette
           subject.send(:respond_as_mobile?).should be_false
         end
 
+        it "should be false if skip_user_agents contains the current user agent defined using regexp" do
+          subject.mobylette_options[:skip_user_agents] = [/ipad/, /android/]
+          subject.send(:respond_as_mobile?).should be_false
+        end
+
         it "should be true if skip_user_agents is not set" do
           subject.mobylette_options[:skip_user_agents] = []
           subject.send(:respond_as_mobile?).should be_true
