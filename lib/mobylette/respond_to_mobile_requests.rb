@@ -33,7 +33,7 @@ module Mobylette
       helper_method :is_mobile_view?
       helper_method :request_device?
 
-      before_filter :handle_mobile
+      before_action :handle_mobile
 
       cattr_accessor :mobylette_options
       @@mobylette_options = Hash.new
@@ -101,7 +101,7 @@ module Mobylette
 
       # Private: Configures how the resolver shall handle fallbacks.
       #
-      # if options has a :fallback_chains key, it will use it 
+      # if options has a :fallback_chains key, it will use it
       # as the fallback rules for the resolver, the format should
       # be a hash, where each key defines a array of formats.
       # Example:
@@ -213,7 +213,7 @@ module Mobylette
           return device if request_device?(device)
         end
       end
-      :mobile 
+      :mobile
     end
 
   end
