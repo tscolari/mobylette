@@ -1,3 +1,6 @@
+require 'action_view'
+require 'action_view/template/resolver'
+
 module Mobylette
   module Resolvers
     class ChainedFallbackResolver < ::ActionView::FileSystemResolver
@@ -24,9 +27,9 @@ module Mobylette
       #     ...
       #   }
       #
-      # It will add the fallback chain array of the 
+      # It will add the fallback chain array of the
       # request.format to the resolver.
-      # 
+      #
       # If the format.request is not defined in formats,
       # it will behave as a normal FileSystemResovler.
       #
@@ -39,11 +42,11 @@ module Mobylette
       # Private: finds the right template on the filesystem,
       #         using fallback if needed
       #
-      def find_templates(name, prefix, partial, details)
+      def find_templates(name, prefix, partial, details, outside_app_allowed = false)
         # checks if the format has a fallback chain
         if @fallback_formats.has_key?(details[:formats].first)
           details = details.dup
-          details[:formats] = Array.wrap(@fallback_formats[details[:formats].first]) 
+          details[:formats] = Array.wrap(@fallback_formats[details[:formats].first])
         end
         super(name, prefix, partial, details)
       end
